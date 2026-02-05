@@ -39,3 +39,20 @@ body {
 .animate-scroll {
   animation: scroll 30s linear infinite;
 }
+
+/* Small fade-up entrance used by metric cards */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 600ms cubic-bezier(.2, .8, .2, 1) forwards;
+}

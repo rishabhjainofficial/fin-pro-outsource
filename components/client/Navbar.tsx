@@ -81,8 +81,10 @@ const Navbar = () => {
 
                 {/* Logo */}
                 <div className="flex items-center gap-2">
-                    <Landmark size={24} className="text-slate-900" />
-                    <span className="font-bold text-2xl tracking-tighter uppercase text-slate-900">Gapbridge</span>
+                    <Link href="/" className="flex items-center gap-2">
+                        <Landmark size={28} className="text-slate-900" />
+                        <span className="text-2xl font-bold text-slate-900">Gapbridge</span>
+                    </Link>
                 </div>
 
                 {/* Mobile Menu Button */}

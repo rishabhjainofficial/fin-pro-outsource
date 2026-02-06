@@ -56,3 +56,21 @@ body {
 .animate-fade-up {
   animation: fadeUp 600ms cubic-bezier(.2, .8, .2, 1) forwards;
 }
+
+/* Unique keyframe for testimonials */
+@keyframes testimonial-loop {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Custom utility class */
+.animate-testimonial-scroll {
+  display: flex;
+  width: max-content;
+  animation: testimonial-loop 50s linear infinite;
+}

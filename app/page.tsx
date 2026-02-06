@@ -8,6 +8,8 @@ import WhyChooseUs from "@/components/client/home/WhyChooseUs";
 import StepsToHire from "@/components/client/home/StepsToHire";
 import IndustriesServe from "@/components/client/home/IndustriesServe";
 import JoinTeam from "@/components/client/home/JoinTeam";
+import ToolsUsed from "@/components/client/home/ToolsUsed";
+import Testimonials from "@/components/client/home/Testimonials";
 export default function Home() {
   return (
     <div className="w-full flex flex-col items-center justify-center">
@@ -21,6 +23,8 @@ export default function Home() {
       <StepsToHire />
       <IndustriesServe />
       <JoinTeam />
+      <ToolsUsed />
+      <Testimonials />
     </div>
   );
 }

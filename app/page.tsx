@@ -6,6 +6,8 @@ import ResultDriven from "@/components/client/home/ResultDriven";
 import OurServices from "@/components/client/home/OurServices";
 import WhyChooseUs from "@/components/client/home/WhyChooseUs";
 import StepsToHire from "@/components/client/home/StepsToHire";
+import IndustriesServe from "@/components/client/home/IndustriesServe";
+import JoinTeam from "@/components/client/home/JoinTeam";
 export default function Home() {
   return (
     <div className="w-full flex flex-col items-center justify-center">
@@ -17,6 +19,8 @@ export default function Home() {
       <OurServices />
       <WhyChooseUs />
       <StepsToHire />
+      <IndustriesServe />
+      <JoinTeam />
     </div>
   );
 }

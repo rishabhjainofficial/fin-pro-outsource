@@ -3,12 +3,12 @@ import Image from 'next/image';
 
 const BrandScroll = () => {
     const brands = [
-        { name: 'Brand 1', src: '/images/brand.jpg' },
-        { name: 'Brand 2', src: '/images/brand.jpg' },
-        { name: 'Brand 3', src: '/images/brand.jpg' },
-        { name: 'Brand 4', src: '/images/brand.jpg' },
-        { name: 'Brand 5', src: '/images/brand.jpg' },
-        { name: 'Brand 6', src: '/images/brand.jpg' },
+        { name: 'Brand 1', src: 'https://images.unsplash.com/photo-1570882280426-df8ac5ccd672?q=80&w=1075&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
+        { name: 'Brand 2', src: 'https://images.unsplash.com/photo-1555274175-75f4056dfd05?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
+        { name: 'Brand 3', src: 'https://images.unsplash.com/photo-1724167954496-a5c4befea483?q=80&w=327&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
+        { name: 'Brand 4', src: 'https://images.unsplash.com/photo-1570882280426-df8ac5ccd672?q=80&w=1075&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
+        { name: 'Brand 5', src: 'https://images.unsplash.com/photo-1570882280426-df8ac5ccd672?q=80&w=1075&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
+        { name: 'Brand 6', src: 'https://images.unsplash.com/photo-1570882280426-df8ac5ccd672?q=80&w=1075&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
     ];
 
     // We double the array to create the infinite loop effect

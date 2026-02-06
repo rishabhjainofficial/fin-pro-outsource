@@ -5,7 +5,7 @@ const Banner = () => {
         <section className="w-full relative h-[44vh] md:h-[60vh] lg:h-[72vh] overflow-hidden">
             {/* Background image */}
             <Image
-                src="/images/banner.jpg"
+                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=815&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Team collaborating on financial strategy"
                 fill
                 priority

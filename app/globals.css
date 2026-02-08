@@ -10,6 +10,20 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Your Formal Business Palette */
+  --color-brand-navy: #0f172a;
+  --color-brand-green: #5d9446;
+  --color-brand-red: #944646;
+  --color-brand-blue: #467d94;
+  --color-brand-surface: #f8fafc;
+  --color-brand-slate: #475569;
+  --color-brand-border: #e2e8f0;
+
+  /* Adding the extra rounding sizes for your stunning UI */
+  --radius-3xl: 1.5rem;
+  --radius-4xl: 2rem;
+  --radius-5xl: 3rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -73,4 +87,13 @@ body {
   display: flex;
   width: max-content;
   animation: testimonial-loop 50s linear infinite;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

@@ -1,5 +1,5 @@
 'use client';
-import { Star, Quote } from 'lucide-react';
+import { Star, Quote,Library } from 'lucide-react';
 import Image from 'next/image';
 
 const testimonials = [
@@ -34,46 +34,56 @@ const testimonials = [
 ];
 
 const Testimonials = () => {
-    // Duplicate the array to create a seamless loop
     const doubledTestimonials = [...testimonials, ...testimonials];
 
     return (
-        <section className="w-full px-4 py-16 bg-linear-to-b from-white to-slate-50">
-            <div className="max-w-6xl mx-auto">
-                <div className="text-center mb-8">
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-                        Trusted by industry leaders.
-                    </h2>
-                    <p className="mt-3 text-base text-gray-600 max-w-2xl mx-auto">
-                        Our clients are a testament to our commitment to excellence.
+        <section className="w-full px-4 py-24 bg-white overflow-hidden">
+            <div className="max-w-7xl mx-auto px-4 mb-16">
+                <div className="flex flex-col md:flex-row items-end justify-between gap-6">
+                    <div className="max-w-2xl">
+                        {/* <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-navy border border-brand-green/20 mb-4">
+                            <Library size={14} className="text-brand-green" />
+                            <span className="text-white text-xs font-bold uppercase tracking-widest">Success Stories</span>
+                        </div> */}
+                        <h2 className="text-4xl md:text-5xl font-black text-brand-navy tracking-tight leading-none">
+                            Trusted by <span className="text-brand-green">Industry Leaders.</span>
+                        </h2>
+                    </div>
+                    <p className="text-lg text-brand-slate font-medium max-w-sm">
+                        Our clients are a testament to our commitment to precision and financial excellence.
                     </p>
                 </div>
             </div>
 
-            {/* The viewport container */}
-            <div className="relative flex overflow-hidden group">
-                {/* The unique animation class applied here */}
-                <div className="flex animate-testimonial-scroll gap-6 py-4 group-hover:[animation-play-state:paused]">
+            {/* Marquee Container */}
+            <div className="relative flex overflow-hidden">
+                <div className="flex animate-testimonial-scroll gap-8 py-10 group-hover:[animation-play-state:paused]">
                     {doubledTestimonials.map((item, index) => (
                         <div
                             key={index}
-                            className="w-[350px] md:w-[480px] flex-shrink-0 relative bg-slate-50 p-8 md:p-12 rounded-[3rem] border border-slate-100 hover:border-[#5d9446]/30 hover:bg-white hover:shadow-2xl transition-all duration-500"
+                            className="w-[400px] md:w-[520px] flex-shrink-0 relative bg-brand-surface p-10 md:p-14 rounded-5xl border border-brand-border hover:bg-white hover:shadow-2xl hover:shadow-brand-navy/5 transition-all duration-700 group/card"
                         >
-                            <Quote className="absolute top-8 right-8 w-16 h-16 text-slate-200 opacity-40 group-hover:text-[#5d9446]/10" />
+                            {/* Decorative Quote Mark */}
+                            <Quote className="absolute top-10 right-10 w-20 h-20 text-brand-navy/5 group-hover/card:text-brand-green/10 transition-colors duration-700" />
 
                             <div className="relative z-10 flex flex-col h-full">
                                 <div className="flex gap-1 mb-8">
-                                    {Array.from({ length: item.star }).map((_, i) => (
-                                        <Star key={i} size={16} fill="#5d9446" className="text-[#5d9446]" />
+                                    {Array.from({ length: 5 }).map((_, i) => (
+                                        <Star
+                                            key={i}
+                                            size={18}
+                                            fill={i < item.star ? "#5d9446" : "none"}
+                                            className={i < item.star ? "text-brand-green" : "text-brand-border"}
+                                        />
                                     ))}
                                 </div>
 
-                                <p className="text-xl text-slate-700 leading-relaxed italic mb-10">
+                                <p className="text-xl md:text-2xl text-brand-navy font-semibold leading-relaxed mb-12 italic tracking-tight">
                                     {`"${item.content}"`}
                                 </p>
 
-                                <div className="mt-auto flex items-center gap-4">
-                                    <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-white shadow-md">
+                                <div className="mt-auto flex items-center gap-5">
+                                    <div className="relative w-16 h-16 rounded-2xl overflow-hidden border-2 border-white shadow-xl rotate-3 group-hover/card:rotate-0 transition-transform duration-500">
                                         <Image
                                             src={item.image}
                                             alt={item.name}
@@ -82,8 +92,8 @@ const Testimonials = () => {
                                         />
                                     </div>
                                     <div>
-                                        <h4 className="font-bold text-slate-900">{item.name}</h4>
-                                        <p className="text-[#5d9446] text-sm font-medium">{item.role}</p>
+                                        <h4 className="font-black text-brand-navy text-lg">{item.name}</h4>
+                                        <p className="text-brand-green text-sm font-bold uppercase tracking-wider">{item.role}</p>
                                     </div>
                                 </div>
                             </div>
@@ -91,9 +101,9 @@ const Testimonials = () => {
                     ))}
                 </div>
 
-                {/* Stunning Edge Fades */}
-                <div className="pointer-events-none absolute inset-y-0 left-0 w-40 bg-gradient-to-r from-white via-white/80 to-transparent z-10" />
-                <div className="pointer-events-none absolute inset-y-0 right-0 w-40 bg-gradient-to-l from-white via-white/80 to-transparent z-10" />
+                {/* Refined Edge Fades */}
+                <div className="pointer-events-none absolute inset-y-0 left-0 w-64 bg-gradient-to-r from-white via-white/80 to-transparent z-10" />
+                <div className="pointer-events-none absolute inset-y-0 right-0 w-64 bg-gradient-to-l from-white via-white/80 to-transparent z-10" />
             </div>
         </section>
     );

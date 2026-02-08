@@ -10,6 +10,9 @@ import IndustriesServe from "@/components/client/home/IndustriesServe";
 import JoinTeam from "@/components/client/home/JoinTeam";
 import ToolsUsed from "@/components/client/home/ToolsUsed";
 import Testimonials from "@/components/client/home/Testimonials";
+import BlogSection from "@/components/client/home/BlogSection";
+import CaseStudiesSection from "@/components/client/home/CaseStudiesSection";
+import LetConnect from "@/components/client/home/LetConnect";
 export default function Home() {
   return (
     <div className="w-full flex flex-col items-center justify-center">
@@ -25,6 +28,9 @@ export default function Home() {
       <JoinTeam />
       <ToolsUsed />
       <Testimonials />
+      <BlogSection />
+      <CaseStudiesSection />
+      <LetConnect />
     </div>
   );
 }

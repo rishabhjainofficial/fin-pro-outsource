@@ -1,84 +1,105 @@
 'use client';
 
-import { ArrowRight, icons } from "lucide-react";
+import { ArrowRight, BookOpen, CreditCard, FileText, ChartBar, ShieldCheck, Users } from "lucide-react";
 import Link from "next/link";
+import { motion } from "framer-motion";
+
+const services = [
+    {
+        title: 'Bookkeeping Services',
+        description: 'Accurate recording of financial transactions to maintain organized records.',
+        link: '#',
+        icon: BookOpen,
+        color: 'brand-green'
+    },
+    {
+        title: 'Payroll Management',
+        description: 'Efficient management of compensation, tax withholdings, and labor compliance.',
+        link: '#',
+        icon: CreditCard,
+        color: 'brand-blue'
+    },
+    {
+        title: 'Tax Preparation',
+        description: 'Expert preparation and filing to ensure compliance and maximize deductions.',
+        link: '#',
+        icon: FileText,
+        color: 'brand-red'
+    },
+    {
+        title: 'Financial Reporting',
+        description: 'Comprehensive statements providing deep insights into your business health.',
+        link: '#',
+        icon: ChartBar,
+        color: 'brand-navy'
+    },
+    {
+        title: 'Auditing Services',
+        description: 'Independent examination to ensure accuracy and compliance with standards.',
+        link: '#',
+        icon: ShieldCheck,
+        color: 'brand-green'
+    },
+    {
+        title: 'CFO Services',
+        description: 'Strategic financial leadership to drive informed decisions and growth.',
+        link: '#',
+        icon: Users,
+        color: 'brand-blue'
+    },
+]
 
 const OurServices = () => {
-    const services = [
-        {
-            title: 'Bookkeeping Services',
-            description: 'Accurate and timely recording of financial transactions to maintain organized financial records.',
-            link: '#',
-            icon: icons.BookOpen
-        },
-        {
-            title: 'Payroll Services',
-            description: 'Efficient management of employee compensation, tax withholdings, and compliance with labor laws.',
-            link: '#',
-            icon: icons.CreditCard
-        },
-        {
-            title: 'Tax Preparation',
-            description: 'Expert preparation and filing of tax returns to ensure compliance and maximize deductions.',
-            link: '#',
-            icon: icons.FileText
-        },
-        {
-            title: 'Financial Reporting',
-            description: 'Comprehensive financial statements and reports to provide insights into your business’s financial health.',
-            link: '#',
-            icon: icons.ChartBar
-        },
-        {
-            title: 'Auditing Services',
-            description: 'Independent examination of financial records to ensure accuracy and compliance with accounting standards.',
-            link: '#',
-            icon: icons.ShieldCheck
-        },
-        {
-            title: 'CFO Services',
-            description: 'Strategic financial leadership and guidance to help businesses make informed decisions and drive growth.',
-            link: '#',
-            icon: icons.Users
-        },
-    ]
     return (
-        <section className="w-full px-4 py-16 bg-linear-to-b from-white to-slate-50">
-            <div className="max-w-6xl mx-auto">
-                <div className="text-center mb-8">
-                    <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 tracking-tight">
-                        Professional accounting & financial services
-                    </h2>
-                    <p className="mt-3 text-base text-gray-600 max-w-2xl mx-auto">
-                        Expert, reliable support for accounting, payroll, tax, and advisory needs — delivered with precision and confidentiality.
-                    </p>
+        <section className="w-full px-4 py-24 bg-white">
+            <div className="max-w-7xl mx-auto">
+                {/* Section Header */}
+                <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                    <div className="max-w-2xl">
+                        <h2 className="text-brand-navy text-4xl md:text-5xl font-black tracking-tight mb-4">
+                            Precision <span className="text-brand-green">Financial</span> Solutions
+                        </h2>
+                        <p className="text-brand-slate text-lg font-medium">
+                            Expert, reliable support for accounting, payroll, and advisory needs — delivered with clinical precision and absolute confidentiality.
+                        </p>
+                    </div>
+                    <Link href="#all-services" className="text-brand-navy font-bold flex items-center gap-2 group border-b-2 border-brand-green pb-1">
+                        Explore All Services <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                    </Link>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {/* Services Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {services.map((service, index) => (
                         <Link
                             href={service.link}
                             key={index}
-                            aria-label={`Learn more about ${service.title}`}
-                            className="group block bg-white border border-slate-100 rounded-2xl p-6 shadow-sm hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-200 transition-colors"
+                            className="group relative bg-brand-surface p-10 rounded-4xl border border-transparent hover:border-brand-border hover:bg-white hover:shadow-2xl hover:shadow-brand-navy/5 transition-all duration-500 flex flex-col justify-between min-h-[320px] overflow-hidden"
                         >
-                            <div className="flex flex-col h-full">
-                                <div className="flex items-start gap-4">
-                                    <div className="shrink-0">
-                                        <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-slate-100 text-slate-700">
-                                            <service.icon className="w-5 h-5" />
-                                        </div>
-                                    </div>
+                            {/* Animated Background Accent */}
+                            <div className={`absolute top-0 right-0 w-32 h-32 bg-${service.color}/5 rounded-full blur-3xl -translate-y-12 translate-x-12 group-hover:translate-y-0 group-hover:translate-x-0 transition-transform duration-700`} />
 
-                                    <div className="flex-1">
-                                        <h3 className="text-lg font-medium text-slate-900">{service.title}</h3>
-                                        <p className="mt-2 text-sm text-gray-600">{service.description}</p>
-                                    </div>
+                            <div className="relative z-10">
+                                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center bg-white shadow-sm border border-brand-border text-brand-navy group-hover:bg-brand-navy group-hover:text-white transition-all duration-500 mb-8`}>
+                                    <service.icon size={24} />
                                 </div>
 
-                                <div className="mt-6 flex items-center justify-end">
-                                    <span className="text-sm font-medium text-slate-700 mr-2 group-hover:text-slate-900 transition">Learn more</span>
-                                    <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-slate-700 transition-transform group-hover:translate-x-1" />
+                                <h3 className="text-2xl font-bold text-brand-navy mb-4 group-hover:text-brand-green transition-colors">
+                                    {service.title}
+                                </h3>
+                                <p className="text-brand-slate leading-relaxed font-medium">
+                                    {service.description}
+                                </p>
+                            </div>
+
+                            <div className="relative z-10 mt-8 flex items-center justify-between overflow-hidden">
+                                <span className="text-xs font-black uppercase tracking-[0.2em] text-brand-navy/30 group-hover:text-brand-navy transition-colors">
+                                    Service 0{index + 1}
+                                </span>
+                                <div className="translate-x-12 group-hover:translate-x-0 transition-transform duration-500">
+                                    <div className="w-10 h-10 rounded-full bg-brand-green flex items-center justify-center text-white shadow-lg">
+                                        <ArrowRight size={18} />
+                                    </div>
                                 </div>
                             </div>
                         </Link>
@@ -89,4 +110,4 @@ const OurServices = () => {
     )
 }
 
-export default OurServices
+export default OurServices;

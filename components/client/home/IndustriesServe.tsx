@@ -1,4 +1,8 @@
-'use client'
+'use client';
+
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { Landmark, ArrowUpRight } from 'lucide-react';
 
 const IndustriesServe = () => {
     const data = [
@@ -20,7 +24,7 @@ const IndustriesServe = () => {
         },
         {
             title: 'Shipping & Logistics',
-            src: 'https://plus.unsplash.com/premium_photo-1661963559074-9655a9404f1a?q=80&w=1064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            src: 'https://images.unsplash.com/photo-1769144256181-698b8f807066?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         },
         {
             title: 'Agriculture',
@@ -43,37 +47,66 @@ const IndustriesServe = () => {
             src: 'https://images.unsplash.com/photo-1762831063505-68022b6133a9?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         },
     ];
+
     return (
-        <section className="w-full px-4 py-16 bg-linear-to-b from-white to-slate-50">
-            <div className="max-w-6xl mx-auto">
-                <div className="text-center mb-8">
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-                        Accounting and Bookkeeping Expertise across Industries
-                    </h2>
-                    <p className="mt-3 text-base text-gray-600 max-w-2xl mx-auto">
-                        We support a diverse range of industries with tailored accounting solutions designed to meet specific sector needs.
+        <section className="w-full px-4 py-24 bg-brand-surface">
+            <div className="max-w-7xl mx-auto">
+                {/* Header */}
+                <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-6">
+                    <div className="max-w-2xl">
+                            {/* <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-navy border border-brand-navy/10 mb-4">
+                                <Landmark size={14} className="text-brand-green" />
+                                <span className="text-white text-xs font-bold uppercase tracking-wider">Sector Expertise</span>
+                            </div> */}
+                        <h2 className="text-4xl md:text-5xl font-black text-brand-navy tracking-tight leading-none">
+                            Tailored Solutions <br />
+                            <span className="text-brand-green font-extrabold italic">Across Industries.</span>
+                        </h2>
+                    </div>
+                    <p className="text-brand-slate text-lg font-medium max-w-sm">
+                        Diversified accounting expertise designed to meet the unique regulatory needs of your specific sector.
                     </p>
                 </div>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-1 gap-8 items-center">
-                <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-                    {data?.map((industry) => (
+
+                {/* Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+                    {data.map((industry) => (
                         <div
                             key={industry.title}
-                            tabIndex={0}
-                            role="article"
-                            aria-label={industry.title}
-                            className="group border border-slate-100 rounded-xl p-6 flex items-center justify-center hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-200 transition text-center bg-cover bg-center bg-no-repeat relative overflow-hidden min-h-50 hover:scale-105"
-                            style={{ backgroundImage: `url(${industry.src})` }}
+                            className="group relative h-[280px] rounded-3xl overflow-hidden bg-brand-navy flex items-end p-6 cursor-default transition-all duration-500"
                         >
-                            <div className="absolute inset-0 bg-black/40"></div>
-                            <h3 className="text-xl font-semibold text-white relative z-10">{industry.title}</h3>
+                            {/* The Image (Revealed on Hover) */}
+                            <Image
+                                src={industry.src}
+                                alt={industry.title}
+                                fill
+                                className="object-cover opacity-40 group-hover:opacity-60 group-hover:scale-110 transition-all duration-700 ease-in-out"
+                            />
+
+                            {/* Gradient Overlay */}
+                            <div className="absolute inset-0 bg-linear-to-t from-brand-navy via-brand-navy/20 to-transparent" />
+
+                            {/* Hover Border Accent */}
+                            <div className="absolute inset-0 border-2 border-brand-green/0 group-hover:border-brand-green/40 rounded-3xl transition-all duration-500 z-20" />
+
+                            {/* Content */}
+                            <div className="relative z-10 w-full">
+                                <div className="flex items-center justify-between">
+                                    <h3 className="text-lg font-bold text-white leading-tight">
+                                        {industry.title}
+                                    </h3>
+                                    <div className="bg-brand-green p-1.5 rounded-full opacity-0 -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                                        <ArrowUpRight size={14} className="text-white" />
+                                    </div>
+                                </div>
+                                <div className="h-1 w-0 bg-brand-green mt-2 group-hover:w-full transition-all duration-500" />
+                            </div>
                         </div>
                     ))}
                 </div>
             </div>
         </section>
-    )
-}
+    );
+};
 
-export default IndustriesServe
+export default IndustriesServe;

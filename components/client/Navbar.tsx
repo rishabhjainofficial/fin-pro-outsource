@@ -31,9 +31,9 @@ const Navbar = () => {
             name: 'Services',
             type: 'dropdown',
             subLinks: [
-                { title: 'Business Owners', href: '/business-owners', desc: 'Accounting.', icon: <Briefcase size={iconSize} /> },
-                { title: 'Valuation', href: '/valuation-services', desc: 'Appraisal.', icon: <HandCoins size={iconSize} /> },
-                { title: 'Advisory', href: '/advisory-services', desc: 'Consulting.', icon: <MessageSquareMore size={iconSize} /> },
+                { title: 'Business Owners', href: '/services/business-owners', desc: 'Accounting.', icon: <Briefcase size={iconSize} /> },
+                { title: 'Valuation Services', href: '/services/valuation-services', desc: 'Appraisal.', icon: <HandCoins size={iconSize} /> },
+                { title: 'Advisory Services', href: '/services/advisory-services', desc: 'Consulting.', icon: <MessageSquareMore size={iconSize} /> },
             ]
         },
         { name: 'CPA Firm (Hire)', type: 'link', href: '/cpa-firm' },

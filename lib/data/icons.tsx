@@ -1,0 +1,61 @@
+import {
+    Calculator, BookOpen, Receipt, Landmark,
+    Settings, Users, PieChart, Database,
+    ShieldCheck, LineChart, Calendar, FileText,
+    UserPlus, Laptop, BarChart4, TrendingUp, Rocket,
+    Lightbulb, Globe, UserCheck, FileSearch, ClipboardCheck, Users2, UserCog
+} from 'lucide-react';
+
+export const serviceIconMap: Record<string, React.ReactNode> = {
+    Calculator: <Calculator size={24} />,
+    BookOpen: <BookOpen size={24} />,
+    Receipt: <Receipt size={24} />,
+    Landmark: <Landmark size={24} />,
+    Settings: <Settings size={24} />,
+    Users: <Users size={24} />,
+    PieChart: <PieChart size={24} />,
+    Database: <Database size={24} />,
+    ShieldCheck: <ShieldCheck size={24} />,
+    LineChart: <LineChart size={24} />,
+    Calendar: <Calendar size={24} />,
+    FileText: <FileText size={24} />,
+    UserPlus: <UserPlus size={24} />,
+    Laptop: <Laptop size={24} />,
+    BarChart4: <BarChart4 size={24} />,
+    TrendingUp: <TrendingUp size={24} />,
+    Rocket: <Rocket size={24} />,
+    Lightbulb: <Lightbulb size={24} />,
+    Globe: <Globe size={24} />,
+    UserCheck: <UserCheck size={24} />,
+    FileSearch: <FileSearch size={24} />,
+    ClipboardCheck: <ClipboardCheck size={24} />,
+    Users2: <Users2 size={24} />,
+    UserCog: <UserCog size={24} />
+};
+
+export const serviceCategoryIconMap: Record<string, React.ReactNode> = {
+    Calculator: <Calculator size={14} className="text-brand-green" />,
+    BookOpen: <BookOpen size={14} className="text-brand-green" />,
+    Receipt: <Receipt size={14} className="text-brand-green" />,
+    Landmark: <Landmark size={14} className="text-brand-green" />,
+    Settings: <Settings size={14} className="text-brand-green" />,
+    Users: <Users size={14} className="text-brand-green" />,
+    PieChart: <PieChart size={14} className="text-brand-green" />,
+    Database: <Database size={14} className="text-brand-green" />,
+    ShieldCheck: <ShieldCheck size={14} className="text-brand-green" />,
+    LineChart: <LineChart size={14} className="text-brand-green" />,
+    Calendar: <Calendar size={14} className="text-brand-green" />,
+    FileText: <FileText size={14} className="text-brand-green" />,
+    UserPlus: <UserPlus size={14} className="text-brand-green" />,
+    Laptop: <Laptop size={14} className="text-brand-green" />,
+    BarChart4: <BarChart4 size={14} className="text-brand-green" />,
+    TrendingUp: <TrendingUp size={14} className="text-brand-green" />,
+    Rocket: <Rocket size={14} className="text-brand-green" />,
+    Lightbulb: <Lightbulb size={14} className="text-brand-green" />,
+    Globe: <Globe size={14} className="text-brand-green" />,
+    UserCheck: <UserCheck size={14} className="text-brand-green" />,
+    FileSearch: <FileSearch size={14} className="text-brand-green" />,
+    ClipboardCheck: <ClipboardCheck size={14} className="text-brand-green" />,
+    Users2: <Users2 size={14} className="text-brand-green" />,
+    UserCog: <UserCog size={14} className="text-brand-green" />
+};

@@ -1,6 +1,7 @@
+'use client';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowRight, Users } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 interface Services {
     title: string;
@@ -42,7 +43,7 @@ const ServicePage = ({ services, headerPart1, headerPart2, desc, spanText, spanI
                             whileHover={{ y: -8 }}
                             className="group relative"
                         >
-                            <Link href={`/services/${service.slug}`}>
+                            <Link href={`/${service.slug}`}>
                                 <div className="h-full p-8 bg-brand-surface border border-brand-border rounded-[2.5rem] transition-all duration-500 hover:bg-brand-navy hover:shadow-2xl hover:shadow-brand-navy/20">
                                     <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center mb-6 text-brand-green group-hover:bg-brand-green group-hover:text-white transition-all">
                                         {service.icon}

@@ -3,8 +3,13 @@ import { getServices } from '@/lib/api/services';
 import { serviceIconMap, serviceCategoryIconMap } from '@/lib/data/icons';
 import { Metadata } from 'next';
 
-export async function generateMetadata(): Promise<Metadata> {
-    const categoryData = await getServices('cpa-firm');
+export async function generateMetadata({
+    params
+}: {
+    params: Promise<{ slug: string }>
+}): Promise<Metadata> {
+    const { slug } = await params;
+    const categoryData = await getServices(slug);
 
     return {
         title: categoryData?.meta?.title || "Financial Services",
@@ -13,8 +18,10 @@ export async function generateMetadata(): Promise<Metadata> {
     };
 }
 
-const CPAFirm = async () => {
-    const categoryData = await getServices('cpa-firm');
+const Category = async ({ params }: { params: Promise<{ category: string }> }) => {
+    // 1. Await the params object
+    const { category } = await params;
+    const categoryData = await getServices(category);
 
     const services = categoryData?.services?.map(service => ({
         title: service.title,
@@ -34,4 +41,4 @@ const CPAFirm = async () => {
     );
 };
 
-export default CPAFirm;
+export default Category;

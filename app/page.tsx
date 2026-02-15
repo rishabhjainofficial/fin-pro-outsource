@@ -13,6 +13,25 @@ import Testimonials from "@/components/client/home/Testimonials";
 import BlogSection from "@/components/client/home/BlogSection";
 import CaseStudiesSection from "@/components/client/home/CaseStudiesSection";
 import LetConnect from "@/components/client/home/LetConnect";
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: 'Gapbridge Outsourcing',
+    description: 'Gapbridge Outsourcing is a leading outsourcing company that provides a range of services to help businesses grow and succeed.',
+    keywords: ['Gapbridge Outsourcing', 'Outsourcing', 'Gapbridge'],
+    openGraph: {
+        title: 'Gapbridge Outsourcing',
+        description: 'Gapbridge Outsourcing is a leading outsourcing company that provides a range of services to help businesses grow and succeed.',
+    },
+    twitter: {
+        title: 'Gapbridge Outsourcing',
+      description: 'Gapbridge Outsourcing is a leading outsourcing company that provides a range of services to help businesses grow and succeed.',
+    },
+    icons: {
+        icon: '/favicon.ico',
+    },
+};
+
 export default function Home() {
   return (
     <div className="w-full flex flex-col items-center justify-center">

@@ -22,15 +22,29 @@ const Footer = () => {
     ];
 
     const businessServices = [
-        'Accounting Outsourcing', 'Bookkeeping Services', 'Outsourced Tax Prep',
-        'AR & AP Management', 'Software Consulting', 'Virtual CFO',
-        'Xero & QuickBooks', 'Audit Support', 'Cost Analysis', 'Year End Services'
+        { name: 'Accounting Outsourcing', href: '/services/business-owners/accounting-outsourcing' },
+        { name: 'Bookkeeping Services', href: '/services/business-owners/bookkeeping-services' },
+        { name: 'Outsourced Tax Prep', href: '/services/business-owners/outsourced-tax-prep' },
+        { name: 'AR & AP Management', href: '/services/business-owners/ar-ap-management' },
+        { name: 'Software Consulting', href: '/services/business-owners/software-consulting' },
+        { name: 'Virtual CFO', href: '/services/business-owners/virtual-cfo' },
+        { name: 'Xero & QuickBooks', href: '/services/business-owners/xero-quickbooks' },
+        { name: 'Audit Support', href: '/services/business-owners/audit-support' },
+        { name: 'Cost Analysis', href: '/services/business-owners/cost-analysis' },
+        { name: 'Year End Services', href: '/services/business-owners/year-end-services' }
     ];
 
     const cpaFirmLinks = [
-        'Hire Accountant', 'Hire Bookkeeper', 'Hire Fractional CFO',
-        'Hire Tax Preparer', 'Hire Tax Reviewer', 'Hire Staff Accountant',
-        'Hire AR/AP Executive', 'Hire Audit Staff', 'Hire QuickBooks Expert', 'Hire Virtual CFO'
+        { name: 'Hire Accountant', href: '/cpa-firm/hire-accountant' },
+        { name: 'Hire Bookkeeper', href: '/cpa-firm/hire-bookkeeper' },
+        { name: 'Hire Fractional CFO', href: '/cpa-firm/hire-fractional-cfo' },
+        { name: 'Hire Tax Preparer', href: '/cpa-firm/hire-tax-preparer' },
+        { name: 'Hire Tax Reviewer', href: '/cpa-firm/hire-tax-reviewer' },
+        { name: 'Hire Staff Accountant', href: '/cpa-firm/hire-staff-accountant' },
+        { name: 'Hire AR/AP Executive', href: '/cpa-firm/hire-ar-ap-executive' },
+        { name: 'Hire Audit Staff', href: '/cpa-firm/hire-audit-staff' },
+        { name: 'Hire QuickBooks Expert', href: '/cpa-firm/hire-quickbooks-expert' },
+        { name: 'Hire Virtual CFO', href: '/cpa-firm/hire-virtual-cfo' }
     ];
 
     return (
@@ -93,10 +107,10 @@ const Footer = () => {
                                 ))}
                             </div>
                         </div>
-                        <div>
+                        {/* <div>
                             <h4 className="text-sm font-black uppercase tracking-widest mb-4 opacity-40">Associate Partner</h4>
                             <div className="text-xl font-bold italic text-white/80">Tax<span className="text-brand-green">Apro</span></div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
 
@@ -108,8 +122,8 @@ const Footer = () => {
                         <h4 className="text-lg font-bold mb-8 pb-4 border-b border-white/10">Business Owners</h4>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             {businessServices.map((service) => (
-                                <Link key={service} href="#" className="text-white/50 hover:text-white text-sm transition-colors">
-                                    {service}
+                                <Link key={service.name} href={service.href} className="text-white/50 hover:text-white text-sm transition-colors">
+                                    {service.name}
                                 </Link>
                             ))}
                         </div>
@@ -120,8 +134,8 @@ const Footer = () => {
                         <h4 className="text-lg font-bold mb-8 pb-4 border-b border-white/10">Accounting/CPA Firms</h4>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             {cpaFirmLinks.map((link) => (
-                                <Link key={link} href="#" className="text-white/50 hover:text-white text-sm transition-colors">
-                                    {link}
+                                <Link key={link.name} href={link.href} className="text-white/50 hover:text-white text-sm transition-colors">
+                                    {link.name}
                                 </Link>
                             ))}
                         </div>

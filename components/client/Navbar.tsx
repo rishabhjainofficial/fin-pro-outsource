@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { Landmark, ChevronDown, Menu, X, ArrowRight, CircleQuestionMark, ListChecks, Users, Server, Briefcase, HandCoins, MessageSquareMore } from 'lucide-react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
@@ -60,12 +61,7 @@ const Navbar = () => {
             >
                 {/* Logo */}
                 <Link href="/" className="flex items-center gap-2 group">
-                    <div className="bg-brand-navy p-2 rounded-2xl group-hover:bg-brand-green transition-colors duration-500">
-                        <Landmark size={22} className="text-white" />
-                    </div>
-                    <span className={`text-xl font-black tracking-tighter transition-colors duration-500 ${scrolled ? 'text-brand-navy' : 'text-white'}`}>
-                        GAP<span className="text-brand-green">BRIDGE</span>
-                    </span>
+                    <Image src="/gapbridge-logo.png" alt="Logo" width={150} height={150} />
                 </Link>
 
                 {/* Desktop Menu */}

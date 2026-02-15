@@ -1,9 +1,22 @@
-const Blog = () => {
-    return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-50">
-            <h1 className="text-4xl font-bold text-gray-900">Blog Page</h1>
-        </div>
-    );
-}
+import { getBlogs, getCategories } from '@/lib/api/blogs';
+import BlogList from './BlogList';
 
-export default Blog;
+const page = async ({
+    searchParams,
+}: {
+    searchParams: { page?: string };
+}) => {
+    const currentPage = Number(searchParams.page) || 1;
+    const postsPerPage = 6;
+
+    const categories = getCategories();
+    const { blogs, totalCount } = await getBlogs(postsPerPage, undefined, undefined);
+
+    const totalPages = Math.ceil(totalCount / postsPerPage);
+
+    return (
+        <BlogList blogs={blogs} categories={categories} totalPages={totalPages} currentPage={currentPage} />
+    );
+};
+
+export default page;

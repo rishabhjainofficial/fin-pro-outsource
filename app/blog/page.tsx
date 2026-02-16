@@ -2,37 +2,12 @@
 import { getBlogs, getCategories } from '@/lib/api/blogs';
 import List from '@/components/client/blog/List';
 import { Metadata } from 'next';
+import { getPageMetaData } from '@/lib/api/pageMetaData';
 
-export const metadata: Metadata = {
-    title: 'Blog | Explore Insightful Accounting Ideas',
-    description: 'Stay updated with the latest trends, insights, and expert advice in accounting, finance, and business growth. Read our latest blog posts.',
-    keywords: ['Gapbridge Outsourcing', 'Outsourcing', 'Gapbridge', 'Blog', 'Accounting', 'Finance', 'Business Growth', 'Tax Season', 'Offshore Accounting', 'UK Firms', '2026'],
-    openGraph: {
-        title: 'Blog | Explore Insightful Accounting Ideas',
-        description: 'Stay updated with the latest trends, insights, and expert advice in accounting, finance, and business growth. Read our latest blog posts.',
-        url: "/blog",   
-        siteName: "Gapbridge Outsource",
-        images: [
-            {
-                url: "/og-image.jpg",
-                width: 1200,
-                height: 630,
-                alt: "Blog",
-            },
-        ],
-        locale: "en_US",
-        type: "website",
-    },
-    twitter: {
-        card: "summary_large_image",
-        title: 'Blog | Explore Insightful Accounting Ideas',
-        description: 'Stay updated with the latest trends, insights, and expert advice in accounting, finance, and business growth. Read our latest blog posts.',
-        images: ["/og-image.jpg"],
-    },
-    icons: {
-        icon: '/favicon.ico',
-    },
-};
+export async function generateMetadata(): Promise<Metadata> {
+    const metaData = await getPageMetaData('/blog');
+    return metaData;
+}
 
 const Page = async ({
     searchParams,

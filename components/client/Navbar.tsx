@@ -128,26 +128,59 @@ const Navbar = () => {
             <AnimatePresence>
                 {isMobileOpen && (
                     <motion.div
-                        initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }}
-                        className="absolute top-28 left-4 right-4 bg-white rounded-[2.5rem] p-8 shadow-2xl border border-brand-border lg:hidden max-h-[70vh] overflow-y-auto"
+                        initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                        // Ensure pointer events are explicitly enabled here
+                        className="absolute top-28 left-4 right-4 bg-white rounded-[2.5rem] shadow-2xl border border-brand-border lg:hidden pointer-events-auto overflow-hidden flex flex-col"
+                        style={{ maxHeight: 'calc(100vh - 140px)' }} // Responsive height calculation
                     >
-                        <div className="grid gap-8">
-                            {navLinks.map((link) => (
-                                <div key={link.name} className="space-y-4">
-                                    <div className="text-xs font-black uppercase tracking-widest text-brand-green">{link.name}</div>
-                                    <div className="grid gap-4">
-                                        {link.type === 'link' ? (
-                                            <Link href={link.href || '#'} className="text-xl font-bold text-brand-navy">{link.name}</Link>
-                                        ) : (
-                                            link.subLinks?.map((sub) => (
-                                                <Link key={sub.title} href={sub.href} className="flex items-center gap-3 text-brand-navy font-bold">
-                                                    {sub.icon} {sub.title}
+                        {/* Inner Scrollable Container */}
+                        <div className="p-8 overflow-y-auto custom-scrollbar">
+                            <div className="grid gap-10">
+                                {navLinks.map((link) => (
+                                    <div key={link.name} className="space-y-5">
+                                        <div className="text-[10px] font-black uppercase tracking-[0.2em] text-brand-green/60">
+                                            {link.name}
+                                        </div>
+                                        <div className="grid gap-5">
+                                            {link.type === 'link' ? (
+                                                <Link
+                                                    href={link.href || '#'}
+                                                    onClick={() => setIsMobileOpen(false)} // Close menu on click
+                                                    className="text-lg font-black text-brand-navy active:text-brand-green transition-colors"
+                                                >
+                                                    {link.name}
                                                 </Link>
-                                            ))
-                                        )}
+                                            ) : (
+                                                link.subLinks?.map((sub) => (
+                                                    <Link
+                                                        key={sub.title}
+                                                        href={sub.href}
+                                                        onClick={() => setIsMobileOpen(false)} // Close menu on click
+                                                        className="flex items-center gap-4 text-brand-navy font-bold text-lg group active:translate-x-1 transition-transform"
+                                                    >
+                                                        <div className="p-2 bg-brand-surface rounded-xl text-brand-navy group-active:bg-brand-green group-active:text-white transition-colors">
+                                                            {sub.icon}
+                                                        </div>
+                                                        {sub.title}
+                                                    </Link>
+                                                ))
+                                            )}
+                                        </div>
                                     </div>
-                                </div>
-                            ))}
+                                ))}
+
+                                {/* Explicit Mobile CTA */}
+                                <Link
+                                    href="/contact-us"
+                                    onClick={() => setIsMobileOpen(false)}
+                                    className="mt-4 w-full justify-center px-7 py-5 rounded-2xl bg-brand-navy text-white text-sm font-black uppercase tracking-widest flex items-center gap-2"
+                                >
+                                    Book a Call
+                                    <ArrowRight size={18} />
+                                </Link>
+                            </div>
                         </div>
                     </motion.div>
                 )}

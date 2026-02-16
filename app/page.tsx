@@ -14,25 +14,23 @@ import BlogSection from "@/components/client/home/BlogSection";
 import CaseStudiesSection from "@/components/client/home/CaseStudiesSection";
 import LetConnect from "@/components/client/home/LetConnect";
 import { Metadata } from 'next';
+import { getPageMetaData } from '@/lib/api/pageMetaData';
+import { serviceIconMap, serviceCategoryIconMap } from '@/lib/data/icons';
+import { getAllServices } from '@/lib/api/services';
 
-export const metadata: Metadata = {
-  title: 'Gapbridge Outsourcing',
-  description: 'Gapbridge Outsourcing is a leading outsourcing company that provides a range of services to help businesses grow and succeed.',
-  keywords: ['Gapbridge Outsourcing', 'Outsourcing', 'Gapbridge'],
-  openGraph: {
-    title: 'Gapbridge Outsourcing',
-    description: 'Gapbridge Outsourcing is a leading outsourcing company that provides a range of services to help businesses grow and succeed.',
-  },
-  twitter: {
-    title: 'Gapbridge Outsourcing',
-    description: 'Gapbridge Outsourcing is a leading outsourcing company that provides a range of services to help businesses grow and succeed.',
-  },
-  icons: {
-    icon: '/favicon.ico',
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const metaData = await getPageMetaData('/');
+  return metaData;
+}
 
-export default function Home() {
+export default async function Home() {
+  const rawServices = await getAllServices(6);
+  const services = rawServices?.map(service => ({
+    title: service.title,
+    slug: service.slug,
+    icon: serviceIconMap[service.icon] || null,
+    description: service.description,
+  })) || [];
   return (
     <div className="w-full flex flex-col items-center justify-center">
       <Banner />
@@ -40,7 +38,7 @@ export default function Home() {
       <OutSourcingTeam />
       <ScheduleConsultation />
       <ResultDriven />
-      <OurServices />
+      <OurServices services={services} />
       <WhyChooseUs />
       <StepsToHire />
       <IndustriesServe />

@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { Calendar, ArrowRight, ShieldCheck, Zap } from 'lucide-react';
+import Link from 'next/link';
 
 const ScheduleConsultation = () => {
     return (
@@ -31,13 +32,13 @@ const ScheduleConsultation = () => {
                             </p>
 
                             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                                <a
-                                    href="#contact"
+                                <Link
+                                    href="/contact-us"
                                     className="w-full sm:w-auto px-8 py-4 rounded-full bg-brand-green text-white font-bold shadow-xl shadow-brand-green/20 hover:bg-brand-green/90 hover:-translate-y-1 transition-all flex items-center justify-center gap-2 group"
                                 >
                                     Schedule a Consultation
                                     <Calendar size={20} className="group-hover:rotate-12 transition-transform" />
-                                </a>
+                                </Link>
                                 <div className="flex items-center gap-2 text-white/60 text-sm font-medium">
                                     <ShieldCheck size={20} className="text-brand-green" />
                                     ISO Certified & GDPR Compliant

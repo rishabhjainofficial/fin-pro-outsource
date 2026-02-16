@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle2, ArrowRight } from 'lucide-react';
 
@@ -145,12 +146,14 @@ const OutSourcingTeam = () => {
                                     </ul>
 
                                     <div className="flex flex-wrap gap-4 mt-auto">
-                                        <button className="bg-brand-green text-white px-8 py-4 rounded-full font-bold shadow-lg shadow-brand-green/20 hover:bg-brand-green/90 transition-all flex items-center gap-2 group">
-                                            Hire Now <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                                        </button>
-                                        <button className="bg-white text-brand-navy border border-brand-border px-8 py-4 rounded-full font-bold hover:bg-brand-surface transition-all">
+                                        <Link href="/contact-us">
+                                            <button className="bg-brand-green text-white px-8 py-4 rounded-full font-bold shadow-lg shadow-brand-green/20 hover:bg-brand-green/90 transition-all flex items-center gap-2 group">
+                                                Hire Now <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                                            </button>
+                                        </Link>
+                                        {/* <button className="bg-white text-brand-navy border border-brand-border px-8 py-4 rounded-full font-bold hover:bg-brand-surface transition-all">
                                             Learn More
-                                        </button>
+                                        </button> */}
                                     </div>
                                 </div>
                             </div>

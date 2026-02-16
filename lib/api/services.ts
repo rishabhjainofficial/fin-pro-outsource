@@ -33,11 +33,11 @@ export async function getServiceBySlug(slug: string): Promise<Service | undefine
     return servicesData.find(service => service.slug === slug);
 }
 
-export async function getServicesByCategory(category: string): Promise<Service[]> {
+export async function getAllServices(limit?: number) {
     await new Promise(resolve => setTimeout(resolve, 10));
 
     // When you add DB:
-    // return await prisma.service.findMany({ where: { category } });
+    // return await prisma.service.findMany();
 
-    return servicesData.filter(service => service.category === category);
+    return servicesData.slice(0, limit);
 }

@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Users, ArrowRight, Sparkles } from 'lucide-react';
 
@@ -57,10 +57,12 @@ const JoinTeam = () => {
                         </p>
                     </div>
 
-                    <button className="group relative flex items-center gap-3 px-8 py-4 bg-white border-2 border-brand-navy text-brand-navy rounded-full font-bold hover:bg-brand-navy hover:text-white transition-all duration-300 shadow-xl shadow-brand-navy/5">
-                        Join Our Team
-                        <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-                    </button>
+                    <Link href="/career">
+                        <button className="group relative flex items-center gap-3 px-8 py-4 bg-white border-2 border-brand-navy text-brand-navy rounded-full font-bold hover:bg-brand-navy hover:text-white transition-all duration-300 shadow-xl shadow-brand-navy/5">
+                            Join Our Team
+                            <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                        </button>
+                    </Link>
                 </div>
 
                 {/* The Artistic Bento Gallery */}

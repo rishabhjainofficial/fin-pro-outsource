@@ -6,36 +6,7 @@ import { Metadata } from 'next';
 export async function generateMetadata(): Promise<Metadata> {
     const categoryData = await getServices('cpa-firm');
 
-    return {
-        title: categoryData?.meta?.title || "Financial Services",
-        description: categoryData?.meta?.description || "Professional financial services",
-        keywords: categoryData?.meta?.keywords,
-        openGraph: {
-            title: categoryData?.meta?.title || "Financial Services",
-            description: categoryData?.meta?.description || "Professional financial services",
-            url: "/cpa-firm",
-            siteName: "Gapbridge Outsource",
-            images: [
-                {
-                    url: "/og-image.jpg",
-                    width: 1200,
-                    height: 630,
-                    alt: "CPA Firm",
-                },
-            ],
-            locale: "en_US",
-            type: "website",
-        },
-        twitter: {
-            card: "summary_large_image",
-            title: categoryData?.meta?.title || "Financial Services",
-            description: categoryData?.meta?.description || "Professional financial services",
-            images: ["/og-image.jpg"],
-        },
-        icons: {
-            icon: '/favicon.ico',
-        },
-    };
+    return categoryData?.meta || {};
 }
 
 const CPAFirm = async () => {

@@ -1,11 +1,9 @@
+import { Metadata } from "next";
+
 export interface ServiceCategory {
     name: string;
     slug: string;
-    meta: {
-        title: string;
-        description: string;
-        keywords: string;
-    };
+    meta: Metadata;
     header: {
         part1: string;
         part2: string;
@@ -24,11 +22,7 @@ export interface Service {
     description: string;
     category: string;
     order: number;
-    meta: {
-        title: string;
-        description: string;
-        keywords: string;
-    };
+    meta: Metadata;
 }
 
 export const categoriesData: ServiceCategory[] = [
@@ -38,7 +32,43 @@ export const categoriesData: ServiceCategory[] = [
         meta: {
             title: "Accounting Outsourcing Services for Business Owners | Gapbridge",
             description: "Discover top-tier accounting outsourcing services tailored for business owners. Streamline your financial operations with Gapbridge's expert solutions.",
-            keywords: "accounting outsourcing, business accounting services, outsourced accounting for business owners, financial management solutions"
+            keywords: "accounting outsourcing, business accounting services, outsourced accounting for business owners, financial management solutions",
+            openGraph: {
+                title: "Accounting Outsourcing Services for Business Owners | Gapbridge",
+                description: "Discover top-tier accounting outsourcing services tailored for business owners. Streamline your financial operations with Gapbridge's expert solutions.",
+                url: "/business-owners",
+                siteName: "Gapbridge Outsource",
+                images: [
+                    {
+                        url: "/og-image.jpg",
+                        width: 1200,
+                        height: 630,
+                        alt: "Business Owners",
+                    },
+                ],
+                locale: "en_US",
+                type: "website",
+            },
+            twitter: {
+                card: "summary_large_image",
+                title: "Accounting Outsourcing Services for Business Owners | Gapbridge",
+                description: "Discover top-tier accounting outsourcing services tailored for business owners. Streamline your financial operations with Gapbridge's expert solutions.",
+                images: ["/og-image.jpg"],
+                creator: "@gapbridge",
+                site: "@gapbridge",
+            },
+            robots: {
+                index: true,
+                follow: true,
+                nocache: false,
+                googleBot: {
+                    index: true,
+                    follow: true,
+                    'max-video-preview': 2,
+                    'max-image-preview': 'large',
+                    'max-snippet': 500,
+                },
+            },
         },
         header: {
             part1: "Comprehensive",
@@ -54,7 +84,43 @@ export const categoriesData: ServiceCategory[] = [
         meta: {
             title: "Business Valuation Services | Gapbridge",
             description: "Get accurate business valuation services with Gapbridge. Expert solutions to help you understand your company's worth and make informed financial decisions.",
-            keywords: "business valuation services, company valuation, business appraisal, accurate valuation solutions"
+            keywords: "business valuation services, company valuation, business appraisal, accurate valuation solutions",
+            openGraph: {
+                title: "Business Valuation Services | Gapbridge",
+                description: "Get accurate business valuation services with Gapbridge. Expert solutions to help you understand your company's worth and make informed financial decisions.",
+                url: "/valuation-services",
+                siteName: "Gapbridge Outsource",
+                images: [
+                    {
+                        url: "/og-image.jpg",
+                        width: 1200,
+                        height: 630,
+                        alt: "Valuation Services",
+                    },
+                ],
+                locale: "en_US",
+                type: "website",
+            },
+            twitter: {
+                card: "summary_large_image",
+                title: "Business Valuation Services | Gapbridge",
+                description: "Get accurate business valuation services with Gapbridge. Expert solutions to help you understand your company's worth and make informed financial decisions.",
+                images: ["/og-image.jpg"],
+                creator: "@gapbridge",
+                site: "@gapbridge",
+            },
+            robots: {
+                index: true,
+                follow: true,
+                nocache: false,
+                googleBot: {
+                    index: true,
+                    follow: true,
+                    'max-video-preview': 2,
+                    'max-image-preview': 'large',
+                    'max-snippet': 500,
+                },
+            },
         },
         header: {
             part1: "Accurate",
@@ -70,7 +136,43 @@ export const categoriesData: ServiceCategory[] = [
         meta: {
             title: "Financial Advisory Services | Gapbridge",
             description: "Access expert financial advisory services with Gapbridge. Tailored solutions to help you navigate complex financial challenges and drive strategic growth.",
-            keywords: "financial advisory services, outsourced financial consulting, expert financial advice, strategic financial solutions"
+            keywords: "financial advisory services, outsourced financial consulting, expert financial advice, strategic financial solutions",
+            openGraph: {
+                title: "Financial Advisory Services | Gapbridge",
+                description: "Access expert financial advisory services with Gapbridge. Tailored solutions to help you navigate complex financial challenges and drive strategic growth.",
+                url: "/advisory-services",
+                siteName: "Gapbridge Outsource",
+                images: [
+                    {
+                        url: "/og-image.jpg",
+                        width: 1200,
+                        height: 630,
+                        alt: "Advisory Services",
+                    },
+                ],
+                locale: "en_US",
+                type: "website",
+            },
+            twitter: {
+                card: "summary_large_image",
+                title: "Financial Advisory Services | Gapbridge",
+                description: "Access expert financial advisory services with Gapbridge. Tailored solutions to help you navigate complex financial challenges and drive strategic growth.",
+                images: ["/og-image.jpg"],
+                creator: "@gapbridge",
+                site: "@gapbridge",
+            },
+            robots: {
+                index: true,
+                follow: true,
+                nocache: false,
+                googleBot: {
+                    index: true,
+                    follow: true,
+                    'max-video-preview': 2,
+                    'max-image-preview': 'large',
+                    'max-snippet': 500,
+                },
+            },
         },
         header: {
             part1: "Expert",
@@ -86,7 +188,43 @@ export const categoriesData: ServiceCategory[] = [
         meta: {
             title: "Offshore Staffing Services for CPA Firms | Gapbridge",
             description: "Access cost-effective offshore staffing solutions for CPA firms with Gapbridge. Tailored services to help business owners find skilled professionals and optimize their workforce.",
-            keywords: "offshore staffing, CPA firm staffing, outsourced staffing solutions, cost-effective staffing for business owners"
+            keywords: "offshore staffing, CPA firm staffing, outsourced staffing solutions, cost-effective staffing for business owners",
+            openGraph: {
+                title: "Offshore Staffing Services for CPA Firms | Gapbridge",
+                description: "Access cost-effective offshore staffing solutions for CPA firms with Gapbridge. Tailored services to help business owners find skilled professionals and optimize their workforce.",
+                url: "/cpa-firm",
+                siteName: "Gapbridge Outsource",
+                images: [
+                    {
+                        url: "/og-image.jpg",
+                        width: 1200,
+                        height: 630,
+                        alt: "CPA Firms",
+                    },
+                ],
+                locale: "en_US",
+                type: "website",
+            },
+            twitter: {
+                card: "summary_large_image",
+                title: "Offshore Staffing Services for CPA Firms | Gapbridge",
+                description: "Access cost-effective offshore staffing solutions for CPA firms with Gapbridge. Tailored services to help business owners find skilled professionals and optimize their workforce.",
+                images: ["/og-image.jpg"],
+                creator: "@gapbridge",
+                site: "@gapbridge",
+            },
+            robots: {
+                index: true,
+                follow: true,
+                nocache: false,
+                googleBot: {
+                    index: true,
+                    follow: true,
+                    'max-video-preview': 2,
+                    'max-image-preview': 'large',
+                    'max-snippet': 500,
+                },
+            },
         },
         header: {
             part1: "Scale Your",
@@ -110,7 +248,43 @@ export const servicesData: Service[] = [
         meta: {
             title: "Accounting Outsourcing Services for Business Owners | Gapbridge",
             description: "Discover top-tier accounting outsourcing services tailored for business owners. Streamline your financial operations with Gapbridge's expert solutions.",
-            keywords: "accounting outsourcing, business accounting services, outsourced accounting for business owners, financial management solutions"
+            keywords: "accounting outsourcing, business accounting services, outsourced accounting for business owners, financial management solutions",
+            openGraph: {
+                title: "Accounting Outsourcing Services for Business Owners | Gapbridge",
+                description: "Discover top-tier accounting outsourcing services tailored for business owners. Streamline your financial operations with Gapbridge's expert solutions.",
+                url: "/accounting-outsourcing",
+                siteName: "Gapbridge Outsource",
+                images: [
+                    {
+                        url: "/og-image.jpg",
+                        width: 1200,
+                        height: 630,
+                        alt: "Accounting Outsourcing",
+                    },
+                ],
+                locale: "en_US",
+                type: "website",
+            },
+            twitter: {
+                card: "summary_large_image",
+                title: "Accounting Outsourcing Services for Business Owners | Gapbridge",
+                description: "Discover top-tier accounting outsourcing services tailored for business owners. Streamline your financial operations with Gapbridge's expert solutions.",
+                images: ["/og-image.jpg"],
+                creator: "@gapbridge",
+                site: "@gapbridge",
+            },
+            robots: {
+                index: true,
+                follow: true,
+                nocache: false,
+                googleBot: {
+                    index: true,
+                    follow: true,
+                    'max-video-preview': 2,
+                    'max-image-preview': 'large',
+                    'max-snippet': 500,
+                },
+            },
         }
     },
     {
@@ -124,7 +298,43 @@ export const servicesData: Service[] = [
         meta: {
             title: "Professional Bookkeeping Services for Business Owners | Gapbridge",
             description: "Keep your financial records accurate and up-to-date with Gapbridge's professional bookkeeping services. Tailored solutions for business owners.",
-            keywords: "bookkeeping services, business bookkeeping, outsourced bookkeeping for business owners, financial record management"
+            keywords: "bookkeeping services, business bookkeeping, outsourced bookkeeping for business owners, financial record management",
+            openGraph: {
+                title: "Professional Bookkeeping Services for Business Owners | Gapbridge",
+                description: "Keep your financial records accurate and up-to-date with Gapbridge's professional bookkeeping services. Tailored solutions for business owners.",
+                url: "/bookkeeping-services",
+                siteName: "Gapbridge Outsource",
+                images: [
+                    {
+                        url: "/og-image.jpg",
+                        width: 1200,
+                        height: 630,
+                        alt: "Bookkeeping Services",
+                    },
+                ],
+                locale: "en_US",
+                type: "website",
+            },
+            twitter: {
+                card: "summary_large_image",
+                title: "Professional Bookkeeping Services for Business Owners | Gapbridge",
+                description: "Keep your financial records accurate and up-to-date with Gapbridge's professional bookkeeping services. Tailored solutions for business owners.",
+                images: ["/og-image.jpg"],
+                creator: "@gapbridge",
+                site: "@gapbridge",
+            },
+            robots: {
+                index: true,
+                follow: true,
+                nocache: false,
+                googleBot: {
+                    index: true,
+                    follow: true,
+                    'max-video-preview': 2,
+                    'max-image-preview': 'large',
+                    'max-snippet': 500,
+                },
+            },
         }
     },
     {
@@ -138,7 +348,43 @@ export const servicesData: Service[] = [
         meta: {
             title: "Outsourced Tax Preparation Services for Business Owners | Gapbridge",
             description: "Simplify your tax season with Gapbridge's outsourced tax preparation services. Expert support for business owners to ensure compliance and maximize returns.",
-            keywords: "outsourced tax preparation, tax services for business owners, tax support, tax compliance solutions"
+            keywords: "outsourced tax preparation, tax services for business owners, tax support, tax compliance solutions",
+            openGraph: {
+                title: "Outsourced Tax Preparation Services for Business Owners | Gapbridge",
+                description: "Simplify your tax season with Gapbridge's outsourced tax preparation services. Expert support for business owners to ensure compliance and maximize returns.",
+                url: "/tax-preparation",
+                siteName: "Gapbridge Outsource",
+                images: [
+                    {
+                        url: "/og-image.jpg",
+                        width: 1200,
+                        height: 630,
+                        alt: "Tax Preparation",
+                    },
+                ],
+                locale: "en_US",
+                type: "website",
+            },
+            twitter: {
+                card: "summary_large_image",
+                title: "Outsourced Tax Preparation Services for Business Owners | Gapbridge",
+                description: "Simplify your tax season with Gapbridge's outsourced tax preparation services. Expert support for business owners to ensure compliance and maximize returns.",
+                images: ["/og-image.jpg"],
+                creator: "@gapbridge",
+                site: "@gapbridge",
+            },
+            robots: {
+                index: true,
+                follow: true,
+                nocache: false,
+                googleBot: {
+                    index: true,
+                    follow: true,
+                    'max-video-preview': 2,
+                    'max-image-preview': 'large',
+                    'max-snippet': 500,
+                },
+            },
         }
     },
     {
@@ -152,7 +398,43 @@ export const servicesData: Service[] = [
         meta: {
             title: "AR & AP Management Services for Business Owners | Gapbridge",
             description: "Optimize your cash flow with Gapbridge's comprehensive AR & AP management services. Tailored solutions for business owners to streamline financial operations.",
-            keywords: "AR management, AP management, accounts receivable services, accounts payable services, financial operations optimization"
+            keywords: "AR management, AP management, accounts receivable services, accounts payable services, financial operations optimization",
+            openGraph: {
+                title: "AR & AP Management Services for Business Owners | Gapbridge",
+                description: "Optimize your cash flow with Gapbridge's comprehensive AR & AP management services. Tailored solutions for business owners to streamline financial operations.",
+                url: "/ar-ap-management",
+                siteName: "Gapbridge Outsource",
+                images: [
+                    {
+                        url: "/og-image.jpg",
+                        width: 1200,
+                        height: 630,
+                        alt: "AR & AP Management",
+                    },
+                ],
+                locale: "en_US",
+                type: "website",
+            },
+            twitter: {
+                card: "summary_large_image",
+                title: "AR & AP Management Services for Business Owners | Gapbridge",
+                description: "Optimize your cash flow with Gapbridge's comprehensive AR & AP management services. Tailored solutions for business owners to streamline financial operations.",
+                images: ["/og-image.jpg"],
+                creator: "@gapbridge",
+                site: "@gapbridge",
+            },
+            robots: {
+                index: true,
+                follow: true,
+                nocache: false,
+                googleBot: {
+                    index: true,
+                    follow: true,
+                    'max-video-preview': 2,
+                    'max-image-preview': 'large',
+                    'max-snippet': 500,
+                },
+            },
         }
     },
     {
@@ -166,7 +448,43 @@ export const servicesData: Service[] = [
         meta: {
             title: "Accounting Software Consulting for Business Owners | Gapbridge",
             description: "Find the perfect accounting software for your business with Gapbridge's expert consulting services. Tailored recommendations to meet your unique needs.",
-            keywords: "accounting software consulting, software recommendations for business owners, accounting technology solutions, financial software consulting"
+            keywords: "accounting software consulting, software recommendations for business owners, accounting technology solutions, financial software consulting",
+            openGraph: {
+                title: "Accounting Software Consulting for Business Owners | Gapbridge",
+                description: "Find the perfect accounting software for your business with Gapbridge's expert consulting services. Tailored recommendations to meet your unique needs.",
+                url: "/accounting-software-consulting",
+                siteName: "Gapbridge Outsource",
+                images: [
+                    {
+                        url: "/og-image.jpg",
+                        width: 1200,
+                        height: 630,
+                        alt: "Accounting Software Consulting",
+                    },
+                ],
+                locale: "en_US",
+                type: "website",
+            },
+            twitter: {
+                card: "summary_large_image",
+                title: "Accounting Software Consulting for Business Owners | Gapbridge",
+                description: "Find the perfect accounting software for your business with Gapbridge's expert consulting services. Tailored recommendations to meet your unique needs.",
+                images: ["/og-image.jpg"],
+                creator: "@gapbridge",
+                site: "@gapbridge",
+            },
+            robots: {
+                index: true,
+                follow: true,
+                nocache: false,
+                googleBot: {
+                    index: true,
+                    follow: true,
+                    'max-video-preview': 2,
+                    'max-image-preview': 'large',
+                    'max-snippet': 500,
+                },
+            },
         }
     },
     {
@@ -180,7 +498,43 @@ export const servicesData: Service[] = [
         meta: {
             title: "Payroll Management Services for Business Owners | Gapbridge",
             description: "Simplify your payroll processes with Gapbridge's expert payroll management services. Tailored solutions for business owners to ensure accurate and timely payroll.",
-            keywords: "payroll management, outsourced payroll services, payroll solutions for business owners, employee payment processing"
+            keywords: "payroll management, outsourced payroll services, payroll solutions for business owners, employee payment processing",
+            openGraph: {
+                title: "Payroll Management Services for Business Owners | Gapbridge",
+                description: "Simplify your payroll processes with Gapbridge's expert payroll management services. Tailored solutions for business owners to ensure accurate and timely payroll.",
+                url: "/payroll-management",
+                siteName: "Gapbridge Outsource",
+                images: [
+                    {
+                        url: "/og-image.jpg",
+                        width: 1200,
+                        height: 630,
+                        alt: "Payroll Management",
+                    },
+                ],
+                locale: "en_US",
+                type: "website",
+            },
+            twitter: {
+                card: "summary_large_image",
+                title: "Payroll Management Services for Business Owners | Gapbridge",
+                description: "Simplify your payroll processes with Gapbridge's expert payroll management services. Tailored solutions for business owners to ensure accurate and timely payroll.",
+                images: ["/og-image.jpg"],
+                creator: "@gapbridge",
+                site: "@gapbridge",
+            },
+            robots: {
+                index: true,
+                follow: true,
+                nocache: false,
+                googleBot: {
+                    index: true,
+                    follow: true,
+                    'max-video-preview': 2,
+                    'max-image-preview': 'large',
+                    'max-snippet': 500,
+                },
+            },
         }
     },
     {
@@ -194,7 +548,43 @@ export const servicesData: Service[] = [
         meta: {
             title: "Virtual CFO Services for Business Owners | Gapbridge",
             description: "Access expert financial guidance with Gapbridge's Virtual CFO services. Flexible solutions to help business owners make informed financial decisions and drive growth.",
-            keywords: "virtual CFO services, outsourced CFO, financial consulting for business owners, strategic financial guidance"
+            keywords: "virtual CFO services, outsourced CFO, financial consulting for business owners, strategic financial guidance",
+            openGraph: {
+                title: "Virtual CFO Services for Business Owners | Gapbridge",
+                description: "Access expert financial guidance with Gapbridge's Virtual CFO services. Flexible solutions to help business owners make informed financial decisions and drive growth.",
+                url: "/virtual-cfo",
+                siteName: "Gapbridge Outsource",
+                images: [
+                    {
+                        url: "/og-image.jpg",
+                        width: 1200,
+                        height: 630,
+                        alt: "Virtual CFO",
+                    },
+                ],
+                locale: "en_US",
+                type: "website",
+            },
+            twitter: {
+                card: "summary_large_image",
+                title: "Virtual CFO Services for Business Owners | Gapbridge",
+                description: "Access expert financial guidance with Gapbridge's Virtual CFO services. Flexible solutions to help business owners make informed financial decisions and drive growth.",
+                images: ["/og-image.jpg"],
+                creator: "@gapbridge",
+                site: "@gapbridge",
+            },
+            robots: {
+                index: true,
+                follow: true,
+                nocache: false,
+                googleBot: {
+                    index: true,
+                    follow: true,
+                    'max-video-preview': 2,
+                    'max-image-preview': 'large',
+                    'max-snippet': 500,
+                },
+            },
         }
     },
     {
@@ -208,7 +598,43 @@ export const servicesData: Service[] = [
         meta: {
             title: "Xero & QuickBooks Accounting Services for Business Owners | Gapbridge",
             description: "Expert Xero and QuickBooks accounting services tailored for business owners. Streamline your financial management with Gapbridge's specialized solutions.",
-            keywords: "Xero accounting services, QuickBooks accounting services, outsourced accounting for business owners, financial software expertise"
+            keywords: "Xero accounting services, QuickBooks accounting services, outsourced accounting for business owners, financial software expertise",
+            openGraph: {
+                title: "Xero & QuickBooks Accounting Services for Business Owners | Gapbridge",
+                description: "Expert Xero and QuickBooks accounting services tailored for business owners. Streamline your financial management with Gapbridge's specialized solutions.",
+                url: "/xero-quickbooks-accounting",
+                siteName: "Gapbridge Outsource",
+                images: [
+                    {
+                        url: "/og-image.jpg",
+                        width: 1200,
+                        height: 630,
+                        alt: "Xero & QuickBooks Accounting",
+                    },
+                ],
+                locale: "en_US",
+                type: "website",
+            },
+            twitter: {
+                card: "summary_large_image",
+                title: "Xero & QuickBooks Accounting Services for Business Owners | Gapbridge",
+                description: "Expert Xero and QuickBooks accounting services tailored for business owners. Streamline your financial management with Gapbridge's specialized solutions.",
+                images: ["/og-image.jpg"],
+                creator: "@gapbridge",
+                site: "@gapbridge",
+            },
+            robots: {
+                index: true,
+                follow: true,
+                nocache: false,
+                googleBot: {
+                    index: true,
+                    follow: true,
+                    'max-video-preview': 2,
+                    'max-image-preview': 'large',
+                    'max-snippet': 500,
+                },
+            },
         }
     },
     {
@@ -222,7 +648,43 @@ export const servicesData: Service[] = [
         meta: {
             title: "Audit Support Services for Business Owners | Gapbridge",
             description: "Ensure a smooth audit process with Gapbridge's expert audit support services. Tailored solutions to help business owners prepare for and navigate audits with confidence.",
-            keywords: "audit support services, outsourced audit assistance, audit preparation for business owners, financial audit support"
+            keywords: "audit support services, outsourced audit assistance, audit preparation for business owners, financial audit support",
+            openGraph: {
+                title: "Audit Support Services for Business Owners | Gapbridge",
+                description: "Ensure a smooth audit process with Gapbridge's expert audit support services. Tailored solutions to help business owners prepare for and navigate audits with confidence.",
+                url: "/audit-support-services",
+                siteName: "Gapbridge Outsource",
+                images: [
+                    {
+                        url: "/og-image.jpg",
+                        width: 1200,
+                        height: 630,
+                        alt: "Audit Support Services",
+                    },
+                ],
+                locale: "en_US",
+                type: "website",
+            },
+            twitter: {
+                card: "summary_large_image",
+                title: "Audit Support Services for Business Owners | Gapbridge",
+                description: "Ensure a smooth audit process with Gapbridge's expert audit support services. Tailored solutions to help business owners prepare for and navigate audits with confidence.",
+                images: ["/og-image.jpg"],
+                creator: "@gapbridge",
+                site: "@gapbridge",
+            },
+            robots: {
+                index: true,
+                follow: true,
+                nocache: false,
+                googleBot: {
+                    index: true,
+                    follow: true,
+                    'max-video-preview': 2,
+                    'max-image-preview': 'large',
+                    'max-snippet': 500,
+                },
+            },
         }
     },
     {
@@ -236,7 +698,43 @@ export const servicesData: Service[] = [
         meta: {
             title: "Cost & Operation Analysis Services for Business Owners | Gapbridge",
             description: "Enhance profitability and make informed decisions with Gapbridge's cost and operation analysis services. Tailored solutions for business owners to optimize financial performance.",
-            keywords: "cost analysis services, operation analysis services, financial performance optimization, data-driven decision making"
+            keywords: "cost analysis services, operation analysis services, financial performance optimization, data-driven decision making",
+            openGraph: {
+                title: "Cost & Operation Analysis Services for Business Owners | Gapbridge",
+                description: "Enhance profitability and make informed decisions with Gapbridge's cost and operation analysis services. Tailored solutions for business owners to optimize financial performance.",
+                url: "/cost-and-operation-analysis",
+                siteName: "Gapbridge Outsource",
+                images: [
+                    {
+                        url: "/og-image.jpg",
+                        width: 1200,
+                        height: 630,
+                        alt: "Cost & Operation Analysis",
+                    },
+                ],
+                locale: "en_US",
+                type: "website",
+            },
+            twitter: {
+                card: "summary_large_image",
+                title: "Cost & Operation Analysis Services for Business Owners | Gapbridge",
+                description: "Enhance profitability and make informed decisions with Gapbridge's cost and operation analysis services. Tailored solutions for business owners to optimize financial performance.",
+                images: ["/og-image.jpg"],
+                creator: "@gapbridge",
+                site: "@gapbridge",
+            },
+            robots: {
+                index: true,
+                follow: true,
+                nocache: false,
+                googleBot: {
+                    index: true,
+                    follow: true,
+                    'max-video-preview': 2,
+                    'max-image-preview': 'large',
+                    'max-snippet': 500,
+                },
+            },
         }
     },
     {
@@ -250,7 +748,43 @@ export const servicesData: Service[] = [
         meta: {
             title: "Year End Services for Business Owners | Gapbridge",
             description: "Ensure a smooth transition into the new fiscal year with Gapbridge's expert year end services. Tailored solutions to help business owners close their books and prepare for the year ahead.",
-            keywords: "year end services, fiscal year closing, financial year transition, outsourced year end support"
+            keywords: "year end services, fiscal year closing, financial year transition, outsourced year end support",
+            openGraph: {
+                title: "Year End Services for Business Owners | Gapbridge",
+                description: "Ensure a smooth transition into the new fiscal year with Gapbridge's expert year end services. Tailored solutions to help business owners close their books and prepare for the year ahead.",
+                url: "/year-end-services",
+                siteName: "Gapbridge Outsource",
+                images: [
+                    {
+                        url: "/og-image.jpg",
+                        width: 1200,
+                        height: 630,
+                        alt: "Year End Services",
+                    },
+                ],
+                locale: "en_US",
+                type: "website",
+            },
+            twitter: {
+                card: "summary_large_image",
+                title: "Year End Services for Business Owners | Gapbridge",
+                description: "Ensure a smooth transition into the new fiscal year with Gapbridge's expert year end services. Tailored solutions to help business owners close their books and prepare for the year ahead.",
+                images: ["/og-image.jpg"],
+                creator: "@gapbridge",
+                site: "@gapbridge",
+            },
+            robots: {
+                index: true,
+                follow: true,
+                nocache: false,
+                googleBot: {
+                    index: true,
+                    follow: true,
+                    'max-video-preview': 2,
+                    'max-image-preview': 'large',
+                    'max-snippet': 500,
+                },
+            },
         }
     },
     {
@@ -264,7 +798,43 @@ export const servicesData: Service[] = [
         meta: {
             title: "Preparation of Financial Statements for Business Owners | Gapbridge",
             description: "Keep your financial statements accurate and up-to-date with Gapbridge's expert preparation services. Tailored solutions for business owners to ensure compliance and informed decision-making.",
-            keywords: "preparation of financial statements, outsourced financial statement services, financial reporting for business owners, accurate financial records"
+            keywords: "preparation of financial statements, outsourced financial statement services, financial reporting for business owners, accurate financial records",
+            openGraph: {
+                title: "Preparation of Financial Statements for Business Owners | Gapbridge",
+                description: "Keep your financial statements accurate and up-to-date with Gapbridge's expert preparation services. Tailored solutions for business owners to ensure compliance and informed decision-making.",
+                url: "/preparation-of-financial-statements",
+                siteName: "Gapbridge Outsource",
+                images: [
+                    {
+                        url: "/og-image.jpg",
+                        width: 1200,
+                        height: 630,
+                        alt: "Preparation of Financial Statements",
+                    },
+                ],
+                locale: "en_US",
+                type: "website",
+            },
+            twitter: {
+                card: "summary_large_image",
+                title: "Preparation of Financial Statements for Business Owners | Gapbridge",
+                description: "Keep your financial statements accurate and up-to-date with Gapbridge's expert preparation services. Tailored solutions for business owners to ensure compliance and informed decision-making.",
+                images: ["/og-image.jpg"],
+                creator: "@gapbridge",
+                site: "@gapbridge",
+            },
+            robots: {
+                index: true,
+                follow: true,
+                nocache: false,
+                googleBot: {
+                    index: true,
+                    follow: true,
+                    'max-video-preview': 2,
+                    'max-image-preview': 'large',
+                    'max-snippet': 500,
+                },
+            },
         }
     },
     {
@@ -278,7 +848,43 @@ export const servicesData: Service[] = [
         meta: {
             title: "Offshore Staffing Services for CPA Firms | Gapbridge",
             description: "Access cost-effective offshore staffing solutions for CPA firms with Gapbridge. Tailored services to help business owners find skilled professionals and optimize their workforce.",
-            keywords: "offshore staffing, CPA firm staffing, outsourced staffing solutions, cost-effective staffing for business owners"
+            keywords: "offshore staffing, CPA firm staffing, outsourced staffing solutions, cost-effective staffing for business owners",
+            openGraph: {
+                title: "Offshore Staffing Services for CPA Firms | Gapbridge",
+                description: "Access cost-effective offshore staffing solutions for CPA firms with Gapbridge. Tailored services to help business owners find skilled professionals and optimize their workforce.",
+                url: "/offshore-staffing-for-cpa-firm",
+                siteName: "Gapbridge Outsource",
+                images: [
+                    {
+                        url: "/og-image.jpg",
+                        width: 1200,
+                        height: 630,
+                        alt: "Offshore Staffing for CPA Firms",
+                    },
+                ],
+                locale: "en_US",
+                type: "website",
+            },
+            twitter: {
+                card: "summary_large_image",
+                title: "Offshore Staffing Services for CPA Firms | Gapbridge",
+                description: "Access cost-effective offshore staffing solutions for CPA firms with Gapbridge. Tailored services to help business owners find skilled professionals and optimize their workforce.",
+                images: ["/og-image.jpg"],
+                creator: "@gapbridge",
+                site: "@gapbridge",
+            },
+            robots: {
+                index: true,
+                follow: true,
+                nocache: false,
+                googleBot: {
+                    index: true,
+                    follow: true,
+                    'max-video-preview': 2,
+                    'max-image-preview': 'large',
+                    'max-snippet': 500,
+                },
+            },
         }
     },
     {
@@ -292,7 +898,43 @@ export const servicesData: Service[] = [
         meta: {
             title: "Outsource Bookkeeping & Accounting Services for CPAs | Gapbridge",
             description: "Enhance your CPA firm's efficiency with Gapbridge's outsourced bookkeeping and accounting services. Tailored solutions to help business owners support their CPA teams and optimize financial operations.",
-            keywords: "outsource bookkeeping for CPAs, outsource accounting for CPAs, CPA firm support services, efficient financial assistance for business owners"
+            keywords: "outsource bookkeeping for CPAs, outsource accounting for CPAs, CPA firm support services, efficient financial assistance for business owners",
+            openGraph: {
+                title: "Outsource Bookkeeping & Accounting Services for CPAs | Gapbridge",
+                description: "Enhance your CPA firm's efficiency with Gapbridge's outsourced bookkeeping and accounting services. Tailored solutions to help business owners support their CPA teams and optimize financial operations.",
+                url: "/outsource-bookkeeping-and-accounting-for-cpas",
+                siteName: "Gapbridge Outsource",
+                images: [
+                    {
+                        url: "/og-image.jpg",
+                        width: 1200,
+                        height: 630,
+                        alt: "Outsource Bookkeeping & Accounting for CPAs",
+                    },
+                ],
+                locale: "en_US",
+                type: "website",
+            },
+            twitter: {
+                card: "summary_large_image",
+                title: "Outsource Bookkeeping & Accounting Services for CPAs | Gapbridge",
+                description: "Enhance your CPA firm's efficiency with Gapbridge's outsourced bookkeeping and accounting services. Tailored solutions to help business owners support their CPA teams and optimize financial operations.",
+                images: ["/og-image.jpg"],
+                creator: "@gapbridge",
+                site: "@gapbridge",
+            },
+            robots: {
+                index: true,
+                follow: true,
+                nocache: false,
+                googleBot: {
+                    index: true,
+                    follow: true,
+                    'max-video-preview': 2,
+                    'max-image-preview': 'large',
+                    'max-snippet': 500,
+                },
+            },
         }
     },
     {
@@ -306,7 +948,43 @@ export const servicesData: Service[] = [
         meta: {
             title: "Outsourced Finance and Accounting Services for Business Owners | Gapbridge",
             description: "Access trusted outsourced finance and accounting services with Gapbridge. Tailored solutions to help business owners streamline their financial operations and drive growth.",
-            keywords: "outsourced finance services, outsourced accounting services, financial outsourcing for business owners, trusted financial solutions"
+            keywords: "outsourced finance services, outsourced accounting services, financial outsourcing for business owners, trusted financial solutions",
+            openGraph: {
+                title: "Outsourced Finance and Accounting Services for Business Owners | Gapbridge",
+                description: "Access trusted outsourced finance and accounting services with Gapbridge. Tailored solutions to help business owners streamline their financial operations and drive growth.",
+                url: "/outsourced-finance-and-accounting-services",
+                siteName: "Gapbridge Outsource",
+                images: [
+                    {
+                        url: "/og-image.jpg",
+                        width: 1200,
+                        height: 630,
+                        alt: "Outsourced Finance and Accounting Services",
+                    },
+                ],
+                locale: "en_US",
+                type: "website",
+            },
+            twitter: {
+                card: "summary_large_image",
+                title: "Outsourced Finance and Accounting Services for Business Owners | Gapbridge",
+                description: "Access trusted outsourced finance and accounting services with Gapbridge. Tailored solutions to help business owners streamline their financial operations and drive growth.",
+                images: ["/og-image.jpg"],
+                creator: "@gapbridge",
+                site: "@gapbridge",
+            },
+            robots: {
+                index: true,
+                follow: true,
+                nocache: false,
+                googleBot: {
+                    index: true,
+                    follow: true,
+                    'max-video-preview': 2,
+                    'max-image-preview': 'large',
+                    'max-snippet': 500,
+                },
+            },
         }
     },
     {
@@ -320,7 +998,43 @@ export const servicesData: Service[] = [
         meta: {
             title: "Business Valuation Services | Gapbridge",
             description: "Get accurate business valuation services with Gapbridge. Expert solutions to help you understand your company's worth and make informed financial decisions.",
-            keywords: "business valuation services, company valuation, business appraisal, accurate valuation solutions"
+            keywords: "business valuation services, company valuation, business appraisal, accurate valuation solutions",
+            openGraph: {
+                title: "Business Valuation Services | Gapbridge",
+                description: "Get accurate business valuation services with Gapbridge. Expert solutions to help you understand your company's worth and make informed financial decisions.",
+                url: "/business-valuation-services",
+                siteName: "Gapbridge Outsource",
+                images: [
+                    {
+                        url: "/og-image.jpg",
+                        width: 1200,
+                        height: 630,
+                        alt: "Business Valuation Services",
+                    },
+                ],
+                locale: "en_US",
+                type: "website",
+            },
+            twitter: {
+                card: "summary_large_image",
+                title: "Business Valuation Services | Gapbridge",
+                description: "Get accurate business valuation services with Gapbridge. Expert solutions to help you understand your company's worth and make informed financial decisions.",
+                images: ["/og-image.jpg"],
+                creator: "@gapbridge",
+                site: "@gapbridge",
+            },
+            robots: {
+                index: true,
+                follow: true,
+                nocache: false,
+                googleBot: {
+                    index: true,
+                    follow: true,
+                    'max-video-preview': 2,
+                    'max-image-preview': 'large',
+                    'max-snippet': 500,
+                },
+            },
         }
     },
     {
@@ -334,7 +1048,43 @@ export const servicesData: Service[] = [
         meta: {
             title: "Startup Valuation Services | Gapbridge",
             description: "Access expert startup valuation services with Gapbridge. Tailored solutions to help you understand your startup's worth and attract investors.",
-            keywords: "startup valuation services, new business valuation, startup appraisal, expert valuation solutions for startups"
+            keywords: "startup valuation services, new business valuation, startup appraisal, expert valuation solutions for startups",
+            openGraph: {
+                title: "Startup Valuation Services | Gapbridge",
+                description: "Access expert startup valuation services with Gapbridge. Tailored solutions to help you understand your startup's worth and attract investors.",
+                url: "/startup-valuation-services",
+                siteName: "Gapbridge Outsource",
+                images: [
+                    {
+                        url: "/og-image.jpg",
+                        width: 1200,
+                        height: 630,
+                        alt: "Startup Valuation Services",
+                    },
+                ],
+                locale: "en_US",
+                type: "website",
+            },
+            twitter: {
+                card: "summary_large_image",
+                title: "Startup Valuation Services | Gapbridge",
+                description: "Access expert startup valuation services with Gapbridge. Tailored solutions to help you understand your startup's worth and attract investors.",
+                images: ["/og-image.jpg"],
+                creator: "@gapbridge",
+                site: "@gapbridge",
+            },
+            robots: {
+                index: true,
+                follow: true,
+                nocache: false,
+                googleBot: {
+                    index: true,
+                    follow: true,
+                    'max-video-preview': 2,
+                    'max-image-preview': 'large',
+                    'max-snippet': 500,
+                },
+            },
         }
     },
     {
@@ -348,7 +1098,43 @@ export const servicesData: Service[] = [
         meta: {
             title: "ESOP Valuation Services | Gapbridge",
             description: "Get expert ESOP valuation services with Gapbridge. Tailored solutions to help you determine the value of your Employee Stock Ownership Plan and make informed decisions.",
-            keywords: "ESOP valuation services, employee stock ownership plan valuation, ESOP appraisal, expert ESOP valuation solutions"
+            keywords: "ESOP valuation services, employee stock ownership plan valuation, ESOP appraisal, expert ESOP valuation solutions",
+            openGraph: {
+                title: "ESOP Valuation Services | Gapbridge",
+                description: "Get expert ESOP valuation services with Gapbridge. Tailored solutions to help you determine the value of your Employee Stock Ownership Plan and make informed decisions.",
+                url: "/esop-valuation-services",
+                siteName: "Gapbridge Outsource",
+                images: [
+                    {
+                        url: "/og-image.jpg",
+                        width: 1200,
+                        height: 630,
+                        alt: "ESOP Valuation Services",
+                    },
+                ],
+                locale: "en_US",
+                type: "website",
+            },
+            twitter: {
+                card: "summary_large_image",
+                title: "ESOP Valuation Services | Gapbridge",
+                description: "Get expert ESOP valuation services with Gapbridge. Tailored solutions to help you determine the value of your Employee Stock Ownership Plan and make informed decisions.",
+                images: ["/og-image.jpg"],
+                creator: "@gapbridge",
+                site: "@gapbridge",
+            },
+            robots: {
+                index: true,
+                follow: true,
+                nocache: false,
+                googleBot: {
+                    index: true,
+                    follow: true,
+                    'max-video-preview': 2,
+                    'max-image-preview': 'large',
+                    'max-snippet': 500,
+                },
+            },
         }
     },
     {
@@ -362,7 +1148,43 @@ export const servicesData: Service[] = [
         meta: {
             title: "IBBI-Registered Valuation Services | Gapbridge",
             description: "Access accurate IBBI-registered valuation services with Gapbridge. Expert solutions to help you determine the value of your business for insolvency and bankruptcy proceedings.",
-            keywords: "IBBI valuation services, insolvency valuation, bankruptcy valuation, accurate IBBI-registered valuation solutions"
+            keywords: "IBBI valuation services, insolvency valuation, bankruptcy valuation, accurate IBBI-registered valuation solutions",
+            openGraph: {
+                title: "IBBI-Registered Valuation Services | Gapbridge",
+                description: "Access accurate IBBI-registered valuation services with Gapbridge. Expert solutions to help you determine the value of your business for insolvency and bankruptcy proceedings.",
+                url: "/ibbi-valuation-services",
+                siteName: "Gapbridge Outsource",
+                images: [
+                    {
+                        url: "/og-image.jpg",
+                        width: 1200,
+                        height: 630,
+                        alt: "IBBI-Registered Valuation Services",
+                    },
+                ],
+                locale: "en_US",
+                type: "website",
+            },
+            twitter: {
+                card: "summary_large_image",
+                title: "IBBI-Registered Valuation Services | Gapbridge",
+                description: "Access accurate IBBI-registered valuation services with Gapbridge. Expert solutions to help you determine the value of your business for insolvency and bankruptcy proceedings.",
+                images: ["/og-image.jpg"],
+                creator: "@gapbridge",
+                site: "@gapbridge",
+            },
+            robots: {
+                index: true,
+                follow: true,
+                nocache: false,
+                googleBot: {
+                    index: true,
+                    follow: true,
+                    'max-video-preview': 2,
+                    'max-image-preview': 'large',
+                    'max-snippet': 500,
+                },
+            },
         }
     },
     {
@@ -376,7 +1198,43 @@ export const servicesData: Service[] = [
         meta: {
             title: "Fractional CFO Services | Gapbridge",
             description: "Access expert Fractional CFO services with Gapbridge. Tailored solutions to help you drive growth and make informed financial decisions with part-time CFO guidance.",
-            keywords: "fractional CFO services, part-time CFO, outsourced CFO, expert financial guidance for growth"
+            keywords: "fractional CFO services, part-time CFO, outsourced CFO, expert financial guidance for growth",
+            openGraph: {
+                title: "Fractional CFO Services | Gapbridge",
+                description: "Access expert Fractional CFO services with Gapbridge. Tailored solutions to help you drive growth and make informed financial decisions with part-time CFO guidance.",
+                url: "/fractional-cfo-services",
+                siteName: "Gapbridge Outsource",
+                images: [
+                    {
+                        url: "/og-image.jpg",
+                        width: 1200,
+                        height: 630,
+                        alt: "Fractional CFO Services",
+                    },
+                ],
+                locale: "en_US",
+                type: "website",
+            },
+            twitter: {
+                card: "summary_large_image",
+                title: "Fractional CFO Services | Gapbridge",
+                description: "Access expert Fractional CFO services with Gapbridge. Tailored solutions to help you drive growth and make informed financial decisions with part-time CFO guidance.",
+                images: ["/og-image.jpg"],
+                creator: "@gapbridge",
+                site: "@gapbridge",
+            },
+            robots: {
+                index: true,
+                follow: true,
+                nocache: false,
+                googleBot: {
+                    index: true,
+                    follow: true,
+                    'max-video-preview': 2,
+                    'max-image-preview': 'large',
+                    'max-snippet': 500,
+                },
+            },
         }
     },
     {
@@ -390,7 +1248,43 @@ export const servicesData: Service[] = [
         meta: {
             title: "Hire Accountant Services for CPA Firms | Gapbridge",
             description: "Hire dedicated accountants for your CPA firm with Gapbridge. Tailored staffing solutions to help you find skilled professionals and optimize your workforce.",
-            keywords: "hire accountant, accountant staffing for CPA firms, outsourced accountant services, cost-effective staffing solutions"
+            keywords: "hire accountant, accountant staffing for CPA firms, outsourced accountant services, cost-effective staffing solutions",
+            openGraph: {
+                title: "Hire Accountant Services for CPA Firms | Gapbridge",
+                description: "Hire dedicated accountants for your CPA firm with Gapbridge. Tailored staffing solutions to help you find skilled professionals and optimize your workforce.",
+                url: "/hire-accountant",
+                siteName: "Gapbridge Outsource",
+                images: [
+                    {
+                        url: "/og-image.jpg",
+                        width: 1200,
+                        height: 630,
+                        alt: "Hire Accountant Services",
+                    },
+                ],
+                locale: "en_US",
+                type: "website",
+            },
+            twitter: {
+                card: "summary_large_image",
+                title: "Hire Accountant Services for CPA Firms | Gapbridge",
+                description: "Hire dedicated accountants for your CPA firm with Gapbridge. Tailored staffing solutions to help you find skilled professionals and optimize your workforce.",
+                images: ["/og-image.jpg"],
+                creator: "@gapbridge",
+                site: "@gapbridge",
+            },
+            robots: {
+                index: true,
+                follow: true,
+                nocache: false,
+                googleBot: {
+                    index: true,
+                    follow: true,
+                    'max-video-preview': 2,
+                    'max-image-preview': 'large',
+                    'max-snippet': 500,
+                },
+            },
         }
     },
     {
@@ -404,7 +1298,43 @@ export const servicesData: Service[] = [
         meta: {
             title: "Hire Bookkeeper Services for CPA Firms | Gapbridge",
             description: "Hire skilled bookkeepers for your CPA firm with Gapbridge. Tailored staffing solutions to help you manage your clients' accounts efficiently and optimize your workforce.",
-            keywords: "hire bookkeeper, bookkeeper staffing for CPA firms, outsourced bookkeeper services, efficient staffing solutions"
+            keywords: "hire bookkeeper, bookkeeper staffing for CPA firms, outsourced bookkeeper services, efficient staffing solutions",
+            openGraph: {
+                title: "Hire Bookkeeper Services for CPA Firms | Gapbridge",
+                description: "Hire skilled bookkeepers for your CPA firm with Gapbridge. Tailored staffing solutions to help you manage your clients' accounts efficiently and optimize your workforce.",
+                url: "/hire-bookkeeper",
+                siteName: "Gapbridge Outsource",
+                images: [
+                    {
+                        url: "/og-image.jpg",
+                        width: 1200,
+                        height: 630,
+                        alt: "Hire Bookkeeper Services",
+                    },
+                ],
+                locale: "en_US",
+                type: "website",
+            },
+            twitter: {
+                card: "summary_large_image",
+                title: "Hire Bookkeeper Services for CPA Firms | Gapbridge",
+                description: "Hire skilled bookkeepers for your CPA firm with Gapbridge. Tailored staffing solutions to help you manage your clients' accounts efficiently and optimize your workforce.",
+                images: ["/og-image.jpg"],
+                creator: "@gapbridge",
+                site: "@gapbridge",
+            },
+            robots: {
+                index: true,
+                follow: true,
+                nocache: false,
+                googleBot: {
+                    index: true,
+                    follow: true,
+                    'max-video-preview': 2,
+                    'max-image-preview': 'large',
+                    'max-snippet': 500,
+                },
+            },
         }
     },
     {
@@ -418,7 +1348,43 @@ export const servicesData: Service[] = [
         meta: {
             title: "Hire Fractional CFO Services for CPA Firms | Gapbridge",
             description: "Hire expert Fractional CFOs for your CPA firm with Gapbridge. Tailored staffing solutions to help you provide high-level financial strategy to your clients and optimize your workforce.",
-            keywords: "hire fractional CFO, fractional CFO staffing for CPA firms, outsourced CFO services, expert financial strategy for clients"
+            keywords: "hire fractional CFO, fractional CFO staffing for CPA firms, outsourced CFO services, expert financial strategy for clients",
+            openGraph: {
+                title: "Hire Fractional CFO Services for CPA Firms | Gapbridge",
+                description: "Hire expert Fractional CFOs for your CPA firm with Gapbridge. Tailored staffing solutions to help you provide high-level financial strategy to your clients and optimize your workforce.",
+                url: "/hire-fractional-cfo",
+                siteName: "Gapbridge Outsource",
+                images: [
+                    {
+                        url: "/og-image.jpg",
+                        width: 1200,
+                        height: 630,
+                        alt: "Hire Fractional CFO Services",
+                    },
+                ],
+                locale: "en_US",
+                type: "website",
+            },
+            twitter: {
+                card: "summary_large_image",
+                title: "Hire Fractional CFO Services for CPA Firms | Gapbridge",
+                description: "Hire expert Fractional CFOs for your CPA firm with Gapbridge. Tailored staffing solutions to help you provide high-level financial strategy to your clients and optimize your workforce.",
+                images: ["/og-image.jpg"],
+                creator: "@gapbridge",
+                site: "@gapbridge",
+            },
+            robots: {
+                index: true,
+                follow: true,
+                nocache: false,
+                googleBot: {
+                    index: true,
+                    follow: true,
+                    'max-video-preview': 2,
+                    'max-image-preview': 'large',
+                    'max-snippet': 500,
+                },
+            },
         }
     },
     {
@@ -432,7 +1398,43 @@ export const servicesData: Service[] = [
         meta: {
             title: "Hire Tax Preparer Services for CPA Firms | Gapbridge",
             description: "Hire skilled tax preparers for your CPA firm with Gapbridge. Tailored staffing solutions to help you carry out accurate tax filings for your clients effortlessly and optimize your workforce.",
-            keywords: "hire tax preparer, tax preparer staffing for CPA firms, outsourced tax preparation services, efficient staffing solutions"
+            keywords: "hire tax preparer, tax preparer staffing for CPA firms, outsourced tax preparation services, efficient staffing solutions",
+            openGraph: {
+                title: "Hire Tax Preparer Services for CPA Firms | Gapbridge",
+                description: "Hire skilled tax preparers for your CPA firm with Gapbridge. Tailored staffing solutions to help you carry out accurate tax filings for your clients effortlessly and optimize your workforce.",
+                url: "/hire-tax-preparer",
+                siteName: "Gapbridge Outsource",
+                images: [
+                    {
+                        url: "/og-image.jpg",
+                        width: 1200,
+                        height: 630,
+                        alt: "Hire Tax Preparer Services",
+                    },
+                ],
+                locale: "en_US",
+                type: "website",
+            },
+            twitter: {
+                card: "summary_large_image",
+                title: "Hire Tax Preparer Services for CPA Firms | Gapbridge",
+                description: "Hire skilled tax preparers for your CPA firm with Gapbridge. Tailored staffing solutions to help you carry out accurate tax filings for your clients effortlessly and optimize your workforce.",
+                images: ["/og-image.jpg"],
+                creator: "@gapbridge",
+                site: "@gapbridge",
+            },
+            robots: {
+                index: true,
+                follow: true,
+                nocache: false,
+                googleBot: {
+                    index: true,
+                    follow: true,
+                    'max-video-preview': 2,
+                    'max-image-preview': 'large',
+                    'max-snippet': 500,
+                },
+            },
         }
     },
     {
@@ -446,7 +1448,43 @@ export const servicesData: Service[] = [
         meta: {
             title: "Hire Staff Accountant Services for CPA Firms | Gapbridge",
             description: "Hire skilled staff accountants for your CPA firm with Gapbridge. Tailored staffing solutions to help you elevate your accounting services and optimize your workforce.",
-            keywords: "hire staff accountant, staff accountant staffing for CPA firms, outsourced accounting services, skilled accounting support"
+            keywords: "hire staff accountant, staff accountant staffing for CPA firms, outsourced accounting services, skilled accounting support",
+            openGraph: {
+                title: "Hire Staff Accountant Services for CPA Firms | Gapbridge",
+                description: "Hire skilled staff accountants for your CPA firm with Gapbridge. Tailored staffing solutions to help you elevate your accounting services and optimize your workforce.",
+                url: "/hire-staff-accountant",
+                siteName: "Gapbridge Outsource",
+                images: [
+                    {
+                        url: "/og-image.jpg",
+                        width: 1200,
+                        height: 630,
+                        alt: "Hire Staff Accountant Services",
+                    },
+                ],
+                locale: "en_US",
+                type: "website",
+            },
+            twitter: {
+                card: "summary_large_image",
+                title: "Hire Staff Accountant Services for CPA Firms | Gapbridge",
+                description: "Hire skilled staff accountants for your CPA firm with Gapbridge. Tailored staffing solutions to help you elevate your accounting services and optimize your workforce.",
+                images: ["/og-image.jpg"],
+                creator: "@gapbridge",
+                site: "@gapbridge",
+            },
+            robots: {
+                index: true,
+                follow: true,
+                nocache: false,
+                googleBot: {
+                    index: true,
+                    follow: true,
+                    'max-video-preview': 2,
+                    'max-image-preview': 'large',
+                    'max-snippet': 500,
+                },
+            },
         }
     },
     {
@@ -460,7 +1498,43 @@ export const servicesData: Service[] = [
         meta: {
             title: "Hire Audit Support Staff Services for CPA Firms | Gapbridge",
             description: "Hire skilled audit support staff for your CPA firm with Gapbridge. Tailored staffing solutions to help you manage all your audit preparations and documentation seamlessly and optimize your workforce.",
-            keywords: "hire audit support staff, audit support staffing for CPA firms, outsourced audit support services, seamless audit management"
+            keywords: "hire audit support staff, audit support staffing for CPA firms, outsourced audit support services, seamless audit management",
+            openGraph: {
+                title: "Hire Audit Support Staff Services for CPA Firms | Gapbridge",
+                description: "Hire skilled audit support staff for your CPA firm with Gapbridge. Tailored staffing solutions to help you manage all your audit preparations and documentation seamlessly and optimize your workforce.",
+                url: "/hire-audit-support",
+                siteName: "Gapbridge Outsource",
+                images: [
+                    {
+                        url: "/og-image.jpg",
+                        width: 1200,
+                        height: 630,
+                        alt: "Hire Audit Support Staff Services",
+                    },
+                ],
+                locale: "en_US",
+                type: "website",
+            },
+            twitter: {
+                card: "summary_large_image",
+                title: "Hire Audit Support Staff Services for CPA Firms | Gapbridge",
+                description: "Hire skilled audit support staff for your CPA firm with Gapbridge. Tailored staffing solutions to help you manage all your audit preparations and documentation seamlessly and optimize your workforce.",
+                images: ["/og-image.jpg"],
+                creator: "@gapbridge",
+                site: "@gapbridge",
+            },
+            robots: {
+                index: true,
+                follow: true,
+                nocache: false,
+                googleBot: {
+                    index: true,
+                    follow: true,
+                    'max-video-preview': 2,
+                    'max-image-preview': 'large',
+                    'max-snippet': 500,
+                },
+            },
         }
     },
     {
@@ -474,7 +1548,43 @@ export const servicesData: Service[] = [
         meta: {
             title: "Hire QuickBooks Expert Services for CPA Firms | Gapbridge",
             description: "Hire certified QuickBooks experts for your CPA firm with Gapbridge. Tailored staffing solutions to help you make optimum use of QuickBooks software and optimize your workforce.",
-            keywords: "hire QuickBooks expert, QuickBooks expert staffing for CPA firms, outsourced QuickBooks services, certified QuickBooks support"
+            keywords: "hire QuickBooks expert, QuickBooks expert staffing for CPA firms, outsourced QuickBooks services, certified QuickBooks support",
+            openGraph: {
+                title: "Hire QuickBooks Expert Services for CPA Firms | Gapbridge",
+                description: "Hire certified QuickBooks experts for your CPA firm with Gapbridge. Tailored staffing solutions to help you make optimum use of QuickBooks software and optimize your workforce.",
+                url: "/hire-quickbooks-expert",
+                siteName: "Gapbridge Outsource",
+                images: [
+                    {
+                        url: "/og-image.jpg",
+                        width: 1200,
+                        height: 630,
+                        alt: "Hire QuickBooks Expert Services",
+                    },
+                ],
+                locale: "en_US",
+                type: "website",
+            },
+            twitter: {
+                card: "summary_large_image",
+                title: "Hire QuickBooks Expert Services for CPA Firms | Gapbridge",
+                description: "Hire certified QuickBooks experts for your CPA firm with Gapbridge. Tailored staffing solutions to help you make optimum use of QuickBooks software and optimize your workforce.",
+                images: ["/og-image.jpg"],
+                creator: "@gapbridge",
+                site: "@gapbridge",
+            },
+            robots: {
+                index: true,
+                follow: true,
+                nocache: false,
+                googleBot: {
+                    index: true,
+                    follow: true,
+                    'max-video-preview': 2,
+                    'max-image-preview': 'large',
+                    'max-snippet': 500,
+                },
+            },
         }
     },
     {
@@ -488,7 +1598,43 @@ export const servicesData: Service[] = [
         meta: {
             title: "Hire Tax Reviewer Services for CPA Firms | Gapbridge",
             description: "Hire skilled tax reviewers for your CPA firm with Gapbridge. Tailored staffing solutions to help you maximize tax returns by filing and reviewing taxes accurately and optimize your workforce.",
-            keywords: "hire tax reviewer, tax reviewer staffing for CPA firms, outsourced tax review services, accurate tax filing and review"
+            keywords: "hire tax reviewer, tax reviewer staffing for CPA firms, outsourced tax review services, accurate tax filing and review",
+            openGraph: {
+                title: "Hire Tax Reviewer Services for CPA Firms | Gapbridge",
+                description: "Hire skilled tax reviewers for your CPA firm with Gapbridge. Tailored staffing solutions to help you maximize tax returns by filing and reviewing taxes accurately and optimize your workforce.",
+                url: "/hire-tax-reviewer",
+                siteName: "Gapbridge Outsource",
+                images: [
+                    {
+                        url: "/og-image.jpg",
+                        width: 1200,
+                        height: 630,
+                        alt: "Hire Tax Reviewer Services",
+                    },
+                ],
+                locale: "en_US",
+                type: "website",
+            },
+            twitter: {
+                card: "summary_large_image",
+                title: "Hire Tax Reviewer Services for CPA Firms | Gapbridge",
+                description: "Hire skilled tax reviewers for your CPA firm with Gapbridge. Tailored staffing solutions to help you maximize tax returns by filing and reviewing taxes accurately and optimize your workforce.",
+                images: ["/og-image.jpg"],
+                creator: "@gapbridge",
+                site: "@gapbridge",
+            },
+            robots: {
+                index: true,
+                follow: true,
+                nocache: false,
+                googleBot: {
+                    index: true,
+                    follow: true,
+                    'max-video-preview': 2,
+                    'max-image-preview': 'large',
+                    'max-snippet': 500,
+                },
+            },
         }
     },
     {
@@ -502,7 +1648,43 @@ export const servicesData: Service[] = [
         meta: {
             title: "Hire AR/AP Billing Executive Services for CPA Firms | Gapbridge",
             description: "Hire skilled AR/AP billing executives for your CPA firm with Gapbridge. Tailored staffing solutions to help you take complete care of your CPA’s AR & AP functions and optimize your workforce.",
-            keywords: "hire AR/AP billing executive, AR/AP billing executive staffing for CPA firms, outsourced AR/AP services, efficient financial operations support"
+            keywords: "hire AR/AP billing executive, AR/AP billing executive staffing for CPA firms, outsourced AR/AP services, efficient financial operations support",
+            openGraph: {
+                title: "Hire AR/AP Billing Executive Services for CPA Firms | Gapbridge",
+                description: "Hire skilled AR/AP billing executives for your CPA firm with Gapbridge. Tailored staffing solutions to help you take complete care of your CPA’s AR & AP functions and optimize your workforce.",
+                url: "/hire-ar-ap-executive",
+                siteName: "Gapbridge Outsource",
+                images: [
+                    {
+                        url: "/og-image.jpg",
+                        width: 1200,
+                        height: 630,
+                        alt: "Hire AR/AP Billing Executive Services",
+                    },
+                ],
+                locale: "en_US",
+                type: "website",
+            },
+            twitter: {
+                card: "summary_large_image",
+                title: "Hire AR/AP Billing Executive Services for CPA Firms | Gapbridge",
+                description: "Hire skilled AR/AP billing executives for your CPA firm with Gapbridge. Tailored staffing solutions to help you take complete care of your CPA’s AR & AP functions and optimize your workforce.",
+                images: ["/og-image.jpg"],
+                creator: "@gapbridge",
+                site: "@gapbridge",
+            },
+            robots: {
+                index: true,
+                follow: true,
+                nocache: false,
+                googleBot: {
+                    index: true,
+                    follow: true,
+                    'max-video-preview': 2,
+                    'max-image-preview': 'large',
+                    'max-snippet': 500,
+                },
+            },
         }
     },
     {
@@ -516,7 +1698,43 @@ export const servicesData: Service[] = [
         meta: {
             title: "Hire Account Supervisor Services for CPA Firms | Gapbridge",
             description: "Hire skilled account supervisors for your CPA firm with Gapbridge. Tailored staffing solutions to help you achieve financial clarity and lead your team precisely while optimizing your workforce.",
-            keywords: "hire account supervisor, account supervisor staffing for CPA firms, outsourced financial supervision services, skilled financial leadership"
+            keywords: "hire account supervisor, account supervisor staffing for CPA firms, outsourced financial supervision services, skilled financial leadership",
+            openGraph: {
+                title: "Hire Account Supervisor Services for CPA Firms | Gapbridge",
+                description: "Hire skilled account supervisors for your CPA firm with Gapbridge. Tailored staffing solutions to help you achieve financial clarity and lead your team precisely while optimizing your workforce.",
+                url: "/hire-account-supervisor",
+                siteName: "Gapbridge Outsource",
+                images: [
+                    {
+                        url: "/og-image.jpg",
+                        width: 1200,
+                        height: 630,
+                        alt: "Hire Account Supervisor Services",
+                    },
+                ],
+                locale: "en_US",
+                type: "website",
+            },
+            twitter: {
+                card: "summary_large_image",
+                title: "Hire Account Supervisor Services for CPA Firms | Gapbridge",
+                description: "Hire skilled account supervisors for your CPA firm with Gapbridge. Tailored staffing solutions to help you achieve financial clarity and lead your team precisely while optimizing your workforce.",
+                images: ["/og-image.jpg"],
+                creator: "@gapbridge",
+                site: "@gapbridge",
+            },
+            robots: {
+                index: true,
+                follow: true,
+                nocache: false,
+                googleBot: {
+                    index: true,
+                    follow: true,
+                    'max-video-preview': 2,
+                    'max-image-preview': 'large',
+                    'max-snippet': 500,
+                },
+            },
         }
     },
     {
@@ -530,7 +1748,43 @@ export const servicesData: Service[] = [
         meta: {
             title: "Hire Payroll Expert Services for CPA Firms | Gapbridge",
             description: "Hire skilled payroll experts for your CPA firm with Gapbridge. Tailored staffing solutions to help you simplify your CPA’s payroll management and compliance while optimizing your workforce.",
-            keywords: "hire payroll expert, payroll expert staffing for CPA firms, outsourced payroll management services, efficient payroll compliance support"
+            keywords: "hire payroll expert, payroll expert staffing for CPA firms, outsourced payroll management services, efficient payroll compliance support",
+            openGraph: {
+                title: "Hire Payroll Expert Services for CPA Firms | Gapbridge",
+                description: "Hire skilled payroll experts for your CPA firm with Gapbridge. Tailored staffing solutions to help you simplify your CPA’s payroll management and compliance while optimizing your workforce.",
+                url: "/hire-payroll-expert",
+                siteName: "Gapbridge Outsource",
+                images: [
+                    {
+                        url: "/og-image.jpg",
+                        width: 1200,
+                        height: 630,
+                        alt: "Hire Payroll Expert Services",
+                    },
+                ],
+                locale: "en_US",
+                type: "website",
+            },
+            twitter: {
+                card: "summary_large_image",
+                title: "Hire Payroll Expert Services for CPA Firms | Gapbridge",
+                description: "Hire skilled payroll experts for your CPA firm with Gapbridge. Tailored staffing solutions to help you simplify your CPA’s payroll management and compliance while optimizing your workforce.",
+                images: ["/og-image.jpg"],
+                creator: "@gapbridge",
+                site: "@gapbridge",
+            },
+            robots: {
+                index: true,
+                follow: true,
+                nocache: false,
+                googleBot: {
+                    index: true,
+                    follow: true,
+                    'max-video-preview': 2,
+                    'max-image-preview': 'large',
+                    'max-snippet': 500,
+                },
+            },
         }
     },
     {
@@ -544,7 +1798,43 @@ export const servicesData: Service[] = [
         meta: {
             title: "Hire Virtual CFO Services for CPA Firms | Gapbridge",
             description: "Hire expert virtual CFOs for your CPA firm with Gapbridge. Tailored staffing solutions to help you provide financial backbone for your clients' growth and optimize your workforce.",
-            keywords: "hire virtual CFO, virtual CFO staffing for CPA firms, outsourced CFO services, expert financial strategy for clients"
+            keywords: "hire virtual CFO, virtual CFO staffing for CPA firms, outsourced CFO services, expert financial strategy for clients",
+            openGraph: {
+                title: "Hire Virtual CFO Services for CPA Firms | Gapbridge",
+                description: "Hire expert virtual CFOs for your CPA firm with Gapbridge. Tailored staffing solutions to help you provide financial backbone for your clients' growth and optimize your workforce.",
+                url: "/hire-virtual-cfo",
+                siteName: "Gapbridge Outsource",
+                images: [
+                    {
+                        url: "/og-image.jpg",
+                        width: 1200,
+                        height: 630,
+                        alt: "Hire Virtual CFO Services",
+                    },
+                ],
+                locale: "en_US",
+                type: "website",
+            },
+            twitter: {
+                card: "summary_large_image",
+                title: "Hire Virtual CFO Services for CPA Firms | Gapbridge",
+                description: "Hire expert virtual CFOs for your CPA firm with Gapbridge. Tailored staffing solutions to help you provide financial backbone for your clients' growth and optimize your workforce.",
+                images: ["/og-image.jpg"],
+                creator: "@gapbridge",
+                site: "@gapbridge",
+            },
+            robots: {
+                index: true,
+                follow: true,
+                nocache: false,
+                googleBot: {
+                    index: true,
+                    follow: true,
+                    'max-video-preview': 2,
+                    'max-image-preview': 'large',
+                    'max-snippet': 500,
+                },
+            },
         }
     },
     {
@@ -558,7 +1848,43 @@ export const servicesData: Service[] = [
         meta: {
             title: "Hire Virtual Assistant Services for CPA Firms | Gapbridge",
             description: "Hire skilled virtual assistants for your CPA firm with Gapbridge. Tailored staffing solutions to help you manage administrative tasks efficiently and optimize your workforce.",
-            keywords: "hire virtual assistant, virtual assistant staffing for CPA firms, outsourced administrative support services, efficient office management"
+            keywords: "hire virtual assistant, virtual assistant staffing for CPA firms, outsourced administrative support services, efficient office management",
+            openGraph: {
+                title: "Hire Virtual Assistant Services for CPA Firms | Gapbridge",
+                description: "Hire skilled virtual assistants for your CPA firm with Gapbridge. Tailored staffing solutions to help you manage administrative tasks efficiently and optimize your workforce.",
+                url: "/hire-virtual-assistant",
+                siteName: "Gapbridge Outsource",
+                images: [
+                    {
+                        url: "/og-image.jpg",
+                        width: 1200,
+                        height: 630,
+                        alt: "Hire Virtual Assistant Services",
+                    },
+                ],
+                locale: "en_US",
+                type: "website",
+            },
+            twitter: {
+                card: "summary_large_image",
+                title: "Hire Virtual Assistant Services for CPA Firms | Gapbridge",
+                description: "Hire skilled virtual assistants for your CPA firm with Gapbridge. Tailored staffing solutions to help you manage administrative tasks efficiently and optimize your workforce.",
+                images: ["/og-image.jpg"],
+                creator: "@gapbridge",
+                site: "@gapbridge",
+            },
+            robots: {
+                index: true,
+                follow: true,
+                nocache: false,
+                googleBot: {
+                    index: true,
+                    follow: true,
+                    'max-video-preview': 2,
+                    'max-image-preview': 'large',
+                    'max-snippet': 500,
+                },
+            },
         }
     }
 ];

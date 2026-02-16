@@ -1,32 +1,11 @@
-import WhyGapbridge from '@/components/client/why-gapbridge/page'; import { Metadata } from 'next';
+import WhyGapbridge from '@/components/client/why-gapbridge/page';
+import { Metadata } from 'next';
+import { getPageMetaData } from '@/lib/api/pageMetaData';
 
-export const metadata: Metadata = {
-    title: "Why Gapbridge - The Future of Accounting",
-    description: "Discover why firms are choosing Gapbridge for seamless, tech-driven accounting and finance outsourcing.",
-    keywords: ["Why Gapbridge", "Accounting Outsourcing", "FinTech", "Gapbridge Advantage"],
-    openGraph: {
-        title: "Why Gapbridge - The Future of Accounting",
-        description: "Discover why firms are choosing Gapbridge for seamless, tech-driven accounting and finance outsourcing.",
-        url: "/why-gapbridge",
-        siteName: "Gapbridge Outsource",
-        images: [
-            {
-                url: "/images/logo.png",
-                width: 1200,
-                height: 630,
-                alt: "Gapbridge Outsource",
-            },
-        ],
-        locale: "en_US",
-        type: "website",
-    },
-    twitter: {
-        card: "summary_large_image",
-        title: "Why Gapbridge - The Future of Accounting",
-        description: "Discover why firms are choosing Gapbridge for seamless, tech-driven accounting and finance outsourcing.",
-        images: ["/images/logo.png"],
-    },
-};
+export async function generateMetadata(): Promise<Metadata> {
+    const metaData = await getPageMetaData('/why-gapbridge');
+    return metaData;
+}
 
 const page = () => {
     return (

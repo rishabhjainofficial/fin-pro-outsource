@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ArrowRight, Play, CheckCircle2 } from "lucide-react";
+import Link from "next/link";
 
 const Banner = () => {
     return (
@@ -41,13 +42,13 @@ const Banner = () => {
 
                     {/* CTAs */}
                     <div className="flex flex-col sm:flex-row items-center gap-6 animate-fade-up" style={{ animationDelay: '200ms' }}>
-                        <a
-                            href="#contact"
+                        <Link
+                            href="/contact-us"
                             className="group w-full sm:w-auto px-10 py-5 rounded-full bg-brand-green text-white font-black uppercase tracking-widest text-sm shadow-2xl shadow-brand-green/20 hover:bg-brand-green/90 transition-all flex items-center justify-center gap-3"
                         >
-                            Hire Now
+                            Get Started
                             <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-                        </a>
+                        </Link>
 
                         <button className="flex items-center gap-3 text-white font-bold group">
                             <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center bg-white/5 backdrop-blur-md group-hover:bg-brand-green group-hover:border-brand-green transition-all">

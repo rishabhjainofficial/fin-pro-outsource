@@ -17,6 +17,7 @@ import { Metadata } from 'next';
 import { getPageMetaData } from '@/lib/api/pageMetaData';
 import { serviceIconMap, serviceCategoryIconMap } from '@/lib/data/icons';
 import { getAllServices } from '@/lib/api/services';
+import { getBlogForHome } from "@/lib/api/blogs";
 
 export async function generateMetadata(): Promise<Metadata> {
   const metaData = await getPageMetaData('/');
@@ -31,6 +32,8 @@ export default async function Home() {
     icon: serviceIconMap[service.icon] || null,
     description: service.description,
   })) || [];
+
+  const blogs = await getBlogForHome(2);
   return (
     <div className="w-full flex flex-col items-center justify-center">
       <Banner />
@@ -45,7 +48,7 @@ export default async function Home() {
       <JoinTeam />
       <ToolsUsed />
       <Testimonials />
-      <BlogSection />
+      <BlogSection blogs={blogs} />
       <CaseStudiesSection />
       <LetConnect />
     </div>

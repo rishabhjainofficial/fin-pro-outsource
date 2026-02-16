@@ -1,3 +1,5 @@
+import { Metadata } from "next";
+
 export interface Blog {
     id: number;
     title: string;
@@ -8,11 +10,9 @@ export interface Blog {
     category: string;
     image: string;
     slug: string;
-    meta: {
-        title: string;
-        description: string;
-        keywords: string;
-    };
+    readTime: string;
+    featured: boolean;
+    meta: Metadata;
 }
 
 export const blogs: Blog[] = [
@@ -26,6 +26,8 @@ export const blogs: Blog[] = [
         category: "Accounting",
         image: "https://images.unsplash.com/photo-1762427354051-a9bdb181ae3b?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         slug: "the-future-of-offshore-accounting-for-uk-firms-in-2026",
+        readTime: "5 min read",
+        featured: true,
         meta: {
             title: "Future of Offshore Accounting for UK Firms 2026 | Expert Insights",
             description: "Discover how digital transformation and remote expertise are reshaping offshore accounting for UK firms. Learn about trends, benefits, and best practices for 2026.",
@@ -42,6 +44,8 @@ export const blogs: Blog[] = [
         category: "Taxation",
         image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         slug: "navigating-us-tax-season-with-scalable-staffing",
+        readTime: "5 min read",
+        featured: true,
         meta: {
             title: "Navigate US Tax Season with Scalable Staffing Solutions | Tax Guide",
             description: "Manage peak tax season workloads efficiently with scalable staffing. Discover cost-effective alternatives to full-time hiring for CPA firms and tax professionals.",
@@ -58,6 +62,8 @@ export const blogs: Blog[] = [
         category: "Business Strategy",
         image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         slug: "5-ways-virtual-cfo-services-drive-business-growth",
+        readTime: "5 min read",
+        featured: true,
         meta: {
             title: "5 Ways Virtual CFO Services Drive Business Growth | Strategic Finance",
             description: "Learn how Virtual CFO services can transform your business through strategic financial planning, improved profitability, and expert financial leadership.",
@@ -74,6 +80,8 @@ export const blogs: Blog[] = [
         category: "Technology",
         image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         slug: "quickbooks-vs-xero-which-is-right-for-your-business",
+        readTime: "5 min read",
+        featured: false,
         meta: {
             title: "QuickBooks vs Xero 2026: Complete Comparison Guide | Accounting Software",
             description: "Compare QuickBooks and Xero features, pricing, and benefits. Find the perfect cloud accounting software for your business needs with our expert analysis.",
@@ -90,6 +98,8 @@ export const blogs: Blog[] = [
         category: "Compliance",
         image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         slug: "compliance-checklist-for-small-business-year-end",
+        readTime: "6 min read",
+        featured: false,
         meta: {
             title: "Year-End Compliance Checklist for Small Businesses | Tax Requirements",
             description: "Complete year-end compliance checklist for small businesses. Essential tax and regulatory requirements to meet before December 31st deadline.",
@@ -106,6 +116,8 @@ export const blogs: Blog[] = [
         category: "Technology",
         image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         slug: "how-ai-is-transforming-bookkeeping-services",
+        readTime: "9 min read",
+        featured: false,
         meta: {
             title: "AI in Bookkeeping: How Artificial Intelligence Transforms Accounting",
             description: "Discover how AI is revolutionizing bookkeeping services through automation, improved accuracy, and smart financial insights. The future of accounting is here.",
@@ -122,6 +134,8 @@ export const blogs: Blog[] = [
         category: "HR & Payroll",
         image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         slug: "payroll-management-best-practices-for-growing-teams",
+        readTime: "9 min read",
+        featured: true,
         meta: {
             title: "Payroll Management Best Practices for Growing Teams | HR Guide",
             description: "Master payroll processing, compliance, and employee satisfaction with our comprehensive guide for scaling businesses. Expert tips for growing teams.",
@@ -138,6 +152,8 @@ export const blogs: Blog[] = [
         category: "Accounting",
         image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         slug: "understanding-ar-ap-cash-flow-optimization",
+        readTime: "5 min read",
+        featured: false,
         meta: {
             title: "AR & AP Management: Cash Flow Optimization Strategies | Finance Guide",
             description: "Learn strategic approaches to managing accounts receivable and payable for improved cash flow, working capital, and business liquidity.",
@@ -154,6 +170,8 @@ export const blogs: Blog[] = [
         category: "Accounting",
         image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         slug: "the-complete-guide-to-financial-statement-preparation",
+        readTime: "5 min read",
+        featured: false,
         meta: {
             title: "Financial Statement Preparation Guide | Balance Sheet, Income Statement",
             description: "Complete guide to preparing accurate financial statements including balance sheets, income statements, and cash flow reports for business success.",
@@ -170,6 +188,8 @@ export const blogs: Blog[] = [
         category: "Outsourcing",
         image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         slug: "why-cpa-firms-are-outsourcing-to-india",
+        readTime: "5 min read",
+        featured: false,
         meta: {
             title: "Why CPA Firms Outsource to India | Benefits & Cost Savings",
             description: "Discover why CPA firms choose India for outsourcing: cost savings, time zone advantages, expert talent, and quality accounting services.",
@@ -186,6 +206,8 @@ export const blogs: Blog[] = [
         category: "Taxation",
         image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         slug: "tax-planning-strategies-for-high-net-worth-individuals",
+        readTime: "5 min read",
+        featured: false,
         meta: {
             title: "Tax Planning for High-Net-Worth Individuals | Wealth Preservation",
             description: "Advanced tax planning strategies to minimize liability and maximize wealth preservation for high-net-worth individuals and affluent families.",
@@ -202,6 +224,8 @@ export const blogs: Blog[] = [
         category: "Compliance",
         image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         slug: "building-a-bulletproof-audit-trail-for-your-business",
+        readTime: "5 min read",
+        featured: false,
         meta: {
             title: "Building a Bulletproof Audit Trail | Compliance & Documentation Guide",
             description: "Learn essential documentation practices and digital tools to create a robust audit trail ensuring audit readiness and regulatory compliance.",

@@ -44,3 +44,9 @@ export async function getBlogBySlug(slug: string): Promise<Blog | undefined> {
 export function getCategories() {
     return ["All", "Accounting", "Taxation", "CPA Trends", "Advisory"];
 }
+
+export async function getBlogForHome(
+    limit?: number,
+): Promise<Blog[]> {
+    return blogs.slice(0, limit || 3);
+}

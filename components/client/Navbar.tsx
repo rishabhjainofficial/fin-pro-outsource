@@ -61,7 +61,7 @@ const Navbar = () => {
             >
                 {/* Logo */}
                 <Link href="/" className="flex items-center gap-2 group">
-                    <Image src="/gapbridge-logo.png" alt="Logo" width={150} height={150} />
+                    <Image src="/gapbridge-logo.png" alt="Logo" width={150} height={84} />
                 </Link>
 
                 {/* Desktop Menu */}
@@ -87,7 +87,7 @@ const Navbar = () => {
                                         exit={{ opacity: 0, y: 10, scale: 0.95 }}
                                         className="absolute top-full left-0 w-80 pt-4"
                                     >
-                                        <div className="bg-white border border-brand-border shadow-2xl rounded-[2rem] p-3 overflow-hidden">
+                                        <div className="bg-white border border-brand-border shadow-2xl rounded-4xl p-3 overflow-hidden">
                                             {link.subLinks?.map((sub) => (
                                                 <Link key={sub.title} href={sub.href} className="flex items-center gap-4 p-4 rounded-2xl hover:bg-brand-surface group/item transition-all">
                                                     <div className="bg-brand-surface p-2.5 rounded-xl text-brand-navy group-hover/item:bg-brand-green group-hover/item:text-white transition-all">

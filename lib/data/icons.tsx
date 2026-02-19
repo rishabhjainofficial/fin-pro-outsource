@@ -4,7 +4,8 @@ import {
     Settings, Users, PieChart, Database,
     ShieldCheck, LineChart, Calendar, FileText,
     UserPlus, Laptop, BarChart4, TrendingUp, Rocket,
-    Lightbulb, Globe, UserCheck, FileSearch, ClipboardCheck, Users2, UserCog
+    Lightbulb, Globe, UserCheck, FileSearch, ClipboardCheck, Users2, UserCog,
+    Linkedin, Twitter, Facebook, Instagram
 } from 'lucide-react';
 
 export const serviceIconMap: Record<string, React.ReactNode> = {
@@ -36,6 +37,10 @@ export const serviceIconMap: Record<string, React.ReactNode> = {
     Lock: <Lock size={24} />,
     DollarSign: <DollarSign size={24} />,
     BarChart: <BarChart size={24} />,
+    Linkedin: <Linkedin size={24} />,
+    Twitter: <Twitter size={24} />,
+    Facebook: <Facebook size={24} />,
+    Instagram: <Instagram size={24} />,
 };
 
 export const serviceCategoryIconMap: Record<string, React.ReactNode> = {

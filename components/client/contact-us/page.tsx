@@ -1,13 +1,45 @@
 'use client';
 
-import React from 'react';
+import { useState } from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import {
-    Mail, Phone, MapPin, Send, MessageSquare,
-    Clock, Globe, Linkedin, Twitter, CheckCircle2
+    Mail, Phone, MapPin, Send, Facebook, Instagram, Linkedin, Twitter, CheckCircle2
 } from 'lucide-react';
+import { contactUs } from '@/lib/api/contactUs';
+import { getSocialLinks } from '@/lib/api/socialLink';
 
 const ContactUs = () => {
+    const [formData, setFormData] = useState({ name: '', email: '', service: '', message: '' });
+    const [errors, setErrors] = useState<Record<string, string[]>>({});
+    const [isSuccess, setIsSuccess] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({ ...prev, [name]: value }));
+    };
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        setErrors({});
+        setIsSuccess(false);
+        setIsSubmitting(true);
+
+        const response = await contactUs(formData);
+
+        if (response.success) {
+            setIsSuccess(true);
+            setFormData({ name: '', email: '', service: '', message: '' });
+            setTimeout(() => setIsSuccess(false), 5000);
+        } else {
+            setErrors(response.errors || {});
+        }
+        setIsSubmitting(false);
+    };
+
+    const socialLinks = getSocialLinks();
+
     return (
         <main className="w-full bg-white pt-32 pb-24 px-4">
             <div className="max-w-7xl mx-auto">
@@ -61,10 +93,10 @@ const ContactUs = () => {
                             <div className="absolute top-0 right-0 w-32 h-32 bg-brand-green/20 rounded-full blur-3xl" />
                             <h4 className="text-lg font-bold mb-6 relative z-10">Follow our Insights</h4>
                             <div className="flex gap-4 relative z-10">
-                                {[Linkedin, Twitter, Globe].map((Icon, i) => (
-                                    <button key={i} className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center hover:bg-brand-green transition-all">
-                                        <Icon size={20} />
-                                    </button>
+                                {socialLinks.map((link) => (
+                                    <Link key={link.name} href={link.href} className="p-2 rounded-lg bg-white/5 hover:bg-brand-green transition-colors">
+                                        {link.icon}
+                                    </Link>
                                 ))}
                             </div>
                         </div>
@@ -73,38 +105,94 @@ const ContactUs = () => {
                     {/* Right Side: Professional Discovery Form */}
                     <div className="lg:col-span-7">
                         <div className="bg-brand-surface border border-brand-border rounded-[3.5rem] p-8 md:p-16">
-                            <form className="grid gap-8">
+                            <form className="grid gap-8" onSubmit={(e) => handleSubmit(e)}>
                                 <div className="grid md:grid-cols-2 gap-8">
                                     <div className="space-y-3">
                                         <label className="text-[10px] font-black uppercase tracking-[0.3em] text-brand-navy/40 ml-1">Full Name</label>
-                                        <input type="text" className="w-full bg-white border-b-2 border-brand-border focus:border-brand-green outline-none py-4 px-2 transition-all font-bold text-brand-navy" placeholder="Jane Doe" />
+                                        <input
+                                            type="text"
+                                            className="w-full bg-white border-b-2 border-brand-border focus:border-brand-green outline-none py-4 px-2 transition-all font-bold text-brand-navy"
+                                            placeholder="Full Name..."
+                                            name="name"
+                                            value={formData.name}
+                                            onChange={(e) => handleChange(e)}
+                                            required
+                                        />
+                                        {errors.name && (
+                                            <p className="text-[10px] text-brand-red font-bold uppercase mt-1">{errors.name[0]}</p>
+                                        )}
                                     </div>
                                     <div className="space-y-3">
                                         <label className="text-[10px] font-black uppercase tracking-[0.3em] text-brand-navy/40 ml-1">Company Email</label>
-                                        <input type="email" className="w-full bg-white border-b-2 border-brand-border focus:border-brand-green outline-none py-4 px-2 transition-all font-bold text-brand-navy" placeholder="jane@firm.com" />
+                                        <input
+                                            type="email"
+                                            className="w-full bg-white border-b-2 border-brand-border focus:border-brand-green outline-none py-4 px-2 transition-all font-bold text-brand-navy"
+                                            placeholder="Company Email..."
+                                            name="email"
+                                            value={formData.email}
+                                            onChange={(e) => handleChange(e)}
+                                            required
+                                        />
+                                        {errors.email && (
+                                            <p className="text-[10px] text-brand-red font-bold uppercase mt-1">{errors.email[0]}</p>
+                                        )}
                                     </div>
                                 </div>
 
                                 <div className="space-y-3">
                                     <label className="text-[10px] font-black uppercase tracking-[0.3em] text-brand-navy/40 ml-1">How can we help?</label>
-                                    <select className="w-full bg-white border-b-2 border-brand-border focus:border-brand-green outline-none py-4 px-2 transition-all font-bold text-brand-navy appearance-none">
-                                        <option>Select Service Area</option>
-                                        <option>Full-Stack Accounting Outsourcing</option>
-                                        <option>Fractional CFO Advisory</option>
-                                        <option>Tax & Compliance Support</option>
-                                        <option>Staff Augmentation</option>
+                                    <select
+                                        className="w-full bg-white border-b-2 border-brand-border focus:border-brand-green outline-none py-4 px-2 transition-all font-bold text-brand-navy appearance-none" name="service"
+                                        value={formData.service}
+                                        onChange={(e) => handleChange(e)}
+                                        required
+                                    >
+                                        <option value="">Select Service Area</option>
+                                        <option value="Full-Stack Accounting Outsourcing">Full-Stack Accounting Outsourcing</option>
+                                        <option value="Fractional CFO Advisory">Fractional CFO Advisory</option>
+                                        <option value="Tax & Compliance Support">Tax & Compliance Support</option>
+                                        <option value="Staff Augmentation">Staff Augmentation</option>
                                     </select>
+                                    {errors.service && (
+                                        <p className="text-[10px] text-brand-red font-bold uppercase mt-1">{errors.service[0]}</p>
+                                    )}
                                 </div>
 
                                 <div className="space-y-3">
                                     <label className="text-[10px] font-black uppercase tracking-[0.3em] text-brand-navy/40 ml-1">Message / Project Scope</label>
-                                    <textarea rows={4} className="w-full bg-white border-b-2 border-brand-border focus:border-brand-green outline-none py-4 px-2 transition-all font-bold text-brand-navy resize-none" placeholder="Briefly describe your requirements..." />
+                                    <textarea
+                                        rows={4}
+                                        className="w-full bg-white border-b-2 border-brand-border focus:border-brand-green outline-none py-4 px-2 transition-all font-bold text-brand-navy resize-none"
+                                        placeholder="Briefly describe your requirements..."
+                                        name="message"
+                                        value={formData.message}
+                                        onChange={(e) => handleChange(e)}
+                                        required
+                                    />
+                                    {errors.message && (
+                                        <p className="text-[10px] text-brand-red font-bold uppercase mt-1">{errors.message[0]}</p>
+                                    )}
                                 </div>
 
-                                <button className="group w-full py-6 rounded-full bg-brand-navy text-white font-black uppercase tracking-[0.2em] text-sm shadow-2xl shadow-brand-navy/20 hover:bg-brand-green transition-all duration-500 flex items-center justify-center gap-4">
+                                <button className="group w-full py-6 rounded-full bg-brand-navy text-white font-black uppercase tracking-[0.2em] text-sm shadow-2xl shadow-brand-navy/20 hover:bg-brand-green transition-all duration-500 flex items-center justify-center gap-4 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed" disabled={isSubmitting}>
                                     Submit Inquiry
                                     <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                                 </button>
+
+                                {isSuccess && (
+                                    <motion.div
+                                        initial={{ opacity: 0, scale: 0.9 }}
+                                        animate={{ opacity: 1, scale: 1 }}
+                                        className="p-6 bg-brand-green/10 border border-brand-green/20 rounded-3xl text-center mb-8"
+                                    >
+                                        <p className="text-brand-green font-black uppercase tracking-widest text-xs">
+                                            Inquiry Received Successfully
+                                        </p>
+                                        <p className="text-brand-navy text-sm font-medium mt-1">
+                                            Our partners will reach out to you within 24 hours.
+                                        </p>
+                                    </motion.div>
+                                )}
 
                                 <div className="flex items-center justify-center gap-6 mt-4">
                                     <div className="flex items-center gap-2 text-[10px] font-bold text-brand-slate/40 uppercase tracking-widest">

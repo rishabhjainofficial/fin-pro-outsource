@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import {
     ShieldCheck, Zap, Users, Globe,
@@ -122,11 +123,13 @@ const WhyGapbridge = () => {
                 {/* --- Final CTA --- */}
                 <div className="mt-32 text-center">
                     <h2 className="text-4xl font-black text-brand-navy mb-8">Ready to see the difference?</h2>
-                    <button className="group relative px-10 py-5 bg-brand-navy text-white rounded-full font-black uppercase tracking-[0.2em] text-sm overflow-hidden transition-all hover:bg-brand-green">
-                        <span className="relative z-10 flex items-center gap-3">
-                            Schedule a Workflow Audit <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
-                        </span>
-                    </button>
+                    <Link href="/contact-us">
+                        <button className="group relative px-10 py-5 bg-brand-navy text-white rounded-full font-black uppercase tracking-[0.2em] text-sm overflow-hidden transition-all hover:bg-brand-green">
+                            <span className="relative z-10 flex items-center gap-3">
+                                Schedule a Workflow Audit <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
+                            </span>
+                        </button>
+                    </Link>
                 </div>
             </div>
         </div>

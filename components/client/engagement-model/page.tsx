@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import {
     UserPlus, Layers, Calendar, BarChart4,
@@ -65,7 +65,7 @@ const EngagementModel = () => {
                         <motion.div
                             key={idx}
                             whileHover={{ y: -10 }}
-                            className={`p-10 rounded-[3rem] border border-brand-border transition-all duration-500 shadow-sm hover:shadow-2xl hover:shadow-brand-navy/5 flex flex-col ${model.color}`}
+                            className={`p-10 rounded-5xl border border-brand-border transition-all duration-500 shadow-sm hover:shadow-2xl hover:shadow-brand-navy/5 flex flex-col ${model.color}`}
                         >
                             <div className="mb-8 w-14 h-14 rounded-2xl bg-white flex items-center justify-center shadow-sm">
                                 {model.icon}
@@ -151,10 +151,12 @@ const EngagementModel = () => {
 
                 {/* Bottom Call to Action */}
                 <div className="mt-32 text-center">
-                    <p className="text-brand-slate/60 font-bold uppercase tracking-[0.3em] text-xs mb-8">Ready to define your partnership?</p>
-                    <button className="inline-flex items-center gap-3 bg-brand-navy text-white px-10 py-5 rounded-full font-black uppercase tracking-[0.2em] text-sm hover:bg-brand-green transition-all group shadow-2xl shadow-brand-navy/10">
-                        Consult with a Partner <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
-                    </button>
+                    <Link href="/contact-us">
+                        <p className="text-brand-slate/60 font-bold uppercase tracking-[0.3em] text-xs mb-8">Ready to define your partnership?</p>
+                        <button className="inline-flex items-center gap-3 bg-brand-navy text-white px-10 py-5 rounded-full font-black uppercase tracking-[0.2em] text-sm hover:bg-brand-green transition-all group shadow-2xl shadow-brand-navy/10">
+                            Consult with a Partner <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
+                        </button>
+                    </Link>
                 </div>
             </div>
         </main>

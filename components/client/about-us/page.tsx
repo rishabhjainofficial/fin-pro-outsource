@@ -144,7 +144,7 @@ const AboutUs = () => {
                 {/* --- Footer CTA --- */}
                 <div className="mt-40 text-center">
                     <h2 className="text-3xl font-black text-brand-navy mb-10">Partner with a firm that values your growth.</h2>
-                    <Link href="/contact" className="inline-flex items-center gap-3 bg-brand-navy text-white px-10 py-5 rounded-full font-black uppercase tracking-[0.2em] text-sm hover:bg-brand-green transition-all group">
+                    <Link href="/contact-us" className="inline-flex items-center gap-3 bg-brand-navy text-white px-10 py-5 rounded-full font-black uppercase tracking-[0.2em] text-sm hover:bg-brand-green transition-all group">
                         Start Your Journey <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
                     </Link>
                 </div>

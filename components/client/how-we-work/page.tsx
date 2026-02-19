@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import {
     Search, ShieldCheck, BarChart,
@@ -135,9 +135,11 @@ const HowWeWork = () => {
                 {/* Closing Call to Action */}
                 <div className="mt-32 text-center p-16 rounded-[4rem] border-2 border-dashed border-brand-border">
                     <h2 className="text-3xl font-black text-brand-navy mb-6">Ready to initiate your workflow audit?</h2>
-                    <button className="flex items-center gap-3 bg-brand-navy text-white px-10 py-5 rounded-full font-black uppercase tracking-[0.2em] text-sm hover:bg-brand-green transition-all mx-auto group">
-                        Begin Discovery <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
-                    </button>
+                    <Link href="/contact-us">
+                        <button className="flex items-center gap-3 bg-brand-navy text-white px-10 py-5 rounded-full font-black uppercase tracking-[0.2em] text-sm hover:bg-brand-green transition-all mx-auto group">
+                            Begin Discovery <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
+                        </button>
+                    </Link>
                 </div>
             </div>
         </div>

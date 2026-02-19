@@ -1,4 +1,6 @@
 "use client";
+
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import {
     TrendingUp, Clock, Users2, ShieldCheck,
@@ -6,7 +8,6 @@ import {
 } from 'lucide-react';
 
 const ServiceDetailPage = ({ serviceData }: { serviceData: any }) => {
-    // These could eventually come from your serviceData object
     const benefits = [
         {
             title: "Cost Efficiency",
@@ -55,9 +56,11 @@ const ServiceDetailPage = ({ serviceData }: { serviceData: any }) => {
                         <p className="text-xl text-brand-slate font-medium opacity-70 leading-relaxed mb-10">
                             {serviceData.description}
                         </p>
-                        <button className="bg-brand-navy text-white px-10 py-4 rounded-full font-bold flex items-center gap-2 hover:bg-brand-green transition-all shadow-lg shadow-brand-navy/10">
-                            Consult with an Expert <ArrowRight size={18} />
-                        </button>
+                        <Link href="/contact-us">
+                            <button className="bg-brand-navy text-white px-10 py-4 rounded-full font-bold flex items-center gap-2 hover:bg-brand-green transition-all shadow-lg shadow-brand-navy/10">
+                                Consult with an Expert <ArrowRight size={18} />
+                            </button>
+                        </Link>
                     </div>
                 </motion.div>
             </section>

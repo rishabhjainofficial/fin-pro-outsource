@@ -5,56 +5,21 @@ import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle2, ArrowRight } from 'lucide-react';
 
-const OutSourcingTeam = () => {
+const OutSourcingTeam = (
+    { teams }: {
+        teams: {
+            title: string;
+            description: string;
+            image: string;
+            tags: string[];
+            tagsBgColor: string[];
+            tagsColor: string[];
+        }[];
+    }
+) => {
     const [activeTab, setActiveTab] = useState(0);
 
-    const tabs = ['Senior Accountants', 'Tax Preparers', 'Fractional CFO', 'Bookkeepers', 'Payroll'];
-
-    // I've simplified the data structure to use your brand colors more effectively
-    const data = [
-        {
-            title: 'Senior Accountants',
-            description: 'Free up your in-house CPA team for specialized tasks, and leverage the skills of our certified accountants for routine tasks that are super-important. Hire certified senior accountants today.',
-            image: '/images/team-member.png',
-            tags: ['10+ years of experience', 'Advance knowledge', 'Client-focused'],
-            tagsBgColor: ['bg-brand-green/10', 'bg-brand-blue/10', 'bg-brand-red/10'],
-            tagsColor: ['text-brand-green', 'text-brand-blue', 'text-brand-red'],
-        },
-        {
-            title: 'Tax Preparers',
-            description: 'Our tax preparers are experts in navigating the complexities of tax regulations, ensuring accurate and timely filings. Let our professionals handle your tax preparation needs, so you can focus on growing your business.',
-            image: '/images/team-member.png',
-            tags: ['Expertise in tax regulations', 'Accurate filings', 'Timely service'],
-            tagsBgColor: ['bg-brand-green/10', 'bg-brand-blue/10', 'bg-brand-red/10'],
-            tagsColor: ['text-brand-green', 'text-brand-blue', 'text-brand-red'],
-        },
-        {
-            title: 'Fractional CFO',
-            description: 'Our Fractional CFOs provide strategic financial leadership on a part-time basis, helping businesses make informed decisions, optimize cash flow, and drive growth without the cost of a full-time CFO.',
-            image: '/images/team-member.png',
-            tags: ['Strategic financial leadership', 'Cost-effective', 'Growth-focused'],
-            tagsBgColor: ['bg-brand-green/10', 'bg-brand-blue/10', 'bg-brand-red/10'],
-            tagsColor: ['text-brand-green', 'text-brand-blue', 'text-brand-red'],
-        },
-        {
-            title: 'Bookkeepers',
-            description: 'Our bookkeepers ensure your financial records are accurate and up-to-date, providing essential support for your business’s financial health. Let us handle your bookkeeping needs so you can focus on what you do best.',
-            image: '/images/team-member.png',
-            tags: ['Accurate records', 'Up-to-date', 'Financial health'],
-            tagsBgColor: ['bg-brand-green/10', 'bg-brand-blue/10', 'bg-brand-red/10'],
-            tagsColor: ['text-brand-green', 'text-brand-blue', 'text-brand-red'],
-        },
-        {
-            title: 'Payroll',
-            description: 'Our payroll services ensure your employees are paid accurately and on time, while also managing tax withholdings and compliance. Let us take care of your payroll needs so you can focus on growing your business.',
-            image: '/images/team-member.png',
-            tags: ['Accurate payments', 'Timely service', 'Compliance management'],
-            tagsBgColor: ['bg-brand-green/10', 'bg-brand-blue/10', 'bg-brand-red/10'],
-            tagsColor: ['text-brand-green', 'text-brand-blue', 'text-brand-red'],
-        }
-    ];
-
-    const activeData = data[activeTab] || data[0];
+    const activeData = teams[activeTab] || teams[0];
 
     return (
         <section className="w-full px-4 py-24 bg-brand-surface">
@@ -72,9 +37,9 @@ const OutSourcingTeam = () => {
                 {/* Tabs Container */}
                 <div className="flex justify-center mb-12">
                     <div className="flex p-1.5 bg-white border border-brand-border rounded-full overflow-x-auto no-scrollbar shadow-sm">
-                        {tabs.map((tab, index) => (
+                        {teams.map((tab, index) => (
                             <button
-                                key={tab}
+                                key={tab.title}
                                 onClick={() => setActiveTab(index)}
                                 className={`relative px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-300 whitespace-nowrap ${activeTab === index ? 'text-white' : 'text-brand-slate hover:text-brand-navy'
                                     }`}
@@ -86,7 +51,7 @@ const OutSourcingTeam = () => {
                                         transition={{ type: 'spring', duration: 0.5 }}
                                     />
                                 )}
-                                <span className="relative z-10">{tab}</span>
+                                <span className="relative z-10">{tab.title}</span>
                             </button>
                         ))}
                     </div>

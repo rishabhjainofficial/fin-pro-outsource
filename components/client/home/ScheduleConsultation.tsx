@@ -48,7 +48,7 @@ const ScheduleConsultation = () => {
 
                         {/* Right Image Side */}
                         <div className="lg:w-2/5 w-full h-full min-h-[400px] relative">
-                            <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-transparent to-transparent lg:bg-gradient-to-l lg:from-brand-navy z-10" />
+                            <div className="absolute inset-0 bg-linear-to-t from-brand-navy via-transparent to-transparent lg:bg-linear-to-l lg:from-brand-navy z-10" />
                             <Image
                                 src="/images/team-member.png"
                                 alt="Outsourcing Service"

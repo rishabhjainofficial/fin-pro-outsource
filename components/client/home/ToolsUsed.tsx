@@ -5,22 +5,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Cpu } from 'lucide-react';
 
-const ToolsUsed = () => {
-    const tools = [
-        { name: 'QuickBooks', src: '/images/quickbooks.png' },
-        { name: 'Xero', src: '/images/xero.png' },
-        { name: 'Stripe', src: '/images/stripe.png' },
-        { name: 'Bill.com', src: '/images/billcom.png' },
-        { name: 'Shopify', src: '/images/shopify.png' },
-        { name: 'CCHero', src: '/images/cchero.png' },
-        { name: 'DrakeSoftware', src: '/images/drakesoftware.png' },
-        { name: 'Intuit', src: '/images/intuit.png' },
-        { name: 'Slack', src: '/images/slack.png' },
-        { name: 'Dropbox', src: '/images/dropbox.png' },
-        { name: 'Amazon', src: '/images/amazon.png' },
-        { name: 'Zoho', src: '/images/zoho.png' },
-    ];
-
+const ToolsUsed = ({ tools }: { tools: { name: string; src: string }[] }) => {
     return (
         <section className="w-full px-4 py-24 bg-brand-surface">
             <div className="max-w-7xl mx-auto">

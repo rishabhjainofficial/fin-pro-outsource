@@ -4,50 +4,12 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Landmark, ArrowUpRight } from 'lucide-react';
 
-const IndustriesServe = () => {
-    const data = [
-        {
-            title: 'Real Estate',
-            src: 'https://images.unsplash.com/photo-1582407947304-fd86f028f716?q=80&w=996&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        },
-        {
-            title: 'Healthcare',
-            src: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        },
-        {
-            title: 'Hotel & Restaurants',
-            src: 'https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        },
-        {
-            title: 'Retail & Wholesale',
-            src: 'https://images.unsplash.com/photo-1606824722920-4c652a70f348?q=80&w=435&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        },
-        {
-            title: 'Shipping & Logistics',
-            src: 'https://images.unsplash.com/photo-1769144256181-698b8f807066?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        },
-        {
-            title: 'Agriculture',
-            src: 'https://images.unsplash.com/photo-1535379453347-1ffd615e2e08?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        },
-        {
-            title: 'Manufacturing',
-            src: 'https://images.unsplash.com/photo-1647427060118-4911c9821b82?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        },
-        {
-            title: 'E-commerce',
-            src: 'https://images.unsplash.com/photo-1658297063569-162817482fb6?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        },
-        {
-            title: 'Franchise',
-            src: 'https://images.unsplash.com/photo-1726003352580-25aee6be334c?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        },
-        {
-            title: 'Small business accounting',
-            src: 'https://images.unsplash.com/photo-1762831063505-68022b6133a9?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        },
-    ];
-
+const IndustriesServe = ({ industries }: {
+    industries: {
+        title: string;
+        src: string
+    }[]
+}) => {
     return (
         <section className="w-full px-4 py-24 bg-brand-surface">
             <div className="max-w-7xl mx-auto">
@@ -70,7 +32,7 @@ const IndustriesServe = () => {
 
                 {/* Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-                    {data.map((industry) => (
+                    {industries.map((industry) => (
                         <div
                             key={industry.title}
                             className="group relative h-[280px] rounded-3xl overflow-hidden bg-brand-navy flex items-end p-6 cursor-default transition-all duration-500"

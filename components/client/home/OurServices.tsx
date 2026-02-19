@@ -3,7 +3,7 @@
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
-const OurServices = ({ services }: { services: { title: string, slug: string, icon: any, description: string }[] }) => {
+const OurServices = ({ services }: { services: { title: string, slug: string, icon: React.ReactNode, description: string }[] }) => {
     return (
         <section className="w-full px-4 py-24 bg-white">
             <div className="max-w-7xl mx-auto">

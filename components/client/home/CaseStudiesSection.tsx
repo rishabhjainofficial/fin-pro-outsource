@@ -2,59 +2,14 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { TrendingUp, ArrowRight, Briefcase, Target, Award } from 'lucide-react';
+import { TrendingUp, ArrowRight, Briefcase, Calendar, User } from 'lucide-react';
+import { CaseStudy } from '@/lib/data/caseStudies';
 
-const cases = [
-    {
-        id: 1,
-        client: "Nexus Real Estate",
-        title: "Automating Multi-State Tax Compliance",
-        challenge: "Manual bookkeeping across 12 states led to a 15% error rate and missed filing deadlines.",
-        solution: "Implemented a cloud-based CCH integration and custom automated reporting workflows.",
-        impact: "Saved $120k in annual penalties and reduced reporting time by 60%.",
-        metric: "60%",
-        metricLabel: "Time Saved",
-        image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1000&auto=format&fit=crop"
-    },
-    {
-        id: 2,
-        client: "HealthBridge Partners",
-        title: "Scaling Payroll for 500+ Clinicians",
-        challenge: "Rapid expansion created a bottleneck in payroll processing and compliance tracking.",
-        solution: "Full outsourcing of end-to-end payroll with dedicated compliance auditing.",
-        impact: "Zero compliance errors during 2025 audit and 99.9% payroll accuracy.",
-        metric: "99.9%",
-        metricLabel: "Accuracy",
-        image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1000&auto=format&fit=crop"
-    },
-    {
-        id: 3,
-        client: "Nexus Real Estate",
-        title: "Automating Multi-State Tax Compliance",
-        challenge: "Manual bookkeeping across 12 states led to a 15% error rate and missed filing deadlines.",
-        solution: "Implemented a cloud-based CCH integration and custom automated reporting workflows.",
-        impact: "Saved $120k in annual penalties and reduced reporting time by 60%.",
-        metric: "60%",
-        metricLabel: "Time Saved",
-        image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1000&auto=format&fit=crop"
-    },
-    {
-        id: 4,
-        client: "HealthBridge Partners",
-        title: "Scaling Payroll for 500+ Clinicians",
-        challenge: "Rapid expansion created a bottleneck in payroll processing and compliance tracking.",
-        solution: "Full outsourcing of end-to-end payroll with dedicated compliance auditing.",
-        impact: "Zero compliance errors during 2025 audit and 99.9% payroll accuracy.",
-        metric: "99.9%",
-        metricLabel: "Accuracy",
-        image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1000&auto=format&fit=crop"
-    }
-];
-
-const CaseStudiesSection = () => {
+const CaseStudiesSection = ({ caseStudies }: { caseStudies: CaseStudy[] }) => {
     const [activeIndex, setActiveIndex] = useState(0);
-    const activeCase = cases[activeIndex];
+    const activeCase = caseStudies[activeIndex];
 
     return (
         <section className="w-full px-4 py-24 bg-white">
@@ -75,13 +30,13 @@ const CaseStudiesSection = () => {
 
                     {/* Navigation Toggles */}
                     <div className="flex gap-2 p-1.5 bg-white border border-brand-border rounded-2xl">
-                        {cases.map((_, idx) => (
+                        {caseStudies.map((_, idx) => (
                             <button
                                 key={idx}
                                 onClick={() => setActiveIndex(idx)}
                                 className={`px-6 py-2 rounded-xl text-sm font-bold transition-all ${activeIndex === idx
-                                        ? 'bg-brand-navy text-white shadow-lg'
-                                        : 'text-brand-slate hover:bg-brand-surface'
+                                    ? 'bg-brand-navy text-white shadow-lg'
+                                    : 'text-brand-slate hover:bg-brand-surface'
                                     }`}
                             >
                                 Case 0{idx + 1}
@@ -100,67 +55,66 @@ const CaseStudiesSection = () => {
                         transition={{ duration: 0.5 }}
                         className="relative bg-white border border-brand-border rounded-5xl overflow-hidden shadow-2xl shadow-brand-navy/5"
                     >
-                        <div className="flex flex-col lg:flex-row min-h-[600px]">
 
-                            {/* Visual/Image Half */}
-                            <div className="lg:w-1/2 relative min-h-[400px]">
-                                <Image
-                                    src={activeCase.image}
-                                    alt={activeCase.title}
-                                    fill
-                                    className="object-cover"
-                                />
-                                <div className="absolute inset-0 bg-brand-navy/20" />
+                        <Link href={`/case-studies/${activeCase.slug}`}>
+                            <div className="flex flex-col lg:flex-row min-h-[600px]">
 
-                                {/* Floating Metric Badge */}
-                                <div className="absolute bottom-8 left-8 bg-white p-8 rounded-4xl shadow-2xl border border-brand-border animate-fade-up">
-                                    <div className="flex items-center gap-4">
-                                        <div className="p-3 rounded-2xl bg-brand-green/10 text-brand-green">
-                                            <TrendingUp size={24} />
+                                {/* Visual/Image Half */}
+                                <div className="lg:w-1/2 relative min-h-[400px]">
+                                    <Image
+                                        src={activeCase.image}
+                                        alt={activeCase.title}
+                                        fill
+                                        className="object-cover"
+                                    />
+                                    <div className="absolute inset-0 bg-brand-navy/20" />
+
+                                    {/* Floating Metric Badge */}
+                                    <div className="absolute bottom-8 left-8 bg-white p-8 rounded-4xl shadow-2xl border border-brand-border animate-fade-up">
+                                        <div className="flex items-center gap-4">
+                                            <div className="p-3 rounded-2xl bg-brand-green/10 text-brand-green">
+                                                <Calendar size={24} />
+                                            </div>
+                                            <div>
+                                                <div className="text-4xl font-black text-brand-navy leading-none">{activeCase.author}</div>
+                                                <div className="text-xs font-bold uppercase tracking-widest text-brand-slate mt-1">{activeCase.date}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Content Half */}
+                                <div className="lg:w-1/2 p-10 md:p-16 lg:p-20 flex flex-col justify-center">
+                                    <h3 className="text-3xl md:text-5xl font-black text-brand-navy leading-tight mb-8">
+                                        {activeCase.title}
+                                    </h3>
+
+                                    <div className="space-y-8 mb-12">
+                                        <div>
+                                            <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-brand-slate mb-2">The Challenge</h4>
+                                            <p className="text-brand-slate font-medium leading-relaxed">{activeCase.excerpt}</p>
                                         </div>
                                         <div>
-                                            <div className="text-4xl font-black text-brand-navy leading-none">{activeCase.metric}</div>
-                                            <div className="text-xs font-bold uppercase tracking-widest text-brand-slate mt-1">{activeCase.metricLabel}</div>
+                                            <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-brand-slate mb-2">Our Solution</h4>
+                                            <p className="text-brand-slate font-medium leading-relaxed">{activeCase.description}</p>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Content Half */}
-                            <div className="lg:w-1/2 p-10 md:p-16 lg:p-20 flex flex-col justify-center">
-                                <div className="flex items-center gap-3 text-brand-green font-bold text-sm mb-4">
-                                    <Briefcase size={18} />
-                                    {activeCase.client}
-                                </div>
-                                <h3 className="text-3xl md:text-5xl font-black text-brand-navy leading-tight mb-8">
-                                    {activeCase.title}
-                                </h3>
-
-                                <div className="space-y-8 mb-12">
-                                    <div>
-                                        <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-brand-slate mb-2">The Challenge</h4>
-                                        <p className="text-brand-slate font-medium leading-relaxed">{activeCase.challenge}</p>
-                                    </div>
-                                    <div>
-                                        <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-brand-slate mb-2">Our Solution</h4>
-                                        <p className="text-brand-slate font-medium leading-relaxed">{activeCase.solution}</p>
-                                    </div>
-                                    <div className="p-6 bg-brand-surface rounded-3xl border border-brand-border">
+                                        {/* <div className="p-6 bg-brand-surface rounded-3xl border border-brand-border">
                                         <div className="flex items-start gap-4">
                                             <Award className="text-brand-green mt-1 shrink-0" size={20} />
-                                            <p className="text-brand-navy font-bold">{activeCase.impact}</p>
+                                            <p className="text-brand-navy font-bold">{activeCase.description}</p>
                                         </div>
+                                    </div> */}
                                     </div>
-                                </div>
 
-                                <button className="group flex items-center gap-3 text-brand-navy font-black text-sm uppercase tracking-widest">
-                                    View Detailed Study
-                                    <div className="w-10 h-10 rounded-full border border-brand-navy flex items-center justify-center group-hover:bg-brand-navy group-hover:text-white transition-all">
-                                        <ArrowRight size={18} />
-                                    </div>
-                                </button>
+                                    <button className="group flex items-center gap-3 text-brand-navy font-black text-sm uppercase tracking-widest">
+                                        View Detailed Study
+                                        <div className="w-10 h-10 rounded-full border border-brand-navy flex items-center justify-center group-hover:bg-brand-navy group-hover:text-white transition-all">
+                                            <ArrowRight size={18} />
+                                        </div>
+                                    </button>
+                                </div>
                             </div>
-                        </div>
+                        </Link>
                     </motion.div>
                 </AnimatePresence>
 

@@ -5,7 +5,7 @@
   --foreground: #171717;
 }
 
-@theme inline {
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -16,6 +16,8 @@
   --color-brand-green: #5d9446;
   --color-brand-red: #944646;
   --color-brand-blue: #467d94;
+  --color-brand-pink: #d43737;
+  --color-brand-yellow: #d4af37;
   --color-brand-surface: #f8fafc;
   --color-brand-slate: #475569;
   --color-brand-border: #e2e8f0;
@@ -96,4 +98,24 @@ body {
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+/* Glassmorphism Utility */
+.glass-island {
+  background: rgba(255, 255, 255, 0.7);
+  /* Translucent white */
+  backdrop-filter: blur(12px);
+  /* The frosted effect */
+  -webkit-backdrop-filter: blur(12px);
+  /* Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(15, 23, 42, 0.05);
+}
+
+/* Dark Mode adjustment if needed */
+@media (prefers-color-scheme: dark) {
+  .glass-island {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
 }

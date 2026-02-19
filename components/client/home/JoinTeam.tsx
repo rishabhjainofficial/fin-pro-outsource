@@ -5,38 +5,12 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Users, ArrowRight, Sparkles } from 'lucide-react';
 
-const JoinTeam = () => {
-    const images = [
-        {
-            src: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=869&auto=format&fit=crop',
-            title: 'Office hallway'
-        },
-        {
-            src: 'https://images.unsplash.com/photo-1568992687947-868a62a9f521?q=80&w=1032&auto=format&fit=crop',
-            title: 'Meeting Room 1'
-        },
-        {
-            src: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=869&auto=format&fit=crop',
-            title: 'Lunch Area'
-        },
-        {
-            src: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=870&auto=format&fit=crop',
-            title: 'Team Work'
-        },
-        {
-            src: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=870&auto=format&fit=crop',
-            title: 'Meeting Room 2'
-        },
-        {
-            src: 'https://images.unsplash.com/photo-1606857521015-7f9fcf423740?q=80&w=870&auto=format&fit=crop',
-            title: 'Work Space'
-        },
-        {
-            src: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-            title: 'Spacious boardroom'
-        }
-    ]
-
+const JoinTeam = ({ officeImages }: {
+    officeImages: {
+        title: string;
+        src: string
+    }[]
+}) => {
     return (
         <section className="w-full px-4 py-24 bg-white">
             <div className="max-w-7xl mx-auto">
@@ -67,10 +41,10 @@ const JoinTeam = () => {
 
                 {/* The Artistic Bento Gallery */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6 auto-rows-[200px] md:auto-rows-[250px]">
-                    {images.map((image, index) => {
+                    {officeImages.map((image, index) => {
                         // Creating a high-end editorial layout
                         const isMain = index === 0;
-                        const isWide = index === 5;
+                        const isWide = index === 6;
                         const isTall = index === 2;
 
                         return (

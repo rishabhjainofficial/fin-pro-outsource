@@ -18,6 +18,7 @@ import { getPageMetaData } from '@/lib/api/pageMetaData';
 import { serviceIconMap, serviceCategoryIconMap } from '@/lib/data/icons';
 import { getAllServices } from '@/lib/api/services';
 import { getBlogForHome } from "@/lib/api/blogs";
+import { getHomeData } from "@/lib/api/home";
 
 export async function generateMetadata(): Promise<Metadata> {
   const metaData = await getPageMetaData('/');
@@ -25,31 +26,36 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Home() {
-  const rawServices = await getAllServices(6);
-  const services = rawServices?.map(service => ({
-    title: service.title,
-    slug: service.slug,
-    icon: serviceIconMap[service.icon] || null,
-    description: service.description,
-  })) || [];
+  const homeData = await getHomeData();
+  const services = homeData?.services || [];
+  const blogs = homeData?.blogs || [];
+  const brands = homeData?.brands || [];
+  const teams = homeData?.teams || [];
+  const stats = homeData?.stats || [];
+  const features = homeData?.features || [];
+  const steps = homeData?.steps || [];
+  const industries = homeData?.industries || [];
+  const officeImages = homeData?.officeImages || [];
+  const tools = homeData?.tools || [];
+  const testimonials = homeData?.testimonials || [];
+  const caseStudies = homeData?.caseStudies || [];
 
-  const blogs = await getBlogForHome(2);
   return (
     <div className="w-full flex flex-col items-center justify-center">
       <Banner />
-      <BrandScroll />
-      <OutSourcingTeam />
+      <BrandScroll brands={brands} />
+      <OutSourcingTeam teams={teams} />
       <ScheduleConsultation />
-      <ResultDriven />
+      <ResultDriven stats={stats} />
       <OurServices services={services} />
-      <WhyChooseUs />
-      <StepsToHire />
-      <IndustriesServe />
-      <JoinTeam />
-      <ToolsUsed />
-      <Testimonials />
+      <WhyChooseUs features={features} />
+      <StepsToHire steps={steps}/>
+      <IndustriesServe industries={industries}/>
+      <JoinTeam officeImages={officeImages} />
+      <ToolsUsed tools={tools}/>
+      <Testimonials testimonials={testimonials} />
       <BlogSection blogs={blogs} />
-      <CaseStudiesSection />
+      <CaseStudiesSection caseStudies={caseStudies}/>
       <LetConnect />
     </div>
   );

@@ -1,41 +1,16 @@
 'use client';
-import { Star, Quote,Library } from 'lucide-react';
+import { Star, Quote, Library } from 'lucide-react';
 import Image from 'next/image';
 
-const testimonials = [
-    {
-        name: "Sarah Jenkins",
-        role: "CEO, TechFlow Solutions",
-        content: "Working with the team has been a game-changer for our financial clarity. Their adroit handling of our complex accounts saved us countless hours.",
-        star: 5,
-        image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&h=150&auto=format&fit=crop"
-    },
-    {
-        name: "David Chen",
-        role: "Founder, GreenSpace Ltd",
-        content: "The level of expertise across multiple accounting tools is impressive. They didn't just manage our books; they optimized our entire workflow.",
-        star: 4,
-        image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=150&h=150&auto=format&fit=crop"
-    },
-    {
-        name: "Emily Rodriguez",
-        role: "CFO, Artisan Collective",
-        content: "Transparent communication and deep technical knowledge. It's rare to find a partner that feels like an extension of your own internal team.",
-        star: 4,
-        image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=150&h=150&auto=format&fit=crop"
-    },
-    {
-        name: "Marcus Thorne",
-        role: "Director, Global Logistics",
-        content: "Their 5-step hiring process delivered a top-tier accountant in record time. Professional, efficient, and highly recommended.",
-        star: 5,
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=150&h=150&auto=format&fit=crop"
-    }
-];
-
-const Testimonials = () => {
-    const doubledTestimonials = [...testimonials, ...testimonials];
-
+const Testimonials = ({ testimonials }: {
+    testimonials: {
+        name: string;
+        role: string;
+        content: string;
+        star: number;
+        image: string
+    }[]
+}) => {
     return (
         <section className="w-full px-4 py-24 bg-white overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 mb-16">
@@ -58,7 +33,7 @@ const Testimonials = () => {
             {/* Marquee Container */}
             <div className="relative flex overflow-hidden">
                 <div className="flex animate-testimonial-scroll gap-8 py-10 group-hover:[animation-play-state:paused]">
-                    {doubledTestimonials.map((item, index) => (
+                    {testimonials.map((item, index) => (
                         <div
                             key={index}
                             className="w-[400px] md:w-[520px] flex-shrink-0 relative bg-brand-surface p-10 md:p-14 rounded-5xl border border-brand-border hover:bg-white hover:shadow-2xl hover:shadow-brand-navy/5 transition-all duration-700 group/card"

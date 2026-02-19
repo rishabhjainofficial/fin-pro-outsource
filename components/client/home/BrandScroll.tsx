@@ -1,19 +1,7 @@
 "use client";
 import Image from 'next/image';
 
-const BrandScroll = () => {
-    // Pro Tip: For a real site, these should be SVG logos with transparent backgrounds
-    const brands = [
-        { name: 'Client 1', src: 'https://images.unsplash.com/photo-1570882280426-df8ac5ccd672?q=80&w=1075&auto=format&fit=crop' },
-        { name: 'Client 2', src: 'https://images.unsplash.com/photo-1555274175-75f4056dfd05?q=80&w=870&auto=format&fit=crop' },
-        { name: 'Client 3', src: 'https://images.unsplash.com/photo-1724167954496-a5c4befea483?q=80&w=327&auto=format&fit=crop' },
-        { name: 'Client 4', src: 'https://images.unsplash.com/photo-1570882280426-df8ac5ccd672?q=80&w=1075&auto=format&fit=crop' },
-        { name: 'Client 5', src: 'https://images.unsplash.com/photo-1555274175-75f4056dfd05?q=80&w=870&auto=format&fit=crop' },
-        { name: 'Client 6', src: 'https://images.unsplash.com/photo-1724167954496-a5c4befea483?q=80&w=327&auto=format&fit=crop' },
-    ];
-
-    const doubledBrands = [...brands, ...brands, ...brands]; // Tripled for a safer infinite loop gap
-
+const BrandScroll = ({ brands }: { brands: { name: string; src: string }[] }) => {
     return (
         <section className="w-full py-20 bg-white border-y border-brand-border overflow-hidden">
             <div className="max-w-7xl mx-auto px-6 mb-12">
@@ -35,7 +23,7 @@ const BrandScroll = () => {
                     role="list"
                     className="flex animate-scroll whitespace-nowrap items-center gap-16 md:gap-24 px-6 hover:[animation-play-state:paused] cursor-pointer"
                 >
-                    {doubledBrands.map((brand, index) => (
+                    {brands.map((brand, index) => (
                         <div key={index} className="flex items-center justify-center shrink-0">
                             <div className="relative w-32 h-12 md:w-44 md:h-16 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500 hover:scale-110">
                                 <Image

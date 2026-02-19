@@ -5,35 +5,13 @@ import { ArrowLeft, ArrowRight, CirclePlus } from 'lucide-react';
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
-const steps = [
-    {
-        title: 'Primary Discussion',
-        description: 'We kickstart our working relationship by discussing your business requirements & what you hope to achieve with our help.',
-        src: 'https://cdn.prod.website-files.com/6718c309cc349b579872ddbb/6731dec47e22df831eca24ab_slide-img.svg'
-    },
-    {
-        title: 'SLAs Setup',
-        description: 'After discussing your requirements, our team understands your operating procedures, helping us set the right SLAs.',
-        src: 'https://cdn.prod.website-files.com/6718c309cc349b579872ddbb/6731dec47e22df831eca24ab_slide-img.svg'
-    },
-    {
-        title: 'Contract Agreement',
-        description: 'Once the SLAs are set up, we officiate things by signing an agreement, outlining– team members, deadlines, clauses, etc.',
-        src: 'https://cdn.prod.website-files.com/6718c309cc349b579872ddbb/6731dec47e22df831eca24ab_slide-img.svg'
-    },
-    {
-        title: 'Services Commencement',
-        description: 'After finalizing all paperwork, we begin executing the pre-defined tasks and required functions.',
-        src: 'https://cdn.prod.website-files.com/6718c309cc349b579872ddbb/6731dec47e22df831eca24ab_slide-img.svg'
-    },
-    {
-        title: 'Weekly Review Meetings',
-        description: 'We conduct weekly meets, ensuring we address any concern & keep client satisfaction at the heart of our support.',
-        src: 'https://cdn.prod.website-files.com/6718c309cc349b579872ddbb/6731dec47e22df831eca24ab_slide-img.svg'
-    },
-];
-
-const StepsToHire = () => {
+const StepsToHire = ({ steps }: {
+    steps: {
+        title: string;
+        description: string;
+        src: string
+    }[]
+}) => {
     const [currentStep, setCurrentStep] = useState(0);
 
     return (

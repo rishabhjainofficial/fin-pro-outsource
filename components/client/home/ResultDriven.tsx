@@ -1,18 +1,18 @@
 'use client'
-import React, { useRef } from 'react'
-import { Building, Hourglass, Percent, User, ArrowUpRight } from 'lucide-react'
+import { ArrowUpRight } from 'lucide-react'
 
-const stats = [
-    { id: 1, value: 98, suffix: '%', label: 'Savings', sub: 'Increased Efficiency', color: 'text-brand-green' },
-    { id: 2, value: 15, suffix: '+', label: 'Experience', sub: 'Industry Expertise', color: 'text-brand-blue' },
-    { id: 3, value: 100, suffix: '+', label: 'Reconciled', sub: 'Accounts Managed', color: 'text-brand-navy' },
-    { id: 4, value: 50, suffix: '+', label: 'Firms', sub: 'Active Partnerships', color: 'text-brand-red' },
-]
-
-const ResultDriven = () => {
-    const ref = useRef<HTMLDivElement>(null!)
-    // Reusing your existing count-up logic here
-
+const ResultDriven = (
+    { stats }: {
+        stats: {
+            id: number;
+            value: number;
+            suffix: string;
+            label: string;
+            sub: string;
+            color: string;
+        }[]
+    }
+) => {
     return (
         <section className="w-full px-4 py-24 bg-brand-surface">
             <div className="max-w-6xl mx-auto">
@@ -29,9 +29,9 @@ const ResultDriven = () => {
                 {/* The "Bento" Dashboard Card */}
                 <div className="relative group">
                     {/* Subtle Glow Background */}
-                    <div className="absolute -inset-1 bg-gradient-to-r from-brand-green/20 to-brand-blue/20 rounded-[3rem] blur-2xl opacity-30 group-hover:opacity-50 transition duration-1000" />
+                    <div className="absolute -inset-1 bg-linear-to-r from-brand-green/20 to-brand-blue/20 rounded-5xl blur-2xl opacity-30 group-hover:opacity-50 transition duration-1000" />
 
-                    <div className="relative bg-white border border-brand-border rounded-[3rem] overflow-hidden shadow-2xl">
+                    <div className="relative bg-white border border-brand-border rounded-5xl overflow-hidden shadow-2xl">
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 divide-y lg:divide-y-0 lg:divide-x divide-brand-border">
                             {stats.map((stat) => (
                                 <div

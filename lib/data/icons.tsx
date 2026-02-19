@@ -1,5 +1,6 @@
 import {
-    Calculator, BookOpen, Receipt, Landmark,
+    Calculator, BookOpen, Receipt, Landmark, Clock,
+    Lock, DollarSign, BarChart,
     Settings, Users, PieChart, Database,
     ShieldCheck, LineChart, Calendar, FileText,
     UserPlus, Laptop, BarChart4, TrendingUp, Rocket,
@@ -30,7 +31,11 @@ export const serviceIconMap: Record<string, React.ReactNode> = {
     FileSearch: <FileSearch size={24} />,
     ClipboardCheck: <ClipboardCheck size={24} />,
     Users2: <Users2 size={24} />,
-    UserCog: <UserCog size={24} />
+    UserCog: <UserCog size={24} />,
+    Clock: <Clock size={24} />,
+    Lock: <Lock size={24} />,
+    DollarSign: <DollarSign size={24} />,
+    BarChart: <BarChart size={24} />,
 };
 
 export const serviceCategoryIconMap: Record<string, React.ReactNode> = {
@@ -57,5 +62,5 @@ export const serviceCategoryIconMap: Record<string, React.ReactNode> = {
     FileSearch: <FileSearch size={14} className="text-brand-green" />,
     ClipboardCheck: <ClipboardCheck size={14} className="text-brand-green" />,
     Users2: <Users2 size={14} className="text-brand-green" />,
-    UserCog: <UserCog size={14} className="text-brand-green" />
+    UserCog: <UserCog size={14} className="text-brand-green" />,
 };

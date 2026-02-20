@@ -36,7 +36,7 @@ const Testimonials = ({ testimonials }: {
                     {testimonials.map((item, index) => (
                         <div
                             key={index}
-                            className="w-[400px] md:w-[520px] flex-shrink-0 relative bg-brand-surface p-10 md:p-14 rounded-5xl border border-brand-border hover:bg-white hover:shadow-2xl hover:shadow-brand-navy/5 transition-all duration-700 group/card"
+                            className="w-[400px] md:w-[520px] shrink-0 relative bg-brand-surface p-10 md:p-14 rounded-5xl border border-brand-border hover:bg-white hover:shadow-2xl hover:shadow-brand-navy/5 transition-all duration-700 group/card"
                         >
                             {/* Decorative Quote Mark */}
                             <Quote className="absolute top-10 right-10 w-20 h-20 text-brand-navy/5 group-hover/card:text-brand-green/10 transition-colors duration-700" />
@@ -67,7 +67,7 @@ const Testimonials = ({ testimonials }: {
                                         />
                                     </div>
                                     <div>
-                                        <h4 className="font-black text-brand-navy text-lg">{item.name}</h4>
+                                        <h3 className="font-black text-brand-navy text-lg">{item.name}</h3>
                                         <p className="text-brand-green text-sm font-bold uppercase tracking-wider">{item.role}</p>
                                     </div>
                                 </div>
@@ -77,8 +77,8 @@ const Testimonials = ({ testimonials }: {
                 </div>
 
                 {/* Refined Edge Fades */}
-                <div className="pointer-events-none absolute inset-y-0 left-0 w-64 bg-gradient-to-r from-white via-white/80 to-transparent z-10" />
-                <div className="pointer-events-none absolute inset-y-0 right-0 w-64 bg-gradient-to-l from-white via-white/80 to-transparent z-10" />
+                <div className="pointer-events-none absolute inset-y-0 left-0 w-64 bg-linear-to-r from-white via-white/80 to-transparent z-10" />
+                <div className="pointer-events-none absolute inset-y-0 right-0 w-64 bg-linear-to-l from-white via-white/80 to-transparent z-10" />
             </div>
         </section>
     );

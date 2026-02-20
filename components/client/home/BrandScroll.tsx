@@ -30,6 +30,7 @@ const BrandScroll = ({ brands }: { brands: { name: string; src: string }[] }) =>
                                     src={brand.src}
                                     alt={brand.name}
                                     fill
+                                    sizes="(max-width: 768px) 128px, 176px"
                                     className="object-contain"
                                 />
                             </div>

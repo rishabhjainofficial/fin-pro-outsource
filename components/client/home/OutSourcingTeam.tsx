@@ -75,6 +75,7 @@ const OutSourcingTeam = (
                                         src={activeData.image}
                                         alt={activeData.title}
                                         fill
+                                        sizes="(max-width: 1024px) 100vw, 50vw"
                                         className="object-cover"
                                     />
                                     <div className="absolute inset-0 bg-linear-to-r from-white/10 to-transparent lg:from-transparent" />

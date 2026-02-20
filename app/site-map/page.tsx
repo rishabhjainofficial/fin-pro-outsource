@@ -75,9 +75,9 @@ const Sitemap = () => {
                                 <div className="p-2 bg-brand-surface rounded-xl">
                                     {category.icon}
                                 </div>
-                                <h3 className="text-sm font-black uppercase tracking-[0.2em] text-brand-navy">
+                                <h2 className="text-sm font-black uppercase tracking-[0.2em] text-brand-navy">
                                     {category.title}
-                                </h3>
+                                </h2>
                             </div>
 
                             <ul className="space-y-4">

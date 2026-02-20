@@ -118,6 +118,7 @@ const Navbar = () => {
                 {/* Mobile Menu Toggle */}
                 <button
                     onClick={() => setIsMobileOpen(!isMobileOpen)}
+                    aria-label="Toggle mobile menu"
                     className={`lg:hidden w-12 h-12 flex items-center justify-center rounded-full ${scrolled ? 'text-brand-navy' : 'text-white'}`}
                 >
                     {isMobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -137,9 +138,9 @@ const Navbar = () => {
                     >
                         {/* Inner Scrollable Container */}
                         <div className="p-8 overflow-y-auto custom-scrollbar">
-                            <div className="grid gap-10">
+                            <ul className="grid gap-10">
                                 {navLinks.map((link) => (
-                                    <div key={link.name} className="space-y-5">
+                                    <li key={link.name} className="space-y-5">
                                         <div className="text-[10px] font-black uppercase tracking-[0.2em] text-brand-green/60">
                                             {link.name}
                                         </div>
@@ -168,7 +169,7 @@ const Navbar = () => {
                                                 ))
                                             )}
                                         </div>
-                                    </div>
+                                    </li>
                                 ))}
 
                                 {/* Explicit Mobile CTA */}
@@ -180,7 +181,7 @@ const Navbar = () => {
                                     Book a Call
                                     <ArrowRight size={18} />
                                 </Link>
-                            </div>
+                            </ul>
                         </div>
                     </motion.div>
                 )}

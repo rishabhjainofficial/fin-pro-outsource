@@ -167,16 +167,18 @@ const List = ({ blogs, categories, currentPage, totalPages }: { blogs: Blog[], c
                     <button
                         onClick={() => handlePagination(currentPage - 1)}
                         disabled={currentPage === 1}
+                        aria-label="Previous Page"
                         className={`w-12 h-12 rounded-full border transition-all flex items-center justify-center ${currentPage === 1 ? 'border-brand-border text-brand-slate opacity-30 cursor-not-allowed' : 'border-brand-green text-brand-green hover:bg-brand-green hover:text-white'
                             }`}
                     >
-                        <ChevronLeft size={20} />
+                        <ChevronLeft size={20} aria-hidden="true" />
                     </button>
 
                     {[...Array(totalPages)].map((_, i) => (
                         <button
                             key={i}
                             onClick={() => handlePagination(i + 1)}
+                            aria-label={`Page ${i + 1}`}
                             className={`w-12 h-12 rounded-full font-black transition-all ${i + 1 === currentPage ? 'bg-brand-green text-white shadow-lg' : 'text-brand-navy hover:bg-brand-surface'
                                 }`}
                         >
@@ -187,10 +189,11 @@ const List = ({ blogs, categories, currentPage, totalPages }: { blogs: Blog[], c
                     <button
                         onClick={() => handlePagination(currentPage + 1)}
                         disabled={currentPage === totalPages}
+                        aria-label="Next Page"
                         className={`w-12 h-12 rounded-full border transition-all flex items-center justify-center ${currentPage === totalPages ? 'border-brand-border text-brand-slate opacity-30 cursor-not-allowed' : 'border-brand-green text-brand-green hover:bg-brand-green hover:text-white'
                             }`}
                     >
-                        <ChevronRight size={20} />
+                        <ChevronRight size={20} aria-hidden="true" />
                     </button>
                 </section>
             )}

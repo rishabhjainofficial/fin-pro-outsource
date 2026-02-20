@@ -31,12 +31,12 @@ const FooterClient = ({
                                 GAP<span className="text-brand-green">BRIDGE</span>
                             </div>
                         </div>
-                        <p className="text-white/60 text-sm leading-relaxed max-w-xs">
+                        <p className="text-white/80 text-sm leading-relaxed max-w-xs">
                             Maximize Efficiency, Minimize Costs — Your Trusted Outsourcing Accounting Partner.
                         </p>
                         <div className="flex gap-4">
                             {socialLinks.map((link) => (
-                                <Link key={link.name} href={link.href} className="p-2 rounded-lg bg-white/5 hover:bg-brand-green transition-colors">
+                                <Link key={link.name} href={link.href} aria-label={link.name} className="p-2 rounded-lg bg-white/5 hover:bg-brand-green transition-colors">
                                     {link.icon}
                                 </Link>
                             ))}
@@ -45,16 +45,16 @@ const FooterClient = ({
 
                     {/* Company Navigation */}
                     <div className="md:col-span-6">
-                        <h4 className="text-lg font-bold mb-8">Company</h4>
+                        <h3 className="text-lg font-bold mb-8">Company</h3>
                         <div className="grid grid-cols-2 gap-y-4 gap-x-8">
                             {companyLinks.map((link) => (
                                 <Link
                                     key={link.name}
                                     href={link.href}
-                                    className="text-white/60 hover:text-brand-green text-sm transition-colors flex items-center group"
+                                    className="text-white/80 hover:text-brand-green text-sm transition-colors flex items-center group"
                                 >
                                     {link.name}
-                                    <ArrowUpRight size={12} className="opacity-0 group-hover:opacity-100 transition-all ml-1" />
+                                    <ArrowUpRight size={12} aria-hidden="true" className="opacity-0 group-hover:opacity-100 transition-all ml-1" />
                                 </Link>
                             ))}
                         </div>
@@ -63,7 +63,7 @@ const FooterClient = ({
                     {/* Certifications & Partner */}
                     <div className="md:col-span-3 space-y-8">
                         <div>
-                            <h4 className="text-sm font-black uppercase tracking-widest mb-6 opacity-40">Certifications</h4>
+                            <h3 className="text-sm font-black uppercase tracking-widest mb-6 opacity-40">Certifications</h3>
                             <div className="flex flex-wrap gap-3">
                                 {/* Certification Badges */}
                                 {['/xero.png', '/cp.png', '/qb1.png', '/qb2.png'].map((src, i) => (
@@ -88,10 +88,10 @@ const FooterClient = ({
 
                     {/* Business Owners */}
                     <div>
-                        <h4 className="text-lg font-bold mb-8 pb-4 border-b border-white/10">Business Owners</h4>
+                        <h3 className="text-lg font-bold mb-8 pb-4 border-b border-white/10">Business Owners</h3>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             {businessServices.map((service) => (
-                                <Link key={service.title} href={service.slug} className="text-white/50 hover:text-white text-sm transition-colors">
+                                <Link key={service.title} href={service.slug} className="text-white/70 hover:text-white text-sm transition-colors">
                                     {service.title}
                                 </Link>
                             ))}
@@ -100,10 +100,10 @@ const FooterClient = ({
 
                     {/* Accounting/CPA Firms */}
                     <div>
-                        <h4 className="text-lg font-bold mb-8 pb-4 border-b border-white/10">Accounting/CPA Firms</h4>
+                        <h3 className="text-lg font-bold mb-8 pb-4 border-b border-white/10">Accounting/CPA Firms</h3>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             {cpaFirmLinks.map((link) => (
-                                <Link key={link.title} href={`${link.slug}`} className="text-white/50 hover:text-white text-sm transition-colors">
+                                <Link key={link.title} href={`${link.slug}`} className="text-white/70 hover:text-white text-sm transition-colors">
                                     {link.title}
                                 </Link>
                             ))}
@@ -114,18 +114,20 @@ const FooterClient = ({
                 {/* Bottom Section: Copyright */}
                 <div className="pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
                     <div className="flex gap-8">
-                        <Link href="/terms-and-conditions" className="text-white/40 hover:text-white text-xs transition-colors">Terms of Service</Link>
-                        <Link href="/site-map" className="text-white/40 hover:text-white text-xs transition-colors">Sitemap</Link>
-                        <Link href="/security" className="text-white/40 hover:text-white text-xs transition-colors">Security</Link>
+                        <Link href="/terms-and-conditions" className="text-white/60 hover:text-white text-xs transition-colors">Terms of Service</Link>
+                        <Link href="/site-map" className="text-white/60 hover:text-white text-xs transition-colors">Sitemap</Link>
+                        <Link href="/security" className="text-white/60 hover:text-white text-xs transition-colors">Security</Link>
                     </div>
-                    <p className="text-white/40 text-xs font-medium">
+                    <p className="text-white/60 text-xs font-medium">
                         © {currentYear} Gapbridge Outsource Partner. All rights reserved.
                     </p>
-                    <div className="flex items-center gap-2 text-white/40 text-xs font-medium">
+                    <div className="flex items-center gap-2 text-white/60 text-xs font-medium">
                         <span>Designed & Developed by</span>
                         <Link
                             href="https://dev-rishabh.vercel.app"
-                            className="text-white/60 hover:text-brand-green transition-colors font-bold"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-white/80 hover:text-brand-green transition-colors font-bold"
                         >
                             Rishabh Jain
                         </Link>

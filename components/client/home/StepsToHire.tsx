@@ -44,6 +44,7 @@ const StepsToHire = ({ steps }: {
                         <button
                             key={idx}
                             onClick={() => setCurrentStep(idx)}
+                            aria-label={`Go to step ${idx + 1}`}
                             className={`relative z-10 w-10 h-10 rounded-full flex items-center justify-center font-bold transition-all duration-300 ${currentStep >= idx ? 'bg-brand-green text-white scale-110 shadow-lg shadow-brand-green/30' : 'bg-white border-2 border-brand-border text-brand-slate'
                                 }`}
                         >
@@ -92,16 +93,18 @@ const StepsToHire = ({ steps }: {
                                     <button
                                         onClick={() => setCurrentStep(s => Math.max(0, s - 1))}
                                         disabled={currentStep === 0}
+                                        aria-label="Previous Step"
                                         className="p-4 rounded-full border border-brand-border bg-white text-brand-navy hover:bg-brand-navy hover:text-white transition-all disabled:opacity-20 shadow-sm"
                                     >
-                                        <ArrowLeft size={24} />
+                                        <ArrowLeft size={24} aria-hidden="true" />
                                     </button>
                                     <button
                                         onClick={() => setCurrentStep(s => Math.min(steps.length - 1, s + 1))}
                                         disabled={currentStep === steps.length - 1}
+                                        aria-label="Next Step"
                                         className="p-4 rounded-full bg-brand-green text-white hover:bg-brand-navy transition-all disabled:opacity-20 shadow-xl shadow-brand-green/20"
                                     >
-                                        <ArrowRight size={24} />
+                                        <ArrowRight size={24} aria-hidden="true" />
                                     </button>
                                 </div>
                             </div>

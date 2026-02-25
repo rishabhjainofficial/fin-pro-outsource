@@ -42,7 +42,7 @@ const ResultDriven = (
                                         <div className={`p-2 rounded-lg bg-slate-50 border border-brand-border`}>
                                             <ArrowUpRight size={16} className="text-brand-slate" />
                                         </div>
-                                        <span className="text-[10px] font-black uppercase tracking-[0.2em] text-brand-slate/50">
+                                        <span className="text-[10px] font-black uppercase tracking-[0.2em] text-brand-slate/70">
                                             Data Metric
                                         </span>
                                     </div>
@@ -65,7 +65,7 @@ const ResultDriven = (
                 </div>
 
                 {/* Footer Trust Caption */}
-                <div className="mt-12 flex items-center justify-center gap-4 text-brand-slate/60 italic text-sm">
+                <div className="mt-12 flex items-center justify-center gap-4 text-brand-slate italic text-sm">
                     <div className="h-px w-12 bg-brand-border" />
                     Verified financial data for the fiscal year 2025
                     <div className="h-px w-12 bg-brand-border" />

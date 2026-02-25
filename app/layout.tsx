@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <Script id="microsoft-clarity" strategy="afterInteractive">
+        <Script id="microsoft-clarity" strategy="lazyOnload">
           {`
             (function(c,l,a,r,i,t,y){
               c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };

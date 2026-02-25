@@ -7,7 +7,7 @@ const BrandScroll = ({ brands }: { brands: { name: string; src: string }[] }) =>
             <div className="max-w-7xl mx-auto px-6 mb-12">
                 <div className="flex flex-col items-center">
                     <div className="h-px w-12 bg-brand-green mb-6" />
-                    <p className="text-center text-xs font-black uppercase tracking-[0.3em] text-brand-navy/40">
+                    <p className="text-center text-xs font-black uppercase tracking-[0.3em] text-brand-navy/70">
                         Strategic Partnerships & Trusted Alliances
                     </p>
                 </div>
@@ -20,7 +20,6 @@ const BrandScroll = ({ brands }: { brands: { name: string; src: string }[] }) =>
 
                 {/* The Scrolling Wrapper */}
                 <div
-                    role="list"
                     className="flex animate-scroll whitespace-nowrap items-center gap-16 md:gap-24 px-6 hover:[animation-play-state:paused] cursor-pointer"
                 >
                     {brands.map((brand, index) => (

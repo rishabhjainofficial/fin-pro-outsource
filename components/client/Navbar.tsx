@@ -49,19 +49,16 @@ const Navbar = () => {
             <motion.nav
                 onMouseLeave={() => setHoveredMenu(null)}
                 animate={{
-                    width: scrolled ? '92%' : '100%',
                     y: scrolled ? 0 : -24,
                     borderRadius: scrolled ? '100px' : '0px',
                     backgroundColor: scrolled ? 'rgba(255, 255, 255, 0.9)' : 'rgba(255, 255, 255, 0)',
-                    paddingLeft: scrolled ? '32px' : '48px',
-                    paddingRight: scrolled ? '12px' : '48px',
                     boxShadow: scrolled ? '0 20px 40px -10px rgba(15, 23, 42, 0.15)' : 'none',
                 }}
-                className={`pointer-events-auto flex items-center justify-between max-w-7xl h-20 border transition-all duration-500 backdrop-blur-md ${scrolled ? 'border-brand-border' : 'border-transparent'}`}
+                className={`pointer-events-auto flex items-center justify-between max-w-7xl h-20 border backdrop-blur-md transition-[width,padding,border-color] duration-500 ${scrolled ? 'border-brand-border w-[92%] pl-8 pr-3' : 'border-transparent w-full px-12'}`}
             >
                 {/* Logo */}
                 <Link href="/" className="flex items-center gap-2 group">
-                    <Image src="/gapbridge-logo.png" alt="Logo" width={150} height={84} />
+                    <Image src="/gapbridge-logo.png" alt="Logo" width={150} height={84} priority sizes="150px" />
                 </Link>
 
                 {/* Desktop Menu */}

@@ -63,7 +63,7 @@ const FooterClient = ({
                     {/* Certifications & Partner */}
                     <div className="md:col-span-3 space-y-8">
                         <div>
-                            <h3 className="text-sm font-black uppercase tracking-widest mb-6 opacity-40">Certifications</h3>
+                            <h3 className="text-sm font-black uppercase tracking-widest mb-6 text-white/60">Certifications</h3>
                             <div className="flex flex-wrap gap-3">
                                 {/* Certification Badges */}
                                 {['/xero.png', '/cp.png', '/qb1.png', '/qb2.png'].map((src, i) => (
@@ -77,7 +77,7 @@ const FooterClient = ({
                             </div>
                         </div>
                         {/* <div>
-                            <h4 className="text-sm font-black uppercase tracking-widest mb-4 opacity-40">Associate Partner</h4>
+                            <h4 className="text-sm font-black uppercase tracking-widest mb-4 text-white/60">Associate Partner</h4>
                             <div className="text-xl font-bold italic text-white/80">Tax<span className="text-brand-green">Apro</span></div>
                         </div> */}
                     </div>

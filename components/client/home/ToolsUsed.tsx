@@ -66,7 +66,7 @@ const ToolsUsed = ({ tools }: { tools: { name: string; src: string }[] }) => {
 
                 {/* Trust Footer */}
                 <div className="mt-16 text-center">
-                    <p className="text-brand-slate/50 text-sm font-medium italic">
+                    <p className="text-brand-slate/80 text-sm font-medium italic">
                         + and 20+ other specialized financial integrations
                     </p>
                 </div>

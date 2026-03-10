@@ -348,7 +348,7 @@ export const servicesData: Service[] = [
         description: "End-to-end tax preparation support",
         category: "business-owners",
         order: 3,
-        isVisible: false,
+        isVisible: true,
         meta: {
             title: "Outsourced Tax Preparation Services for Business Owners | Gapbridge",
             description: "Simplify your tax season with Gapbridge's outsourced tax preparation services. Expert support for business owners to ensure compliance and maximize returns.",

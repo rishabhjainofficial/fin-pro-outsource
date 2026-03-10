@@ -45,7 +45,7 @@ export async function getAboutUsData(): Promise<{ id: number; title: string; rol
         {
             id: 8,
             title: "Rishabh Jain",
-            role: "Marketing Manager",
+            role: "Technical & Web Partner",
             src: "/images/teams/rishabh_jain.webp"
         },
     ];

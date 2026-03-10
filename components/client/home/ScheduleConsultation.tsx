@@ -50,7 +50,7 @@ const ScheduleConsultation = () => {
                         <div className="lg:w-2/5 w-full h-full min-h-[400px] relative">
                             <div className="absolute inset-0 bg-linear-to-t from-brand-navy via-transparent to-transparent lg:bg-linear-to-l lg:from-brand-navy z-10" />
                             <Image
-                                src="/images/teams/parth_shah.webp"
+                                src="/images/teams/parth_shah-removebg-preview.png"
                                 alt="Outsourcing Service"
                                 fill
                                 className="object-contain object-top filter brightness-90 contrast-110"

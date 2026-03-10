@@ -71,9 +71,30 @@ const ContactUs = () => {
                         {/* Direct Lines */}
                         <div className="grid gap-6">
                             {[
-                                { icon: Mail, label: 'Email', value: 'info@gapbridgebiz.com', sub: 'Response within 24hrs' },
-                                { icon: Phone, label: 'Phone', value: '+1 (570) 600-6024', sub: 'Mon-Fri, 9am - 6pm EST' },
-                                { icon: MapPin, label: 'Headquarters', value: '123 Financial District, NY', sub: 'Available for in-person meets' }
+                                {
+                                    icon: Mail,
+                                    label: 'Email',
+                                    value: 'info@gapbridgebiz.com',
+                                    sub: 'Response within 24hrs'
+                                },
+
+                                {
+                                    icon: Phone,
+                                    label: 'Phone',
+                                    value: '+1 (570) 600-6024',
+                                    sub: 'Mon-Fri,9am - 6pm EST'
+                                },
+
+                                {
+                                    icon: MapPin,
+                                    label: 'Address',
+                                    value: '304 Kashiparekh Complex,',
+                                    subValue1: 'B/h Bhagwati chamber',
+                                    subValue2: 'Next to Femina Town',
+                                    subValue3: 'Swastik cross road',
+                                    subValue4: 'Navrangpura, Ahmedabad (IN) - 380009',
+                                    sub: 'Available for in-person meets'
+                                }
                             ].map((item, idx) => (
                                 <div key={idx} className="group flex items-start gap-6 p-6 rounded-3xl border border-brand-border hover:bg-brand-surface transition-all duration-500">
                                     <div className="w-14 h-14 rounded-2xl bg-brand-navy text-white flex items-center justify-center group-hover:bg-brand-green transition-colors">
@@ -81,7 +102,13 @@ const ContactUs = () => {
                                     </div>
                                     <div>
                                         <p className="text-xs font-black uppercase tracking-[0.2em] text-brand-slate/40 mb-1">{item.label}</p>
-                                        <p className="text-xl font-bold text-brand-navy mb-1">{item.value}</p>
+                                        <p className="text-xl font-bold text-brand-navy mb-1 whitespace-pre-line">
+                                            <p>{item.value}</p>
+                                            {item.label === 'Address' && <p>{item.subValue1}</p>}
+                                            {item.label === 'Address' && <p>{item.subValue2}</p>}
+                                            {item.label === 'Address' && <p>{item.subValue3}</p>}
+                                            {item.label === 'Address' && <p>{item.subValue4}</p>}
+                                        </p>
                                         <p className="text-sm font-medium text-brand-green">{item.sub}</p>
                                     </div>
                                 </div>

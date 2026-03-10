@@ -115,10 +115,10 @@ export async function getHomeData(): Promise<{
                 tagsColor: ['text-brand-green', 'text-brand-blue', 'text-brand-red'],
             },
             {
-                title: 'Marketing Manager',
-                description: 'Our Marketing Manager is a strategic thinker who helps businesses grow by developing and executing marketing plans that align with their goals. Let us take care of your marketing needs so you can focus on growing your business.',
+                title: 'Technical & Web Partner',
+                description: 'Our Technical Partner helps businesses establish a strong digital presence by building custom websites and tech solutions. From web development to technical strategy, let us handle your tech needs while you focus on business growth.',
                 image: '/images/teams/rishabh_jain.webp',
-                tags: ['Strategic marketing', 'Cost-effective', 'Growth-focused'],
+                tags: ['Web Development', 'Custom Solutions', 'Technical Strategy'],
                 tagsBgColor: ['bg-brand-green/10', 'bg-brand-blue/10', 'bg-brand-red/10'],
                 tagsColor: ['text-brand-green', 'text-brand-blue', 'text-brand-red'],
             }

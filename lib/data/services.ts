@@ -22,6 +22,7 @@ export interface Service {
     description: string;
     category: string;
     order: number;
+    isVisible?: boolean;
     meta: Metadata;
 }
 
@@ -245,6 +246,7 @@ export const servicesData: Service[] = [
         description: "CPA's go-to firm for A-Z accounting needs",
         category: "business-owners",
         order: 1,
+        isVisible: true,
         meta: {
             title: "Accounting Outsourcing Services for Business Owners | Gapbridge",
             description: "Discover top-tier accounting outsourcing services tailored for business owners. Streamline your financial operations with Gapbridge's expert solutions.",
@@ -295,6 +297,7 @@ export const servicesData: Service[] = [
         description: "Experienced bookkeepers at your service",
         category: "business-owners",
         order: 2,
+        isVisible: false,
         meta: {
             title: "Professional Bookkeeping Services for Business Owners | Gapbridge",
             description: "Keep your financial records accurate and up-to-date with Gapbridge's professional bookkeeping services. Tailored solutions for business owners.",
@@ -345,6 +348,7 @@ export const servicesData: Service[] = [
         description: "End-to-end tax preparation support",
         category: "business-owners",
         order: 3,
+        isVisible: false,
         meta: {
             title: "Outsourced Tax Preparation Services for Business Owners | Gapbridge",
             description: "Simplify your tax season with Gapbridge's outsourced tax preparation services. Expert support for business owners to ensure compliance and maximize returns.",
@@ -395,6 +399,7 @@ export const servicesData: Service[] = [
         description: "Comprehensive AR & AP management services",
         category: "business-owners",
         order: 4,
+        isVisible: true,
         meta: {
             title: "AR & AP Management Services for Business Owners | Gapbridge",
             description: "Optimize your cash flow with Gapbridge's comprehensive AR & AP management services. Tailored solutions for business owners to streamline financial operations.",
@@ -445,6 +450,7 @@ export const servicesData: Service[] = [
         description: "Helping choose the ideal accounting software",
         category: "business-owners",
         order: 5,
+        isVisible: false,
         meta: {
             title: "Accounting Software Consulting for Business Owners | Gapbridge",
             description: "Find the perfect accounting software for your business with Gapbridge's expert consulting services. Tailored recommendations to meet your unique needs.",
@@ -495,6 +501,7 @@ export const servicesData: Service[] = [
         description: "Streamline your CPA's payroll processes",
         category: "business-owners",
         order: 6,
+        isVisible: true,
         meta: {
             title: "Payroll Management Services for Business Owners | Gapbridge",
             description: "Simplify your payroll processes with Gapbridge's expert payroll management services. Tailored solutions for business owners to ensure accurate and timely payroll.",
@@ -545,6 +552,7 @@ export const servicesData: Service[] = [
         description: "Flexible Virtual CFO solutions",
         category: "business-owners",
         order: 7,
+        isVisible: true,
         meta: {
             title: "Virtual CFO Services for Business Owners | Gapbridge",
             description: "Access expert financial guidance with Gapbridge's Virtual CFO services. Flexible solutions to help business owners make informed financial decisions and drive growth.",
@@ -595,6 +603,7 @@ export const servicesData: Service[] = [
         description: "Specialised Xero & QuickBooks services",
         category: "business-owners",
         order: 8,
+        isVisible: false,
         meta: {
             title: "Xero & QuickBooks Accounting Services for Business Owners | Gapbridge",
             description: "Expert Xero and QuickBooks accounting services tailored for business owners. Streamline your financial management with Gapbridge's specialized solutions.",
@@ -645,6 +654,7 @@ export const servicesData: Service[] = [
         description: "Get top-notch audit support service",
         category: "business-owners",
         order: 9,
+        isVisible: true,
         meta: {
             title: "Audit Support Services for Business Owners | Gapbridge",
             description: "Ensure a smooth audit process with Gapbridge's expert audit support services. Tailored solutions to help business owners prepare for and navigate audits with confidence.",
@@ -695,6 +705,7 @@ export const servicesData: Service[] = [
         description: "Drive profitability & make data-backed decisions",
         category: "business-owners",
         order: 10,
+        isVisible: true,
         meta: {
             title: "Cost & Operation Analysis Services for Business Owners | Gapbridge",
             description: "Enhance profitability and make informed decisions with Gapbridge's cost and operation analysis services. Tailored solutions for business owners to optimize financial performance.",
@@ -745,6 +756,7 @@ export const servicesData: Service[] = [
         description: "Smoothly transition into the new fiscal year",
         category: "business-owners",
         order: 11,
+        isVisible: true,
         meta: {
             title: "Year End Services for Business Owners | Gapbridge",
             description: "Ensure a smooth transition into the new fiscal year with Gapbridge's expert year end services. Tailored solutions to help business owners close their books and prepare for the year ahead.",
@@ -795,6 +807,7 @@ export const servicesData: Service[] = [
         description: "Helping keep financial statements handy",
         category: "business-owners",
         order: 12,
+        isVisible: true,
         meta: {
             title: "Preparation of Financial Statements for Business Owners | Gapbridge",
             description: "Keep your financial statements accurate and up-to-date with Gapbridge's expert preparation services. Tailored solutions for business owners to ensure compliance and informed decision-making.",
@@ -845,6 +858,7 @@ export const servicesData: Service[] = [
         description: "Cost-effective Staffing Solutions For CPAs",
         category: "business-owners",
         order: 13,
+        isVisible: true,
         meta: {
             title: "Offshore Staffing Services for CPA Firms | Gapbridge",
             description: "Access cost-effective offshore staffing solutions for CPA firms with Gapbridge. Tailored services to help business owners find skilled professionals and optimize their workforce.",
@@ -895,6 +909,7 @@ export const servicesData: Service[] = [
         description: "Efficient CPA Assistance",
         category: "business-owners",
         order: 14,
+        isVisible: false,
         meta: {
             title: "Outsource Bookkeeping & Accounting Services for CPAs | Gapbridge",
             description: "Enhance your CPA firm's efficiency with Gapbridge's outsourced bookkeeping and accounting services. Tailored solutions to help business owners support their CPA teams and optimize financial operations.",
@@ -945,6 +960,7 @@ export const servicesData: Service[] = [
         description: "Trusted outsourced financial services",
         category: "business-owners",
         order: 15,
+        isVisible: false,
         meta: {
             title: "Outsourced Finance and Accounting Services for Business Owners | Gapbridge",
             description: "Access trusted outsourced finance and accounting services with Gapbridge. Tailored solutions to help business owners streamline their financial operations and drive growth.",
@@ -995,6 +1011,7 @@ export const servicesData: Service[] = [
         icon: "TrendingUp",
         category: "valuation-services",
         order: 1,
+        isVisible: true,
         meta: {
             title: "Business Valuation Services | Gapbridge",
             description: "Get accurate business valuation services with Gapbridge. Expert solutions to help you understand your company's worth and make informed financial decisions.",
@@ -1045,6 +1062,7 @@ export const servicesData: Service[] = [
         icon: "Rocket",
         category: "valuation-services",
         order: 2,
+        isVisible: true,
         meta: {
             title: "Startup Valuation Services | Gapbridge",
             description: "Access expert startup valuation services with Gapbridge. Tailored solutions to help you understand your startup's worth and attract investors.",
@@ -1095,6 +1113,7 @@ export const servicesData: Service[] = [
         icon: "Users",
         category: "valuation-services",
         order: 3,
+        isVisible: true,
         meta: {
             title: "ESOP Valuation Services | Gapbridge",
             description: "Get expert ESOP valuation services with Gapbridge. Tailored solutions to help you determine the value of your Employee Stock Ownership Plan and make informed decisions.",
@@ -1145,6 +1164,7 @@ export const servicesData: Service[] = [
         icon: "Landmark",
         category: "valuation-services",
         order: 4,
+        isVisible: true,
         meta: {
             title: "IBBI-Registered Valuation Services | Gapbridge",
             description: "Access accurate IBBI-registered valuation services with Gapbridge. Expert solutions to help you determine the value of your business for insolvency and bankruptcy proceedings.",
@@ -1195,6 +1215,7 @@ export const servicesData: Service[] = [
         icon: "PieChart",
         category: "advisory-services",
         order: 1,
+        isVisible: true,
         meta: {
             title: "Fractional CFO Services | Gapbridge",
             description: "Access expert Fractional CFO services with Gapbridge. Tailored solutions to help you drive growth and make informed financial decisions with part-time CFO guidance.",
@@ -1245,6 +1266,7 @@ export const servicesData: Service[] = [
         icon: "Users",
         category: "cpa-firm",
         order: 1,
+        isVisible: true,
         meta: {
             title: "Hire Accountant Services for CPA Firms | Gapbridge",
             description: "Hire dedicated accountants for your CPA firm with Gapbridge. Tailored staffing solutions to help you find skilled professionals and optimize your workforce.",
@@ -1295,6 +1317,7 @@ export const servicesData: Service[] = [
         icon: "BookOpen",
         category: "cpa-firm",
         order: 2,
+        isVisible: true,
         meta: {
             title: "Hire Bookkeeper Services for CPA Firms | Gapbridge",
             description: "Hire skilled bookkeepers for your CPA firm with Gapbridge. Tailored staffing solutions to help you manage your clients' accounts efficiently and optimize your workforce.",
@@ -1345,6 +1368,7 @@ export const servicesData: Service[] = [
         icon: "PieChart",
         category: "cpa-firm",
         order: 3,
+        isVisible: true,
         meta: {
             title: "Hire Fractional CFO Services for CPA Firms | Gapbridge",
             description: "Hire expert Fractional CFOs for your CPA firm with Gapbridge. Tailored staffing solutions to help you provide high-level financial strategy to your clients and optimize your workforce.",
@@ -1395,6 +1419,7 @@ export const servicesData: Service[] = [
         icon: "Receipt",
         category: "cpa-firm",
         order: 4,
+        isVisible: true,
         meta: {
             title: "Hire Tax Preparer Services for CPA Firms | Gapbridge",
             description: "Hire skilled tax preparers for your CPA firm with Gapbridge. Tailored staffing solutions to help you carry out accurate tax filings for your clients effortlessly and optimize your workforce.",
@@ -1445,6 +1470,7 @@ export const servicesData: Service[] = [
         icon: "UserCheck",
         category: "cpa-firm",
         order: 5,
+        isVisible: true,
         meta: {
             title: "Hire Staff Accountant Services for CPA Firms | Gapbridge",
             description: "Hire skilled staff accountants for your CPA firm with Gapbridge. Tailored staffing solutions to help you elevate your accounting services and optimize your workforce.",
@@ -1495,6 +1521,7 @@ export const servicesData: Service[] = [
         icon: "ShieldCheck",
         category: "cpa-firm",
         order: 6,
+        isVisible: true,
         meta: {
             title: "Hire Audit Support Staff Services for CPA Firms | Gapbridge",
             description: "Hire skilled audit support staff for your CPA firm with Gapbridge. Tailored staffing solutions to help you manage all your audit preparations and documentation seamlessly and optimize your workforce.",
@@ -1545,6 +1572,7 @@ export const servicesData: Service[] = [
         icon: "Database",
         category: "cpa-firm",
         order: 7,
+        isVisible: true,
         meta: {
             title: "Hire QuickBooks Expert Services for CPA Firms | Gapbridge",
             description: "Hire certified QuickBooks experts for your CPA firm with Gapbridge. Tailored staffing solutions to help you make optimum use of QuickBooks software and optimize your workforce.",
@@ -1595,6 +1623,7 @@ export const servicesData: Service[] = [
         icon: "FileSearch",
         category: "cpa-firm",
         order: 8,
+        isVisible: true,
         meta: {
             title: "Hire Tax Reviewer Services for CPA Firms | Gapbridge",
             description: "Hire skilled tax reviewers for your CPA firm with Gapbridge. Tailored staffing solutions to help you maximize tax returns by filing and reviewing taxes accurately and optimize your workforce.",
@@ -1645,6 +1674,7 @@ export const servicesData: Service[] = [
         icon: "Landmark",
         category: "cpa-firm",
         order: 9,
+        isVisible: true,
         meta: {
             title: "Hire AR/AP Billing Executive Services for CPA Firms | Gapbridge",
             description: "Hire skilled AR/AP billing executives for your CPA firm with Gapbridge. Tailored staffing solutions to help you take complete care of your CPA’s AR & AP functions and optimize your workforce.",
@@ -1695,6 +1725,7 @@ export const servicesData: Service[] = [
         icon: "ClipboardCheck",
         category: "cpa-firm",
         order: 10,
+        isVisible: true,
         meta: {
             title: "Hire Account Supervisor Services for CPA Firms | Gapbridge",
             description: "Hire skilled account supervisors for your CPA firm with Gapbridge. Tailored staffing solutions to help you achieve financial clarity and lead your team precisely while optimizing your workforce.",
@@ -1745,6 +1776,7 @@ export const servicesData: Service[] = [
         icon: "Users2",
         category: "cpa-firm",
         order: 11,
+        isVisible: true,
         meta: {
             title: "Hire Payroll Expert Services for CPA Firms | Gapbridge",
             description: "Hire skilled payroll experts for your CPA firm with Gapbridge. Tailored staffing solutions to help you simplify your CPA’s payroll management and compliance while optimizing your workforce.",
@@ -1795,6 +1827,7 @@ export const servicesData: Service[] = [
         icon: "LineChart",
         category: "cpa-firm",
         order: 12,
+        isVisible: true,
         meta: {
             title: "Hire Virtual CFO Services for CPA Firms | Gapbridge",
             description: "Hire expert virtual CFOs for your CPA firm with Gapbridge. Tailored staffing solutions to help you provide financial backbone for your clients' growth and optimize your workforce.",
@@ -1845,6 +1878,7 @@ export const servicesData: Service[] = [
         icon: "UserCog",
         category: "cpa-firm",
         order: 13,
+        isVisible: true,
         meta: {
             title: "Hire Virtual Assistant Services for CPA Firms | Gapbridge",
             description: "Hire skilled virtual assistants for your CPA firm with Gapbridge. Tailored staffing solutions to help you manage administrative tasks efficiently and optimize your workforce.",

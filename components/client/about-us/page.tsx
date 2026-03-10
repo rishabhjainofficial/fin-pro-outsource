@@ -8,13 +8,13 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 
-const AboutUs = () => {
+const AboutUs = ({ teams }: { teams: { id: number; title: string; role: string; src: string }[] }) => {
     return (
-        <main className="w-full bg-white pt-32 pb-24 px-6">
+        <div className="w-full bg-white pt-20 pb-24 px-6">
             <div className="max-w-7xl mx-auto">
 
                 {/* --- Executive Header --- */}
-                <div className="grid lg:grid-cols-2 gap-16 items-center mb-32">
+                <div className="text-center max-w-3xl mx-auto mb-16">
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -29,57 +29,48 @@ const AboutUs = () => {
                             Engineering <br />
                             <span className="text-brand-green italic">Financial Clarity.</span>
                         </h1>
-                        <p className="text-xl text-brand-slate font-medium leading-relaxed max-w-xl">
+                        <p className="text-xl text-brand-slate font-medium leading-relaxed">
                             Gapbridge was established to solve the complexities of modern financial operations. We provide the infrastructure and expertise that allow firms to scale with confidence and precision.
                         </p>
                     </motion.div>
-
-                    <div className="relative h-[600px] rounded-[4rem] overflow-hidden shadow-2xl">
-                        <Image
-                            src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1000&auto=format&fit=crop"
-                            alt="Corporate Leadership"
-                            fill
-                            className="object-cover"
-                        />
-                        {/* Status Badge */}
-                        <div className="absolute bottom-10 left-10 p-6 bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl shadow-2xl">
-                            <div className="text-white text-sm font-bold tracking-widest uppercase mb-1 opacity-60">Success Rate</div>
-                            <div className="text-white text-4xl font-black">99.9%</div>
-                        </div>
-                    </div>
                 </div>
 
-                {/* --- Core Values --- */}
-                <div className="grid md:grid-cols-3 gap-8 mb-32">
-                    {[
-                        {
-                            title: "Operational Precision",
-                            desc: "We treat every ledger with clinical accuracy, ensuring your financial data is always audit-ready.",
-                            icon: <ShieldCheck size={24} />
-                        },
-                        {
-                            title: "Strategic Partnership",
-                            desc: "We don't just process data; we provide the insights needed to drive high-level business decisions.",
-                            icon: <Heart size={24} />
-                        },
-                        {
-                            title: "Regulatory Mastery",
-                            desc: "Our team stays at the forefront of global tax laws and compliance standards to protect your interests.",
-                            icon: <GraduationCap size={24} />
-                        }
-                    ].map((item, idx) => (
-                        <div key={idx} className="p-12 bg-brand-surface rounded-[3.5rem] border border-brand-border group hover:bg-white hover:shadow-2xl transition-all duration-500">
-                            <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center mb-8 shadow-sm group-hover:bg-brand-navy group-hover:text-white transition-all">
-                                <div className="text-brand-green">{item.icon}</div>
+                {/* --- Core Team --- */}
+                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6 mb-16">
+                    {teams.map((item) => (
+                        <motion.div
+                            key={item.id}
+                            whileHover={{ y: -5 }}
+                            className="group relative flex flex-col items-center text-center"
+                        >
+                            {/* Image Container: Clean & Minimal */}
+                            <div className="relative w-full aspect-square rounded-3xl overflow-hidden mb-4 bg-brand-surface border border-brand-border group-hover:border-brand-green/30 transition-all duration-500 shadow-sm group-hover:shadow-xl">
+                                <Image
+                                    src={item.src}
+                                    alt={item.title}
+                                    fill
+                                    className="object-fit grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100"
+                                />
+
+                                {/* Subtle Overlay on Hover */}
+                                <div className="absolute inset-0 bg-linear-to-t from-brand-navy/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                             </div>
-                            <h3 className="text-2xl font-bold text-brand-navy mb-4">{item.title}</h3>
-                            <p className="text-brand-slate font-medium leading-relaxed">{item.desc}</p>
-                        </div>
+
+                            {/* Typography: Focused & Professional */}
+                            <div className="space-y-1">
+                                <h3 className="text-sm font-black text-brand-navy tracking-tight group-hover:text-brand-green transition-colors">
+                                    {item.title}
+                                </h3>
+                                <p className="text-[10px] uppercase tracking-[0.15em] font-bold text-brand-slate/60">
+                                    {item.role || 'Associate'}
+                                </p>
+                            </div>
+                        </motion.div>
                     ))}
                 </div>
 
                 {/* --- Mission Statement (Dark Block) --- */}
-                <div className="bg-brand-navy rounded-[4rem] overflow-hidden relative mb-32">
+                <div className="bg-brand-navy rounded-[4rem] overflow-hidden relative mb-16">
                     <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
                     <div className="relative z-10 flex flex-col lg:flex-row items-center p-12 md:p-24 gap-16">
                         <div className="lg:w-1/2">
@@ -142,14 +133,14 @@ const AboutUs = () => {
                 </div>
 
                 {/* --- Footer CTA --- */}
-                <div className="mt-40 text-center">
+                <div className="mt-16 text-center">
                     <h2 className="text-3xl font-black text-brand-navy mb-10">Partner with a firm that values your growth.</h2>
                     <Link href="/contact-us" className="inline-flex items-center gap-3 bg-brand-navy text-white px-10 py-5 rounded-full font-black uppercase tracking-[0.2em] text-sm hover:bg-brand-green transition-all group">
                         Start Your Journey <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
                     </Link>
                 </div>
             </div>
-        </main>
+        </div>
     );
 };
 

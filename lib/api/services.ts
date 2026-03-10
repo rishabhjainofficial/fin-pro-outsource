@@ -11,7 +11,7 @@ export async function getServices(slug: string): Promise<ServiceCategory> {
 
     if (slug) {
         const serviceCategory = categoriesData.find(category => category.slug === slug);
-        const services = servicesData.filter(service => service.category === slug);
+        const services = servicesData.filter(service => service.category === slug && service.isVisible);
 
         if (!serviceCategory) {
             throw new Error(`Category with slug "${slug}" not found.`);
@@ -30,7 +30,7 @@ export async function getServiceBySlug(slug: string): Promise<Service | undefine
     // When you add DB:
     // return await prisma.service.findUnique({ where: { slug } });
 
-    return servicesData.find(service => service.slug === slug);
+    return servicesData.find(service => service.slug === slug && service.isVisible);
 }
 
 export async function getAllServices(limit?: number) {
@@ -39,5 +39,5 @@ export async function getAllServices(limit?: number) {
     // When you add DB:
     // return await prisma.service.findMany();
 
-    return servicesData.slice(0, limit);
+    return servicesData.filter(service => service.isVisible).slice(0, limit);
 }

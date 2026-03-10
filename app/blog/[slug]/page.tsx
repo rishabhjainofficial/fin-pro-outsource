@@ -2,10 +2,10 @@ import { getBlogBySlug } from '@/lib/api/blogs';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Calendar, User, ArrowLeft, Share2, Clock, MoveRight } from 'lucide-react';
+import { ArrowLeft, Share2, MoveRight } from 'lucide-react';
 import { Metadata } from 'next';
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
     const { slug } = await params;
     const blog = await getBlogBySlug(slug);
 
@@ -114,9 +114,11 @@ export default async function BlogDetailPage({ params }: { params: { slug: strin
                     <aside className="hidden lg:block sticky top-32 h-fit">
                         <div className="bg-brand-surface p-8 rounded-[2.5rem] border border-brand-border">
                             <p className="text-sm font-black text-brand-navy mb-4">Want specialized advice?</p>
-                            <button className="flex items-center gap-2 text-brand-green font-bold group">
-                                Book a Call <MoveRight size={18} className="group-hover:translate-x-2 transition-transform" />
-                            </button>
+                            <Link href="/contact-us">
+                                <button className="flex items-center gap-2 text-brand-green font-bold group">
+                                    Book a Call <MoveRight size={18} className="group-hover:translate-x-2 transition-transform" />
+                                </button>
+                            </Link>
                         </div>
                     </aside>
                 </div>

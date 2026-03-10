@@ -50,12 +50,12 @@ const Banner = () => {
                             <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                         </Link>
 
-                        <button className="flex items-center gap-3 text-white font-bold group">
+                        {/* <button className="flex items-center gap-3 text-white font-bold group">
                             <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center bg-white/5 backdrop-blur-md group-hover:bg-brand-green group-hover:border-brand-green transition-all">
                                 <Play size={16} fill="white" />
                             </div>
                             <span className="text-sm tracking-widest uppercase">Watch how it works</span>
-                        </button>
+                        </button> */}
                     </div>
 
                     {/* Quick Trust Signals */}

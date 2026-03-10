@@ -11,9 +11,10 @@ const Career = () => {
     ];
 
     const jobs = [
-        { title: "Senior Full Stack Developer", dept: "Engineering", type: "Full-time", location: "Remote / India" },
         { title: "Tax Preparation Specialist", dept: "Finance", type: "Full-time", location: "Udaipur, India" },
         { title: "Client Success Manager", dept: "Operations", type: "Contract", location: "UK (Remote)" },
+        { title: "Accounts Payable Specialist", dept: "Finance", type: "Full-time", location: "Udaipur, India" },
+        { title: "Accounts Receivable Specialist", dept: "Finance", type: "Full-time", location: "Udaipur, India" },
     ];
 
     return (

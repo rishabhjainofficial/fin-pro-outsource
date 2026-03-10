@@ -41,7 +41,7 @@ const ContactUs = () => {
     const socialLinks = getSocialLinks();
 
     return (
-        <main className="w-full bg-white pt-32 pb-24 px-4">
+        <div className="w-full bg-white pt-32 pb-24 px-4">
             <div className="max-w-7xl mx-auto">
 
                 {/* Header Section */}
@@ -71,8 +71,8 @@ const ContactUs = () => {
                         {/* Direct Lines */}
                         <div className="grid gap-6">
                             {[
-                                { icon: Mail, label: 'Email', value: 'hello@gapbridge.com', sub: 'Response within 24hrs' },
-                                { icon: Phone, label: 'Phone', value: '+1 (555) 000-ADROIT', sub: 'Mon-Fri, 9am - 6pm EST' },
+                                { icon: Mail, label: 'Email', value: 'info@gapbridgebiz.com', sub: 'Response within 24hrs' },
+                                { icon: Phone, label: 'Phone', value: '+1 (570) 600-6024', sub: 'Mon-Fri, 9am - 6pm EST' },
                                 { icon: MapPin, label: 'Headquarters', value: '123 Financial District, NY', sub: 'Available for in-person meets' }
                             ].map((item, idx) => (
                                 <div key={idx} className="group flex items-start gap-6 p-6 rounded-3xl border border-brand-border hover:bg-brand-surface transition-all duration-500">
@@ -105,7 +105,7 @@ const ContactUs = () => {
                     {/* Right Side: Professional Discovery Form */}
                     <div className="lg:col-span-7">
                         <div className="bg-brand-surface border border-brand-border rounded-[3.5rem] p-8 md:p-16">
-                            <form className="grid gap-8" onSubmit={(e) => handleSubmit(e)}>
+                            <form className="grid gap-8" onSubmit={(e) => handleSubmit(e)} suppressHydrationWarning>
                                 <div className="grid md:grid-cols-2 gap-8">
                                     <div className="space-y-3">
                                         <label className="text-[10px] font-black uppercase tracking-[0.3em] text-brand-navy/40 ml-1">Full Name</label>
@@ -209,7 +209,7 @@ const ContactUs = () => {
                     </div>
                 </div>
             </div>
-        </main>
+        </div>
     );
 };
 

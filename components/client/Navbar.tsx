@@ -38,10 +38,9 @@ const Navbar = () => {
             ]
         },
         { name: 'CPA Firm (Hire)', type: 'link', href: '/cpa-firm' },
-        { name: 'Career', type: 'link', href: '/career' },
-        { name: 'Blog', type: 'link', href: '/blog' },
-        { name: 'Case Studies', type: 'link', href: '/case-studies' },
-        // { name: 'Contact Us', type: 'link', href: '/contact-us' },
+        // { name: 'Career', type: 'link', href: '/career' },
+        // { name: 'Blog', type: 'link', href: '/blog' },
+        // { name: 'Case Studies', type: 'link', href: '/case-studies' },
     ];
 
     return (

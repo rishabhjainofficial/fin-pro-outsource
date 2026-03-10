@@ -39,10 +39,10 @@ const ScheduleConsultation = () => {
                                     Schedule a Consultation
                                     <Calendar size={20} className="group-hover:rotate-12 transition-transform" />
                                 </Link>
-                                <div className="flex items-center gap-2 text-white/60 text-sm font-medium">
+                                {/* <div className="flex items-center gap-2 text-white/60 text-sm font-medium">
                                     <ShieldCheck size={20} className="text-brand-green" />
                                     ISO Certified & GDPR Compliant
-                                </div>
+                                </div> */}
                             </div>
                         </div>
 
@@ -50,10 +50,10 @@ const ScheduleConsultation = () => {
                         <div className="lg:w-2/5 w-full h-full min-h-[400px] relative">
                             <div className="absolute inset-0 bg-linear-to-t from-brand-navy via-transparent to-transparent lg:bg-linear-to-l lg:from-brand-navy z-10" />
                             <Image
-                                src="/images/team-member.png"
+                                src="/images/teams/parth_shah.webp"
                                 alt="Outsourcing Service"
                                 fill
-                                className="object-cover object-top filter brightness-90 contrast-110"
+                                className="object-contain object-top filter brightness-90 contrast-110"
                             />
                         </div>
                     </div>

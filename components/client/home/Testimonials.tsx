@@ -63,7 +63,7 @@ const Testimonials = ({ testimonials }: {
                                             src={item.image}
                                             alt={item.name}
                                             fill
-                                            className="object-cover"
+                                            className="object-fill"
                                         />
                                     </div>
                                     <div>

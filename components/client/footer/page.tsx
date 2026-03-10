@@ -24,7 +24,7 @@ const FooterClient = ({
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-12 pb-16 border-b border-white/10">
 
                     {/* Brand Info */}
-                    <div className="md:col-span-3 space-y-6">
+                    <div className="md:col-span-6 space-y-6">
                         <div className="flex items-center gap-2">
                             {/* Replace with your actual Logo Component or Image */}
                             <div className="text-2xl font-black tracking-tighter text-white">
@@ -61,26 +61,24 @@ const FooterClient = ({
                     </div>
 
                     {/* Certifications & Partner */}
-                    <div className="md:col-span-3 space-y-8">
+                    {/* <div className="md:col-span-3 space-y-8">
                         <div>
                             <h3 className="text-sm font-black uppercase tracking-widest mb-6 text-white/60">Certifications</h3>
                             <div className="flex flex-wrap gap-3">
-                                {/* Certification Badges */}
                                 {['/xero.png', '/cp.png', '/qb1.png', '/qb2.png'].map((src, i) => (
                                     <div key={i} className="relative w-12 h-12 bg-white/5 rounded-lg p-1 grayscale hover:grayscale-0 transition-all">
                                         <div className="w-full h-full relative">
-                                            {/* Replace with actual paths */}
                                             <div className="bg-brand-green/20 w-full h-full rounded" />
                                         </div>
                                     </div>
                                 ))}
                             </div>
                         </div>
-                        {/* <div>
+                        <div>
                             <h4 className="text-sm font-black uppercase tracking-widest mb-4 text-white/60">Associate Partner</h4>
                             <div className="text-xl font-bold italic text-white/80">Tax<span className="text-brand-green">Apro</span></div>
-                        </div> */}
-                    </div>
+                        </div>
+                    </div> */}
                 </div>
 
                 {/* Middle Section: Services Grid */}
@@ -91,7 +89,7 @@ const FooterClient = ({
                         <h3 className="text-lg font-bold mb-8 pb-4 border-b border-white/10">Business Owners</h3>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             {businessServices.map((service) => (
-                                <Link key={service.title} href={service.slug} className="text-white/70 hover:text-white text-sm transition-colors">
+                                <Link key={service.title} href={service.slug.startsWith('/') ? service.slug : `/${service.slug}`} className="text-white/70 hover:text-white text-sm transition-colors">
                                     {service.title}
                                 </Link>
                             ))}
@@ -103,7 +101,7 @@ const FooterClient = ({
                         <h3 className="text-lg font-bold mb-8 pb-4 border-b border-white/10">Accounting/CPA Firms</h3>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             {cpaFirmLinks.map((link) => (
-                                <Link key={link.title} href={`${link.slug}`} className="text-white/70 hover:text-white text-sm transition-colors">
+                                <Link key={link.title} href={link.slug.startsWith('/') ? link.slug : `/${link.slug}`} className="text-white/70 hover:text-white text-sm transition-colors">
                                     {link.title}
                                 </Link>
                             ))}
